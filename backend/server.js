@@ -2,10 +2,12 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
 
 const FRONTEND_DIR = path.join(__dirname, '..', 'frontend');
@@ -14,7 +16,10 @@ const STATIC_DATA_DIR = path.join(__dirname, 'data');
 const RUNTIME_DATA_DIR = process.env.RUNTIME_DATA_DIR || STATIC_DATA_DIR;
 
 // Serve the static frontend (local dev and optional single-host deployments)
-app.use(express.static(FRONTEND_DIR));
+if (process.env.NODE_ENV !== 'production') {
+  app.use(express.static(FRONTEND_DIR));
+}
+
 
 // Ensure runtime data dir exists
 try {
