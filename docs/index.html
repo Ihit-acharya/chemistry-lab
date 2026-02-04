@@ -129,7 +129,7 @@
 
       <div class="hero-visual">
         <div class="hero-orb">
-          <img src="images/lab-background.jpg" alt="Lab background" />
+          <img id="heroSwapImage" src="images/ihit.jpeg" alt="Ihit" />
         </div>
         <div class="hero-glow"></div>
       </div>
@@ -154,6 +154,21 @@
     // Render profile/login link in the navbar (Bootstrap JS must be loaded first)
     if (window.auth && typeof window.auth.renderProfileInNavbar === 'function') {
       window.auth.renderProfileInNavbar();
+    }
+
+    // Swap hero image between Ihit and Ritesh every 3 seconds
+    const heroSwapImage = document.getElementById('heroSwapImage');
+    if (heroSwapImage) {
+      const images = [
+        { src: 'images/ihit.jpeg', alt: 'Ihit' },
+        { src: 'images/ritesh.jpeg', alt: 'Ritesh' }
+      ];
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % images.length;
+        heroSwapImage.src = images[index].src;
+        heroSwapImage.alt = images[index].alt;
+      }, 3000);
     }
   </script>
 
