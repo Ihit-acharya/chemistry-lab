@@ -557,7 +557,7 @@ function enableChemicalDragging() {
 // ================= EQUIPMENT LOADING =================
 async function loadEquipmentStock() {
     try {
-        const response = await fetch('data/equipment.json');
+           const response = await fetch(window.apiUrl('/data/equipment.json'));
         const data = await response.json();
         allEquipment = data.equipment || [];
 
@@ -576,7 +576,7 @@ async function loadEquipmentStock() {
 // ================= REACTIONS LOADING =================
 async function loadReactions() {
     try {
-        const res = await fetch('data/reactions.json');
+           const res = await fetch(window.apiUrl('/data/reactions.json'));
         const data = await res.json();
         labState.reactions = {};
 
@@ -595,7 +595,7 @@ async function loadReactions() {
 
         // Also load reactants and generate placeholder entries for any missing pair
         try {
-            const rres = await fetch('data/reactants.json');
+                    const rres = await fetch(window.apiUrl('/data/reactants.json'));
             const rdata = await rres.json();
             const chems = rdata.chemicals || [];
 
@@ -1251,7 +1251,7 @@ mainFlask.addEventListener('drop', e => {
 });
 async function loadChemicalStock() {
     try {
-        const response = await fetch('data/reactants.json');
+        const response = await fetch(window.apiUrl('/data/reactants.json'));
         const data = await response.json();
 
         allChemicals = data.chemicals; // Store for search/filter

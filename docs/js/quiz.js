@@ -39,7 +39,7 @@ function getDifficulty() {
 
 async function loadQuestions() {
     const difficulty = getDifficulty();
-    const res = await fetch(`data/quiz_${difficulty}.json`, { cache: 'no-store' });
+    const res = await fetch(window.apiUrl(`/data/quiz_${difficulty}.json`), { cache: 'no-store' });
     if (!res.ok) {
         throw new Error('Failed to load quiz data');
     }
