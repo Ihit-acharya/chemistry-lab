@@ -131,7 +131,7 @@ async function submitQuiz() {
 
     let betterThanPct = 0;
     try {
-        const res = await fetch('/api/quiz/submit', {
+        const res = await fetch(window.apiUrl('/api/quiz/submit'), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, score, total, difficulty })
@@ -160,7 +160,7 @@ async function loadLeaderboard() {
     const difficulty = getDifficulty();
     leaderboardList.innerHTML = '<div class="text-muted">Loading leaderboard...</div>';
     try {
-        const res = await fetch(`/api/quiz/leaderboard?difficulty=${encodeURIComponent(difficulty)}`);
+        const res = await fetch(window.apiUrl(`/api/quiz/leaderboard?difficulty=${encodeURIComponent(difficulty)}`));
         const data = await res.json();
         if (!res.ok || !data.success) throw new Error('Failed to load leaderboard');
         if (!data.scores || data.scores.length === 0) {

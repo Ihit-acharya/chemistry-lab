@@ -87,6 +87,7 @@
   <p class="text-center mt-4"><i class="fa-solid fa-graduation-cap"></i> Chemistry Lab Project | Grade 11 | Nepal</p>
 </footer>
 
+<script src="js/data.js"></script>
 <script>
 document.getElementById('registerForm').addEventListener('submit', async function(e){
   e.preventDefault();
@@ -116,7 +117,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
   }
 
   try {
-    const res = await fetch('/api/register', {
+    const res = await fetch(window.apiUrl('/api/register'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password, name })

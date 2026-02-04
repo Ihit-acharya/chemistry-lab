@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   listEl.innerHTML = '<p class="text-muted">Loading history...</p>';
 
   try {
-    const res = await fetch(`/api/quiz/history?username=${encodeURIComponent(username)}`);
+    const res = await fetch(window.apiUrl(`/api/quiz/history?username=${encodeURIComponent(username)}`));
     const data = await res.json();
     if (!res.ok || !data.success) throw new Error('Failed to load history');
 
