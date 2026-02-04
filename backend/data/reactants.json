@@ -780,7 +780,7 @@
         {
             "id": "H",
             "name": "Hydrogen",
-            "formula": "H",
+            "formula": "H2",
             "type": "element",
             "color": "#d9d9d9"
         },
@@ -822,21 +822,21 @@
         {
             "id": "N",
             "name": "Nitrogen",
-            "formula": "N",
+            "formula": "N2",
             "type": "element",
             "color": "#d9d9d9"
         },
         {
             "id": "O",
             "name": "Oxygen",
-            "formula": "O",
+            "formula": "O2",
             "type": "element",
             "color": "#d9d9d9"
         },
         {
             "id": "F",
             "name": "Fluorine",
-            "formula": "F",
+            "formula": "F2",
             "type": "element",
             "color": "#d9d9d9"
         },
@@ -892,7 +892,7 @@
         {
             "id": "Cl",
             "name": "Chlorine",
-            "formula": "Cl",
+            "formula": "Cl2",
             "type": "element",
             "color": "#d9d9d9"
         },
