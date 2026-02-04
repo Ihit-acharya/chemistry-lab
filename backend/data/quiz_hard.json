@@ -1,0 +1,1002 @@
+[
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the conjugate base of H2CO3?",
+    "options": [
+      "CO3^2-",
+      "HCO3-",
+      "H3CO3+",
+      "CO2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "If Ksp of AgCl is 1.8×10^-10, solubility in pure water is closest to:",
+    "options": [
+      "1.3×10^-5 M",
+      "1.8×10^-10 M",
+      "1.8×10^-5 M",
+      "3.6×10^-10 M"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a buffer pair?",
+    "options": [
+      "HCl/NaCl",
+      "CH3COOH/CH3COONa",
+      "NaOH/NaCl",
+      "H2SO4/Na2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In first-order kinetics, the half-life is:",
+    "options": [
+      "Dependent on initial concentration",
+      "Independent of initial concentration",
+      "Zero for all reactions",
+      "Twice the rate constant"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which orbital is filled after 4s in the Aufbau principle?",
+    "options": [
+      "3d",
+      "4p",
+      "5s",
+      "4d"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the conjugate base of H2CO3?",
+    "options": [
+      "CO3^2-",
+      "HCO3-",
+      "H3CO3+",
+      "CO2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "If Ksp of AgCl is 1.8×10^-10, solubility in pure water is closest to:",
+    "options": [
+      "1.3×10^-5 M",
+      "1.8×10^-10 M",
+      "1.8×10^-5 M",
+      "3.6×10^-10 M"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a buffer pair?",
+    "options": [
+      "HCl/NaCl",
+      "CH3COOH/CH3COONa",
+      "NaOH/NaCl",
+      "H2SO4/Na2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In first-order kinetics, the half-life is:",
+    "options": [
+      "Dependent on initial concentration",
+      "Independent of initial concentration",
+      "Zero for all reactions",
+      "Twice the rate constant"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which orbital is filled after 4s in the Aufbau principle?",
+    "options": [
+      "3d",
+      "4p",
+      "5s",
+      "4d"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the conjugate base of H2CO3?",
+    "options": [
+      "CO3^2-",
+      "HCO3-",
+      "H3CO3+",
+      "CO2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "If Ksp of AgCl is 1.8×10^-10, solubility in pure water is closest to:",
+    "options": [
+      "1.3×10^-5 M",
+      "1.8×10^-10 M",
+      "1.8×10^-5 M",
+      "3.6×10^-10 M"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a buffer pair?",
+    "options": [
+      "HCl/NaCl",
+      "CH3COOH/CH3COONa",
+      "NaOH/NaCl",
+      "H2SO4/Na2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In first-order kinetics, the half-life is:",
+    "options": [
+      "Dependent on initial concentration",
+      "Independent of initial concentration",
+      "Zero for all reactions",
+      "Twice the rate constant"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which orbital is filled after 4s in the Aufbau principle?",
+    "options": [
+      "3d",
+      "4p",
+      "5s",
+      "4d"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the conjugate base of H2CO3?",
+    "options": [
+      "CO3^2-",
+      "HCO3-",
+      "H3CO3+",
+      "CO2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "If Ksp of AgCl is 1.8×10^-10, solubility in pure water is closest to:",
+    "options": [
+      "1.3×10^-5 M",
+      "1.8×10^-10 M",
+      "1.8×10^-5 M",
+      "3.6×10^-10 M"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a buffer pair?",
+    "options": [
+      "HCl/NaCl",
+      "CH3COOH/CH3COONa",
+      "NaOH/NaCl",
+      "H2SO4/Na2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In first-order kinetics, the half-life is:",
+    "options": [
+      "Dependent on initial concentration",
+      "Independent of initial concentration",
+      "Zero for all reactions",
+      "Twice the rate constant"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which orbital is filled after 4s in the Aufbau principle?",
+    "options": [
+      "3d",
+      "4p",
+      "5s",
+      "4d"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the conjugate base of H2CO3?",
+    "options": [
+      "CO3^2-",
+      "HCO3-",
+      "H3CO3+",
+      "CO2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "If Ksp of AgCl is 1.8×10^-10, solubility in pure water is closest to:",
+    "options": [
+      "1.3×10^-5 M",
+      "1.8×10^-10 M",
+      "1.8×10^-5 M",
+      "3.6×10^-10 M"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a buffer pair?",
+    "options": [
+      "HCl/NaCl",
+      "CH3COOH/CH3COONa",
+      "NaOH/NaCl",
+      "H2SO4/Na2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In first-order kinetics, the half-life is:",
+    "options": [
+      "Dependent on initial concentration",
+      "Independent of initial concentration",
+      "Zero for all reactions",
+      "Twice the rate constant"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which orbital is filled after 4s in the Aufbau principle?",
+    "options": [
+      "3d",
+      "4p",
+      "5s",
+      "4d"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the conjugate base of H2CO3?",
+    "options": [
+      "CO3^2-",
+      "HCO3-",
+      "H3CO3+",
+      "CO2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "If Ksp of AgCl is 1.8×10^-10, solubility in pure water is closest to:",
+    "options": [
+      "1.3×10^-5 M",
+      "1.8×10^-10 M",
+      "1.8×10^-5 M",
+      "3.6×10^-10 M"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a buffer pair?",
+    "options": [
+      "HCl/NaCl",
+      "CH3COOH/CH3COONa",
+      "NaOH/NaCl",
+      "H2SO4/Na2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In first-order kinetics, the half-life is:",
+    "options": [
+      "Dependent on initial concentration",
+      "Independent of initial concentration",
+      "Zero for all reactions",
+      "Twice the rate constant"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which orbital is filled after 4s in the Aufbau principle?",
+    "options": [
+      "3d",
+      "4p",
+      "5s",
+      "4d"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which species is the strongest oxidizing agent?",
+    "options": [
+      "Cl2",
+      "Br2",
+      "I2",
+      "F2"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the pH of a 1.0 × 10^-3 M HCl solution?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For the reaction 2A → B, which rate law order would be consistent with rate = k[A]^2?",
+    "options": [
+      "Zero order",
+      "First order",
+      "Second order",
+      "Third order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which has the highest lattice energy (approx.)?",
+    "options": [
+      "NaCl",
+      "KCl",
+      "MgO",
+      "CsI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the hybridization of carbon in CO2?",
+    "options": [
+      "sp",
+      "sp2",
+      "sp3",
+      "dsp2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which statement about equilibrium is true?",
+    "options": [
+      "Forward rate > reverse rate",
+      "Forward rate < reverse rate",
+      "Forward rate = reverse rate",
+      "Reaction stops"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the molarity of a solution with 0.5 mol solute in 250 mL?",
+    "options": [
+      "0.5 M",
+      "1.0 M",
+      "2.0 M",
+      "4.0 M"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "For a galvanic cell, which statement is correct?",
+    "options": [
+      "Electrons flow from cathode to anode",
+      "Anode is positive",
+      "Cathode is positive",
+      "Oxidation occurs at cathode"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which complex has tetrahedral geometry?",
+    "options": [
+      "[Ni(CN)4]2-",
+      "[Co(NH3)6]3+",
+      "[ZnCl4]2-",
+      "[PtCl6]2-"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The enthalpy change for bond formation is generally:",
+    "options": [
+      "Positive",
+      "Negative",
+      "Zero",
+      "Unpredictable"
+    ],
+    "answer": 1
+  }
+]

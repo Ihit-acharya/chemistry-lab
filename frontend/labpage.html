@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Virtual Chemistry Lab</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Global + Lab CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylelab.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+        <div class="container">
+
+            <!-- Website branding -->
+            <a class="navbar-brand" href="homepage.html">
+                <i class="fa-solid fa-flask-vial"></i> Chemistry Lab
+            </a>
+
+            <!-- Toggler for small screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation links -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="labpage.html">
+                            <i class="fa-solid fa-atom"></i> Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="quizhome.html">
+                            <i class="fa-solid fa-circle-question"></i> Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fa-solid fa-circle-info"></i> About
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="lab-container">
+
+        <!-- THREE-CHEMICAL LIMIT BANNER -->
+        <div class="two-chem-banner" id="twoChemBanner" role="status" aria-live="polite">
+            <i class="fas fa-exclamation-triangle"></i>
+            This simulator supports reactions between up to <strong>three</strong> chemicals — please add no more than three reactants.
+        </div>
+
+        <!-- STATUS BAR -->
+        <div class="lab-status-bar" aria-live="polite">
+            <div class="status-left">
+                <div class="status-pill"><i class="fas fa-shield-alt"></i> Safety: <strong>Normal</strong></div>
+                <div class="status-pill hazard-pill" id="hazardIndicator">
+                    <span class="hazard-dot" id="hazardDot"></span>
+                    Hazard: <strong id="hazardText">None</strong>
+                </div>
+                <div class="status-pill"><i class="fas fa-thermometer-half"></i> Temp: <strong class="status-value">100°C</strong></div>
+                <div class="status-pill"><i class="fas fa-atom"></i> Mode: <strong>Sandbox</strong></div>
+                <div class="status-pill"><i class="fas fa-hourglass-half"></i> Timer: <strong class="status-value">00:00</strong></div>
+            </div>
+            <div class="status-actions">
+                <button class="icon-btn" title="Undo" type="button" data-action="undo"><i class="fas fa-undo"></i></button>
+                <button class="icon-btn" title="Redo" type="button" data-action="redo"><i class="fas fa-redo"></i></button>
+                <button class="icon-btn" title="Save Experiment" type="button" data-action="save"><i class="fas fa-save"></i></button>
+                <button class="icon-btn" title="Load Experiment" type="button" data-action="load"><i class="fas fa-folder-open"></i></button>
+                <button class="icon-btn" title="Pause / Resume" type="button" id="pauseSimulation"><i class="fas fa-pause"></i></button>
+                <button class="icon-btn" title="Start Reaction" type="button" id="statusStartReaction"><i class="fas fa-play"></i></button>
+                <button class="icon-btn" title="Toggle Observations" type="button" id="toggleObservationsWindow"><i class="fas fa-clipboard-list"></i></button>
+                <button class="icon-btn" title="Toggle Warnings" type="button" id="toggleWarningsWindow"><i class="fas fa-triangle-exclamation"></i></button>
+                <div class="speed-control">
+                    <label for="simSpeed">Speed</label>
+                    <input type="range" id="simSpeed" min="0.5" max="2" step="0.1" value="1">
+                </div>
+            </div>
+        </div>
+
+        <button class="status-fab" id="statusFab" type="button" title="Show status">
+            <i class="fas fa-sliders-h"></i>
+        </button>
+
+        <!-- LEFT PANEL - INVENTORY -->
+        <div class="chemicals-panel drawer" id="inventoryDrawer" aria-hidden="true">
+            <div class="inventory-header drawer-handle">
+                <div class="inventory-title"><i class="fas fa-flask"></i> Inventory</div>
+                <div class="inventory-actions">
+                    <button class="icon-btn" type="button" title="Sort"><i class="fas fa-sort"></i></button>
+                    <button class="icon-btn" type="button" title="Favorites"><i class="fas fa-star"></i></button>
+                    <button class="icon-btn close-drawer" type="button" title="Close" data-drawer-close="inventoryDrawer"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="chemical-filter">
+                <div class="search-container">
+                    <input type="text" id="chemicalSearch" placeholder="Search by name or formula..." class="chemical-search" aria-label="Search chemicals">
+                    <button id="filterToggle" class="filter-toggle" title="Toggle filters" type="button">
+                        <i class="fas fa-filter"></i>
+                    </button>
+                </div>
+
+                <div class="quantity-control">
+                    <label for="chemicalAmount">Quantity</label>
+                    <input type="range" id="chemicalAmount" min="5" max="50" step="5" value="10" aria-label="Chemical amount">
+                    <span id="chemicalAmountValue">10 mL</span>
+                </div>
+
+                <div class="filter-buttons" id="filterButtons">
+                    <button class="filter-btn active" data-filter="all" type="button">All</button>
+                    <button class="filter-btn" data-filter="acid" type="button">Acids</button>
+                    <button class="filter-btn" data-filter="base" type="button">Bases</button>
+                    <button class="filter-btn" data-filter="salt" type="button">Salts</button>
+                    <button class="filter-btn" data-filter="indicator" type="button">Indicators</button>
+                </div>
+            </div>
+
+            <div class="inventory-strip">
+                <div class="strip-title"><i class="fas fa-vials"></i> Chemicals</div>
+                <div class="chemical-stock">
+                    <div id="chemicalStock"></div>
+                </div>
+            </div>
+
+            <div class="inventory-strip">
+                <div class="strip-title"><i class="fas fa-tools"></i> Equipment</div>
+                <div class="apparatus-stock" id="apparatusStock">
+                    <!-- Equipment will be loaded from data/equipment.json -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER - LAB BENCH -->
+        <div class="lab-bench bench-panel">
+            <div class="bench-toolbar">
+                <div class="bench-chip"><i class="fas fa-vial"></i> Experiment Area</div>
+                <div class="bench-chip subtle"><i class="fas fa-hand-pointer"></i> Drag equipment to the bench</div>
+                <div class="bench-zoom">
+                    <button class="icon-btn" type="button" id="zoomOut" title="Zoom out"><i class="fas fa-minus"></i></button>
+                    <input type="range" id="benchZoom" min="0.7" max="1.4" step="0.05" value="1" aria-label="Bench zoom">
+                    <button class="icon-btn" type="button" id="zoomIn" title="Zoom in"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="lab-surface"></div>
+
+            <div class="bench-overlay">
+                <div class="drop-zone">
+                    <i class="fas fa-flask"></i>
+                    Drop vessels here to mix chemicals
+                </div>
+            </div>
+
+            <!-- Main Reaction Flask (SVG) -->
+            <div class="flask equipment" id="mainFlask">
+                <svg viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;">
+                    <defs>
+                        <clipPath id="flaskClip">
+                            <path d="M95 10 L125 10 L125 70 L180 255 Q185 275 165 275 L55 275 Q35 275 40 255 L95 70 Z" />
+                        </clipPath>
+                    </defs>
+
+                    <g id="flaskLiquid" clip-path="url(#flaskClip)"></g>
+
+                    <path id="flaskOutline" d="M95 10 L125 10 L125 70 L180 255 Q185 275 165 275 L55 275 Q35 275 40 255 L95 70 Z"
+                        fill="none" stroke="rgba(231,174,230,0.9)" stroke-width="4" stroke-linejoin="round" />
+
+                    <path d="M105 20 L105 75 L65 255" stroke="rgba(216, 145, 228, 0.33)" stroke-width="3" fill="none" />
+                </svg>
+            </div>
+
+            <!-- Bottom Section removed per request -->
+        </div>
+
+        <!-- RIGHT PANEL - CONTROLS -->
+        <div class="controls-panel drawer" id="controlsDrawer" aria-hidden="true">
+            <div class="controls-header drawer-handle">
+                <div class="controls-title"><i class="fas fa-sliders-h"></i> Controls</div>
+                <div class="controls-subtitle">Tap buttons for actions</div>
+                <button class="icon-btn close-drawer" type="button" title="Close" data-drawer-close="controlsDrawer"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="control-row">
+                <label for="heatSlider">Heat</label>
+                <input type="range" id="heatSlider" min="100" max="1500" value="100">
+                <span class="value-chip" id="heatValue">100°C</span>
+                <button class="action-btn" id="toggleBurner" type="button"><i class="fas fa-fire"></i> Burner</button>
+            </div>
+
+            <div class="control-row">
+                <label for="reactionTarget">Target</label>
+                <select id="reactionTarget">
+                    <option value="flask">Main Flask</option>
+                </select>
+                <button class="action-btn success" id="startReaction" type="button"><i class="fas fa-play"></i> React</button>
+                <button class="action-btn" id="addStirrer" type="button"><i class="fas fa-undo"></i> Stir</button>
+            </div>
+
+            <div class="control-row">
+                <label for="timerInput">Timer</label>
+                <input type="number" id="timerInput" value="1" min="0.1" max="10" step="0.1" aria-label="Timer minutes">
+                <span>min</span>
+                <button class="action-btn" id="startTimer" type="button"><i class="fas fa-hourglass-start"></i> Start</button>
+                <div class="timer-display" id="timerDisplay"></div>
+            </div>
+
+            <div class="action-grid">
+                <button class="action-btn" id="resetLab" type="button"><i class="fas fa-redo"></i> Reset</button>
+                <button class="action-btn" type="button" data-action="undo"><i class="fas fa-undo"></i> Undo</button>
+                <button class="action-btn" type="button" data-action="redo"><i class="fas fa-redo"></i> Redo</button>
+                <button class="action-btn" type="button" data-action="save"><i class="fas fa-save"></i> Save</button>
+                <button class="action-btn" type="button" data-action="load"><i class="fas fa-folder-open"></i> Load</button>
+                <button class="action-btn" type="button" id="resumeSimulation"><i class="fas fa-play"></i> Resume</button>
+            </div>
+
+            <div class="safety-inline">
+                <i class="fas fa-exclamation-triangle"></i>
+                Max 2 reactants per vessel · Heat above 1200°C triggers warnings · Spills prevented
+            </div>
+        </div>
+
+        <!-- FLASK CONTENTS PANEL -->
+        <div class="drawer info-panel" id="flaskContentsDrawer" aria-hidden="true">
+            <div class="controls-header drawer-handle">
+                <div class="controls-title"><i class="fas fa-flask"></i> Flask Contents</div>
+                <div class="controls-subtitle">Current mixture</div>
+                <button class="icon-btn close-drawer" type="button" title="Close" data-drawer-close="flaskContentsDrawer"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="flask-details-panel">
+                <h5><i class="fas fa-vial"></i> Contents</h5>
+                <div id="currentMixture">
+                    <p class="placeholder-text">No chemicals added yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+        <!-- Floating Windows (No Background) -->
+        <div class="floating-window" id="observationsWindow" aria-hidden="true">
+            <div class="window-header">
+                <span><i class="fas fa-clipboard-list"></i> Observations</span>
+                <button class="icon-btn" type="button" title="Close" data-window-close="observationsWindow"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="window-body" id="observationsWindowContent">
+                <p class="placeholder-text">No observations yet.</p>
+            </div>
+        </div>
+
+        <div class="floating-window" id="warningsWindow" aria-hidden="true">
+            <div class="window-header">
+                <span><i class="fas fa-triangle-exclamation"></i> Warnings</span>
+                <button class="icon-btn" type="button" title="Close" data-window-close="warningsWindow"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="window-body" id="warningsWindowContent">
+                <p class="placeholder-text">No warnings.</p>
+            </div>
+        </div>
+
+        <div class="floating-actions" aria-label="Quick actions">
+            <button class="fab" type="button" data-drawer-open="inventoryDrawer" title="Inventory" aria-expanded="false">
+                <i class="fas fa-flask"></i>
+            </button>
+            <button class="fab" type="button" data-drawer-open="controlsDrawer" title="Controls" aria-expanded="false">
+                <i class="fas fa-sliders-h"></i>
+            </button>
+            <button class="fab" type="button" data-drawer-open="flaskContentsDrawer" title="Flask Contents" aria-expanded="false">
+                <i class="fas fa-vial"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            Chemistry Lab Project | Grade 11 | Nepal
+        </p>
+    </footer>
+
+    <!-- Reaction Status Display (top-level to avoid clipping) -->
+    <div class="reaction-status" id="reactionStatus">
+        <i class="fas fa-atom"></i> <span id="statusText">No reaction in progress</span>
+    </div>
+
+    <!-- Lab JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // enforce signup/login for lab access, then render profile
+        if (window.auth && typeof window.auth.requireAuthRedirect === 'function') {
+            window.auth.requireAuthRedirect();
+        }
+        if (window.auth && typeof window.auth.renderProfileInNavbar === 'function') {
+            window.auth.renderProfileInNavbar();
+        }
+    </script>
+    <script src="js/lab.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backdrop = document.getElementById('drawerBackdrop');
+            const drawers = {
+                inventoryDrawer: document.getElementById('inventoryDrawer'),
+                controlsDrawer: document.getElementById('controlsDrawer'),
+                flaskContentsDrawer: document.getElementById('flaskContentsDrawer')
+            };
+            const floatingActions = document.querySelector('.floating-actions');
+            const statusBar = document.querySelector('.lab-status-bar');
+            const statusFab = document.getElementById('statusFab');
+            const labContainer = document.querySelector('.lab-container');
+            const observationsWindow = document.getElementById('observationsWindow');
+            const warningsWindow = document.getElementById('warningsWindow');
+            const toggleObservationsWindow = document.getElementById('toggleObservationsWindow');
+            const toggleWarningsWindow = document.getElementById('toggleWarningsWindow');
+
+            function closeAllDrawers() {
+                Object.values(drawers).forEach(drawer => {
+                    if (drawer) {
+                        drawer.classList.remove('open');
+                        drawer.setAttribute('aria-hidden', 'true');
+                    }
+                });
+                document.querySelectorAll('[data-drawer-open]').forEach(btn => {
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+                updateBackdrop();
+            }
+
+            function updateBackdrop() {
+                if (!backdrop) return;
+                const anyOpen = Object.values(drawers).some(drawer => drawer && drawer.classList.contains('open'));
+                backdrop.classList.toggle('visible', anyOpen);
+                backdrop.setAttribute('aria-hidden', String(!anyOpen));
+            }
+
+            function positionDrawer(drawer, anchor) {
+                if (!drawer || !anchor) return;
+                const rect = anchor.getBoundingClientRect();
+                const offset = 12;
+                const right = Math.max(16, window.innerWidth - rect.right);
+                const top = Math.max(80, rect.bottom + offset);
+                drawer.style.right = `${right}px`;
+                drawer.style.top = `${top}px`;
+                drawer.dataset.autoPositioned = 'true';
+            }
+
+            function makeFabDraggable(button) {
+                if (!button || !floatingActions) return;
+                let isDragging = false;
+                let startX = 0;
+                let startY = 0;
+                let startTop = 0;
+                let startRight = 0;
+
+                button.style.cursor = 'grab';
+
+                const onMouseDown = (e) => {
+                    isDragging = true;
+                    const rect = button.getBoundingClientRect();
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    startTop = rect.top;
+                    startRight = window.innerWidth - rect.right;
+                    button.style.position = 'fixed';
+                    button.style.right = `${startRight}px`;
+                    button.style.top = `${startTop}px`;
+                    button.style.bottom = 'auto';
+                    button.style.cursor = 'grabbing';
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                };
+
+                const onMouseMove = (e) => {
+                    if (!isDragging) return;
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+                    const newRight = Math.min(Math.max(12, startRight - dx), window.innerWidth - button.offsetWidth - 12);
+                    const newTop = Math.min(Math.max(80, startTop + dy), window.innerHeight - button.offsetHeight - 12);
+                    button.style.right = `${newRight}px`;
+                    button.style.top = `${newTop}px`;
+                    normalizeFabPositions(button);
+                };
+
+                const onMouseUp = () => {
+                    isDragging = false;
+                    button.style.cursor = 'grab';
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup', onMouseUp);
+                    normalizeFabPositions(button);
+                };
+
+                button.addEventListener('mousedown', onMouseDown);
+            }
+
+            function normalizeFabPositions(activeBtn = null) {
+                const buttons = Array.from(document.querySelectorAll('.fab'));
+                const spacing = 12;
+
+                buttons.forEach(btn => {
+                    btn.style.position = 'fixed';
+                    if (!btn.style.top) {
+                        const rect = btn.getBoundingClientRect();
+                        btn.style.top = `${rect.top}px`;
+                        btn.style.right = `${Math.min(Math.max(12, window.innerWidth - rect.right), window.innerWidth - btn.offsetWidth - 12)}px`;
+                        btn.style.bottom = 'auto';
+                    }
+                });
+
+                const sorted = buttons
+                    .map(btn => ({
+                        btn,
+                        top: parseFloat(btn.style.top) || btn.getBoundingClientRect().top,
+                        height: btn.offsetHeight
+                    }))
+                    .sort((a, b) => a.top - b.top);
+
+                sorted.forEach((item, idx) => {
+                    if (idx === 0) return;
+                    const prev = sorted[idx - 1];
+                    const minTop = prev.top + prev.height + spacing;
+                    if (item.top < minTop) {
+                        item.top = minTop;
+                        item.btn.style.top = `${item.top}px`;
+                    }
+                });
+
+                const maxBottom = window.innerHeight - 12;
+                for (let i = sorted.length - 1; i >= 0; i--) {
+                    const item = sorted[i];
+                    const bottom = item.top + item.height;
+                    if (bottom > maxBottom) {
+                        item.top = Math.max(80, maxBottom - item.height);
+                        item.btn.style.top = `${item.top}px`;
+                        if (i > 0) {
+                            const prev = sorted[i - 1];
+                            prev.top = Math.min(prev.top, item.top - prev.height - spacing);
+                            prev.btn.style.top = `${prev.top}px`;
+                        }
+                    }
+                }
+
+                if (activeBtn) {
+                    const activeRect = activeBtn.getBoundingClientRect();
+                    buttons.forEach(btn => {
+                        if (btn === activeBtn) return;
+                        const rect = btn.getBoundingClientRect();
+                        const overlaps = !(rect.right < activeRect.left || rect.left > activeRect.right || rect.bottom < activeRect.top || rect.top > activeRect.bottom);
+                        if (overlaps) {
+                            const newTop = Math.min(window.innerHeight - btn.offsetHeight - 12, activeRect.bottom + spacing);
+                            btn.style.top = `${newTop}px`;
+                        }
+                    });
+                }
+            }
+
+            function makeDrawerDraggable(drawer) {
+                const handle = drawer.querySelector('.drawer-handle');
+                if (!handle) return;
+                let isDragging = false;
+                let startX = 0;
+                let startY = 0;
+                let startTop = 0;
+                let startLeft = 0;
+
+                handle.style.cursor = 'grab';
+
+                const onMouseDown = (e) => {
+                    isDragging = true;
+                    const rect = drawer.getBoundingClientRect();
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    startTop = rect.top;
+                    startLeft = rect.left;
+                    drawer.style.left = `${startLeft}px`;
+                    drawer.style.right = 'auto';
+                    drawer.dataset.autoPositioned = 'false';
+                    handle.style.cursor = 'grabbing';
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                };
+
+                const onMouseMove = (e) => {
+                    if (!isDragging) return;
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+                    const newLeft = Math.min(Math.max(12, startLeft + dx), window.innerWidth - drawer.offsetWidth - 12);
+                    const newTop = Math.min(Math.max(80, startTop + dy), window.innerHeight - drawer.offsetHeight - 12);
+                    drawer.style.left = `${newLeft}px`;
+                    drawer.style.top = `${newTop}px`;
+                };
+
+                const onMouseUp = () => {
+                    isDragging = false;
+                    handle.style.cursor = 'grab';
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup', onMouseUp);
+                };
+
+                handle.addEventListener('mousedown', onMouseDown);
+            }
+
+            function makeWindowDraggable(win) {
+                const handle = win.querySelector('.window-header');
+                if (!handle) return;
+                let isDragging = false;
+                let startX = 0;
+                let startY = 0;
+                let startTop = 0;
+                let startLeft = 0;
+
+                handle.style.cursor = 'grab';
+
+                const onMouseDown = (e) => {
+                    isDragging = true;
+                    const rect = win.getBoundingClientRect();
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    startTop = rect.top;
+                    startLeft = rect.left;
+                    win.style.left = `${startLeft}px`;
+                    win.style.top = `${startTop}px`;
+                    win.style.right = 'auto';
+                    handle.style.cursor = 'grabbing';
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                };
+
+                const onMouseMove = (e) => {
+                    if (!isDragging) return;
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+                    const newLeft = Math.min(Math.max(12, startLeft + dx), window.innerWidth - win.offsetWidth - 12);
+                    const newTop = Math.min(Math.max(80, startTop + dy), window.innerHeight - win.offsetHeight - 12);
+                    win.style.left = `${newLeft}px`;
+                    win.style.top = `${newTop}px`;
+                };
+
+                const onMouseUp = () => {
+                    isDragging = false;
+                    handle.style.cursor = 'grab';
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup', onMouseUp);
+                };
+
+                handle.addEventListener('mousedown', onMouseDown);
+            }
+
+            document.querySelectorAll('[data-drawer-open]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-drawer-open');
+                    const drawer = drawers[id];
+                    if (drawer) {
+                        const isOpen = drawer.classList.contains('open');
+                        if (isOpen) {
+                            drawer.classList.remove('open');
+                            drawer.setAttribute('aria-hidden', 'true');
+                            btn.setAttribute('aria-expanded', 'false');
+                        } else {
+                            positionDrawer(drawer, btn);
+                            drawer.classList.add('open');
+                            drawer.setAttribute('aria-hidden', 'false');
+                            btn.setAttribute('aria-expanded', 'true');
+                            makeDrawerDraggable(drawer);
+                        }
+                        updateBackdrop();
+                    }
+                });
+            });
+
+            document.querySelectorAll('[data-drawer-close]').forEach(btn => {
+                btn.addEventListener('click', closeAllDrawers);
+            });
+
+            window.addEventListener('resize', () => {
+                const openDrawer = document.querySelector('.drawer.open');
+                const activeBtn = document.querySelector('[data-drawer-open][aria-expanded="true"]');
+                if (openDrawer && activeBtn && openDrawer.dataset.autoPositioned !== 'false') {
+                    positionDrawer(openDrawer, activeBtn);
+                }
+            });
+
+            if (backdrop) {
+                backdrop.addEventListener('click', closeAllDrawers);
+            }
+
+            if (floatingActions) {
+                floatingActions.querySelectorAll('.fab').forEach(makeFabDraggable);
+                setTimeout(() => normalizeFabPositions(), 0);
+            }
+
+            if (observationsWindow) {
+                makeWindowDraggable(observationsWindow);
+            }
+            if (warningsWindow) {
+                makeWindowDraggable(warningsWindow);
+            }
+
+            if (toggleObservationsWindow && observationsWindow) {
+                toggleObservationsWindow.addEventListener('click', () => {
+                    const isOpen = observationsWindow.classList.toggle('open');
+                    observationsWindow.setAttribute('aria-hidden', String(!isOpen));
+                    updateFloatingWindowsLayout();
+                });
+            }
+
+            if (toggleWarningsWindow && warningsWindow) {
+                toggleWarningsWindow.addEventListener('click', () => {
+                    const isOpen = warningsWindow.classList.toggle('open');
+                    warningsWindow.setAttribute('aria-hidden', String(!isOpen));
+                    updateFloatingWindowsLayout();
+                });
+            }
+
+            document.querySelectorAll('[data-window-close]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-window-close');
+                    const win = document.getElementById(id);
+                    if (win) {
+                        win.classList.remove('open');
+                        win.setAttribute('aria-hidden', 'true');
+                        updateFloatingWindowsLayout();
+                    }
+                });
+            });
+
+            function updateFloatingWindowsLayout() {
+                const bothOpen = observationsWindow && warningsWindow
+                    && observationsWindow.classList.contains('open')
+                    && warningsWindow.classList.contains('open');
+                document.body.classList.toggle('dual-windows', bothOpen);
+            }
+
+            if (statusBar && statusFab) {
+                statusFab.addEventListener('click', () => {
+                    statusBar.classList.remove('collapsed');
+                    statusFab.classList.remove('visible');
+                    if (labContainer) {
+                        labContainer.classList.remove('status-collapsed');
+                    }
+                });
+
+                statusBar.addEventListener('dblclick', () => {
+                    statusBar.classList.add('collapsed');
+                    statusFab.classList.add('visible');
+                    if (labContainer) {
+                        labContainer.classList.add('status-collapsed');
+                    }
+                });
+            }
+
+            window.addEventListener('resize', () => {
+                normalizeFabPositions();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

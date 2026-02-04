@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Quiz — Chemistry Lab</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/stylequiz.css">
+</head>
+<body class="page-scroll">
+	<nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+		<div class="container">
+			<a class="navbar-brand" href="homepage.html"><i class="fa-solid fa-flask-vial"></i> Chemistry Lab</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="homepage.html"><i class="fa-solid fa-house"></i> Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="labpage.html"><i class="fa-solid fa-atom"></i> Lab</a></li>
+					<li class="nav-item"><a class="nav-link active" href="quizhome.html"><i class="fa-solid fa-circle-question"></i> Quiz</a></li>
+					<li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container py-5">
+		<div class="quiz-shell glass-card p-4">
+			<div class="quiz-header">
+				<div>
+					<h2 class="mb-1">Chemistry Quiz</h2>
+					<p class="text-muted mb-0">Difficulty: <span id="selectedDifficulty">--</span></p>
+				</div>
+				<div class="quiz-progress">
+					<span id="questionCounter">Question 1 of 10</span>
+					<div class="progress">
+						<div class="progress-bar" id="quizProgress" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="quiz-container" class="quiz-card">
+				<div id="question" class="question-text"></div>
+				<div id="options" class="options-list"></div>
+				<div class="quiz-actions">
+					<button id="prev-btn" class="btn btn-outline-light" type="button">Previous</button>
+					<div class="action-spacer"></div>
+					<button id="next-btn" class="btn btn-primary" type="button">Next</button>
+					<button id="submit-btn" class="btn btn-success" type="button">Submit Quiz</button>
+				</div>
+			</div>
+
+			<div class="leaderboard-card glass-card p-4 mt-4">
+				<div class="leaderboard-header">
+					<h4 class="mb-0">Leaderboard</h4>
+					<span class="text-muted small" id="leaderboardDifficulty">Difficulty: --</span>
+				</div>
+				<div id="leaderboardList" class="leaderboard-list"></div>
+			</div>
+
+			<div id="result" class="quiz-result glass-card p-4 mt-4" aria-live="polite"></div>
+		</div>
+	</div>
+
+	<footer class="footer mt-auto">
+		<p class="text-center mt-4"><i class="fa-solid fa-graduation-cap"></i> Chemistry Lab Project | Grade 11 | Nepal</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/auth.js"></script>
+	<script src="js/quiz.js"></script>
+	<script>
+		if (window.auth && typeof window.auth.requireAuthRedirect === 'function') {
+			window.auth.requireAuthRedirect();
+		}
+		if (window.auth && typeof window.auth.renderProfileInNavbar === 'function') {
+			window.auth.renderProfileInNavbar();
+		}
+	</script>
+</body>
+</html>

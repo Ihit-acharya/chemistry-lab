@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="180" height="120">
+  <style>.s{fill:none;stroke:#1f2d3d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+  <g transform="translate(8,8)">
+    <path d="M8 20 h32 v16 h-32 z M40 28 h96 v12 h-96 z M136 20 h32 v16 h-32 z" class="s" fill="#cfe8ff" opacity="0.95"/>
+    <path d="M40 40 v56" class="s"/>
+    <path d="M136 40 v56" class="s"/>
+  </g>
+</svg>

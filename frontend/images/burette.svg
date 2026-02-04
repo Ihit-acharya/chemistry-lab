@@ -1,0 +1,15 @@
+<svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Burette: transparent outline only -->
+  <!-- Reservoir at top -->
+  <ellipse cx="40" cy="25" rx="15" ry="8" fill="none" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- Long thin tube -->
+  <rect x="32" y="32" width="16" height="140" fill="none" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- Graduation marks -->
+  <line x1="28" y1="50" x2="32" y2="50" stroke="#666" stroke-width="1"/>
+  <line x1="28" y1="80" x2="32" y2="80" stroke="#666" stroke-width="1"/>
+  <line x1="28" y1="110" x2="32" y2="110" stroke="#666" stroke-width="1"/>
+  <!-- Stopcock (valve) -->
+  <circle cx="40" cy="165" r="4" fill="none" stroke="#9fb8c8" stroke-width="1.5"/>
+  <!-- Tip -->
+  <line x1="40" y1="172" x2="40" y2="190" stroke="#9fb8c8" stroke-width="1.5"/>
+</svg>

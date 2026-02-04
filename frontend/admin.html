@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — Add User</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Reduce large vertical gap so admin card sits nearer the top */
+    .admin-card{max-width:540px;margin:1.5rem auto}
+    @media (min-width:768px){ .admin-card{margin-top:2.5rem;margin-bottom:2.5rem} }
+
+    /* Remove internal scrollbar and allow the page to scroll normally */
+    .admin-card .card-body { max-height: none; overflow: visible; }
+  </style>
+</head>
+<body class="page-scroll">
+  <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+    <div class="container">
+      <a class="navbar-brand" href="homepage.html"><i class="fa-solid fa-flask-vial"></i> Chemistry Lab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="homepage.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="labpage.html"><i class="fa-solid fa-atom"></i> Lab</a></li>
+          <li class="nav-item"><a class="nav-link" href="quizhome.html"><i class="fa-solid fa-circle-question"></i> Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card admin-card glass-card">
+      <div class="card-body">
+        <h4 class="card-title">Add New User</h4>
+        <form id="regForm">
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input id="u_username" class="form-control glass-input" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input id="u_password" type="password" class="form-control glass-input" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Display Name (optional)</label>
+            <input id="u_name" class="form-control glass-input">
+          </div>
+          <div id="msg" class="d-none alert" role="alert"></div>
+          <div class="d-grid">
+            <button class="btn btn-success" type="submit">Create User</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('regForm');
+    const msg = document.getElementById('msg');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.className = 'd-none';
+      const username = document.getElementById('u_username').value.trim();
+      const password = document.getElementById('u_password').value;
+      const name = document.getElementById('u_name').value.trim();
+
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ username, password, name })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          msg.className = 'alert alert-danger';
+          msg.textContent = data.message || 'Failed to create user';
+          return;
+        }
+        msg.className = 'alert alert-success';
+        msg.textContent = `Created user: ${data.name}`;
+        form.reset();
+      } catch (err) {
+        msg.className = 'alert alert-danger';
+        msg.textContent = 'Server error';
+      }
+    });
+  </script>
+  
+  <footer class="footer mt-auto">
+    <p class="text-center mt-4"><i class="fa-solid fa-graduation-cap"></i> Chemistry Lab Project | Grade 11 | Nepal</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    if (window.auth && typeof window.auth.renderProfileInNavbar === 'function') {
+      window.auth.renderProfileInNavbar();
+    }
+  </script>
+</body>
+</html>

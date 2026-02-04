@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Crucible: transparent outline only -->
+  <!-- Body -->
+  <path d="M 20 25 Q 20 40 22 80 Q 22 105 50 110 Q 78 105 78 80 Q 78 40 80 25 Z" fill="none" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- Rim -->
+  <line x1="20" y1="25" x2="80" y2="25" stroke="#9fb8c8" stroke-width="2.5"/>
+  <!-- Spout/pouring line -->
+  <path d="M 80 35 L 95 30" stroke="#9fb8c8" stroke-width="1.5" fill="none"/>
+</svg>

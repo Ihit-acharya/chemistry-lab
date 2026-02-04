@@ -1,0 +1,18 @@
+<svg viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassFill" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6fbff"/>
+      <stop offset="100%" stop-color="#dff3ff"/>
+    </linearGradient>
+    <linearGradient id="liq" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffcc99"/>
+      <stop offset="100%" stop-color="#ff9966"/>
+    </linearGradient>
+  </defs>
+  <!-- main glass -->
+  <path d="M95 10 L125 10 L125 70 L180 255 Q185 275 165 275 L55 275 Q35 275 40 255 L95 70 Z" fill="#eaf3f7" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- inner glass -->
+  <path d="M105 20 L105 75 L65 255" stroke="#ffffff" stroke-opacity="0.6" stroke-width="3" fill="none"/>
+  <!-- liquid -->
+  <rect x="70" y="150" width="80" height="95" rx="30" fill="url(#liq)" opacity="0.95"/>
+</svg>

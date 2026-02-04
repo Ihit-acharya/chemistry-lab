@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Graduated Cylinder: transparent with outline -->
+  <rect x="25" y="15" width="50" height="125" fill="none" stroke="#9fb8c8" stroke-width="2" rx="3"/>
+  <!-- Opening rim -->
+  <line x1="25" y1="15" x2="75" y2="15" stroke="#9fb8c8" stroke-width="2.5"/>
+  <!-- Graduation marks -->
+  <line x1="20" y1="35" x2="25" y2="35" stroke="#666" stroke-width="1.5"/>
+  <line x1="20" y1="55" x2="25" y2="55" stroke="#666" stroke-width="1.5"/>
+  <line x1="20" y1="75" x2="25" y2="75" stroke="#666" stroke-width="1.5"/>
+  <line x1="20" y1="95" x2="25" y2="95" stroke="#666" stroke-width="1.5"/>
+  <line x1="20" y1="115" x2="25" y2="115" stroke="#666" stroke-width="1.5"/>
+</svg>

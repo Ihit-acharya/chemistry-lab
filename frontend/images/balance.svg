@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120">
+  <style>.s{fill:none;stroke:#1f2d3d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+  <g transform="translate(6,6)">
+    <rect x="10" y="10" width="128" height="18" rx="4" class="s"/>
+    <path d="M24 40 v44" class="s"/>
+    <path d="M136 40 v44" class="s"/>
+    <path d="M24 44 h40" class="s"/>
+    <path d="M64 44 h40" class="s"/>
+  </g>
+</svg>

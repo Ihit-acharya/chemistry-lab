@@ -1,0 +1,1677 @@
+{
+    "chemicals": [
+        {
+            "id": "HCl",
+            "name": "Hydrochloric Acid",
+            "formula": "HCl",
+            "type": "acid",
+            "color": "#ff3333"
+        },
+        {
+            "id": "H2SO4",
+            "name": "Sulfuric Acid",
+            "formula": "H2SO4",
+            "type": "acid",
+            "color": "#ff9966"
+        },
+        {
+            "id": "HNO3",
+            "name": "Nitric Acid",
+            "formula": "HNO3",
+            "type": "acid",
+            "color": "#ff704d"
+        },
+        {
+            "id": "H3PO4",
+            "name": "Phosphoric Acid",
+            "formula": "H3PO4",
+            "type": "acid",
+            "color": "#ffb366"
+        },
+        {
+            "id": "NaOH",
+            "name": "Sodium Hydroxide",
+            "formula": "NaOH",
+            "type": "base",
+            "color": "#ffff00"
+        },
+        {
+            "id": "KOH",
+            "name": "Potassium Hydroxide",
+            "formula": "KOH",
+            "type": "base",
+            "color": "#f0d400"
+        },
+        {
+            "id": "NH3_aq",
+            "name": "Ammonia (aq)",
+            "formula": "NH3",
+            "type": "base",
+            "color": "#cfe6ff"
+        },
+        {
+            "id": "CH3COOH",
+            "name": "Acetic Acid",
+            "formula": "CH3COOH",
+            "type": "acid",
+            "color": "#ffd1b3"
+        },
+        {
+            "id": "CH3COONa",
+            "name": "Sodium Acetate",
+            "formula": "CH3COONa",
+            "type": "salt",
+            "color": "#f2f7ff"
+        },
+        {
+            "id": "MeOH",
+            "name": "Methanol",
+            "formula": "CH3OH",
+            "type": "solvent",
+            "color": "#f7fbff"
+        },
+        {
+            "id": "IPA",
+            "name": "Isopropanol",
+            "formula": "C3H8O",
+            "type": "solvent",
+            "color": "#f3f8ff"
+        },
+        {
+            "id": "Acetone",
+            "name": "Acetone",
+            "formula": "(CH3)2CO",
+            "type": "solvent",
+            "color": "#eef6ff"
+        },
+        {
+            "id": "H2O",
+            "name": "Water",
+            "formula": "H2O",
+            "type": "solvent",
+            "color": "#e6f7ff"
+        },
+        {
+            "id": "H2O2",
+            "name": "Hydrogen Peroxide",
+            "formula": "H2O2",
+            "type": "oxidizer",
+            "color": "#e6f4ff"
+        },
+        {
+            "id": "CaCl2",
+            "name": "Calcium Chloride",
+            "formula": "CaCl2",
+            "type": "salt",
+            "color": "#f7f7f7"
+        },
+        {
+            "id": "MgSO4",
+            "name": "Magnesium Sulfate",
+            "formula": "MgSO4",
+            "type": "salt",
+            "color": "#e6f2ff"
+        },
+        {
+            "id": "Na2CO3",
+            "name": "Sodium Carbonate",
+            "formula": "Na2CO3",
+            "type": "salt",
+            "color": "#fff8e6"
+        },
+        {
+            "id": "KNO3",
+            "name": "Potassium Nitrate",
+            "formula": "KNO3",
+            "type": "salt",
+            "color": "#fffdf0"
+        },
+        {
+            "id": "CaCO3",
+            "name": "Calcium Carbonate",
+            "formula": "CaCO3",
+            "type": "salt",
+            "color": "#fffdf2"
+        },
+        {
+            "id": "FeCl3",
+            "name": "Iron(III) Chloride",
+            "formula": "FeCl3",
+            "type": "salt",
+            "color": "#d98a00"
+        },
+        {
+            "id": "FeSO4",
+            "name": "Iron(II) Sulfate",
+            "formula": "FeSO4",
+            "type": "salt",
+            "color": "#b3c0b3"
+        },
+        {
+            "id": "Al2(SO4)3",
+            "name": "Aluminium Sulfate",
+            "formula": "Al2(SO4)3",
+            "type": "salt",
+            "color": "#f2efe6"
+        },
+        {
+            "id": "Na2S2O3",
+            "name": "Sodium Thiosulfate",
+            "formula": "Na2S2O3",
+            "type": "reagent",
+            "color": "#f0f6f0"
+        },
+        {
+            "id": "NaBH4",
+            "name": "Sodium Borohydride",
+            "formula": "NaBH4",
+            "type": "reagent",
+            "color": "#e6f9e6"
+        },
+        {
+            "id": "ZnSO4",
+            "name": "Zinc Sulfate",
+            "formula": "ZnSO4",
+            "type": "salt",
+            "color": "#d0e8ff"
+        },
+        {
+            "id": "NaHCO3",
+            "name": "Sodium Bicarbonate",
+            "formula": "NaHCO3",
+            "type": "salt",
+            "color": "#fff9e6"
+        },
+        {
+            "id": "NaCl",
+            "name": "Sodium Chloride",
+            "formula": "NaCl",
+            "type": "salt",
+            "color": "#ffffff"
+        },
+        {
+            "id": "KMnO4",
+            "name": "Potassium Permanganate",
+            "formula": "KMnO4",
+            "type": "oxidizer",
+            "color": "#b24fb2"
+        },
+        {
+            "id": "MethylOrange",
+            "name": "Methyl Orange",
+            "formula": "",
+            "type": "indicator",
+            "color": "#ff8c1a"
+        },
+        {
+            "id": "Litmus",
+            "name": "Litmus",
+            "formula": "",
+            "type": "indicator",
+            "color": "#9966ff"
+        },
+        {
+            "id": "MethylRed",
+            "name": "Methyl Red",
+            "formula": "",
+            "type": "indicator",
+            "color": "#ff4d4d"
+        },
+        {
+            "id": "BromothymolBlue",
+            "name": "Bromothymol Blue",
+            "formula": "",
+            "type": "indicator",
+            "color": "#4da6ff"
+        },
+        {
+            "id": "PhenolRed",
+            "name": "Phenol Red",
+            "formula": "",
+            "type": "indicator",
+            "color": "#ff6666"
+        },
+        {
+            "id": "Phenolphthalein",
+            "name": "Phenolphthalein",
+            "formula": "",
+            "type": "indicator",
+            "color": "#ff66cc"
+        },
+        {
+            "id": "O2_gas",
+            "name": "Oxygen (gas)",
+            "formula": "O2",
+            "type": "gas",
+            "color": "#cfeaff"
+        },
+        {
+            "id": "H2_gas",
+            "name": "Hydrogen (gas)",
+            "formula": "H2",
+            "type": "gas",
+            "color": "#e6f7ff"
+        },
+        {
+            "id": "CO2_gas",
+            "name": "Carbon Dioxide (gas)",
+            "formula": "CO2",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "EDTA",
+            "name": "EDTA (titrant)",
+            "formula": "C10H16N2O8",
+            "type": "reagent",
+            "color": "#f0e6ff"
+        },
+        {
+            "id": "AgNO3",
+            "name": "Silver Nitrate",
+            "formula": "AgNO3",
+            "type": "salt",
+            "color": "#e6e6e6"
+        },
+        {
+            "id": "CuSO4",
+            "name": "Copper(II) Sulfate",
+            "formula": "CuSO4",
+            "type": "salt",
+            "color": "#4da6ff"
+        },
+        {
+            "id": "Cu(NO3)2",
+            "name": "Copper(II) Nitrate",
+            "formula": "Cu(NO3)2",
+            "type": "salt",
+            "color": "#6bb8ff"
+        },
+        {
+            "id": "NaI",
+            "name": "Sodium Iodide",
+            "formula": "NaI",
+            "type": "salt",
+            "color": "#ffffcc"
+        },
+        {
+            "id": "Na2SO4",
+            "name": "Sodium Sulfate",
+            "formula": "Na2SO4",
+            "type": "salt",
+            "color": "#fffbf0"
+        },
+        {
+            "id": "K2SO4",
+            "name": "Potassium Sulfate",
+            "formula": "K2SO4",
+            "type": "salt",
+            "color": "#fff6e6"
+        },
+        {
+            "id": "K2CO3",
+            "name": "Potassium Carbonate",
+            "formula": "K2CO3",
+            "type": "salt",
+            "color": "#fff1d6"
+        },
+        {
+            "id": "Na3PO4",
+            "name": "Sodium Phosphate",
+            "formula": "Na3PO4",
+            "type": "salt",
+            "color": "#fff5e0"
+        },
+        {
+            "id": "K3PO4",
+            "name": "Potassium Phosphate",
+            "formula": "K3PO4",
+            "type": "salt",
+            "color": "#fff0d8"
+        },
+        {
+            "id": "Na2SO3",
+            "name": "Sodium Sulfite",
+            "formula": "Na2SO3",
+            "type": "salt",
+            "color": "#f7f2ff"
+        },
+        {
+            "id": "NaF",
+            "name": "Sodium Fluoride",
+            "formula": "NaF",
+            "type": "salt",
+            "color": "#f2f7ff"
+        },
+        {
+            "id": "KF",
+            "name": "Potassium Fluoride",
+            "formula": "KF",
+            "type": "salt",
+            "color": "#f2f7ff"
+        },
+        {
+            "id": "NaNO3",
+            "name": "Sodium Nitrate",
+            "formula": "NaNO3",
+            "type": "salt",
+            "color": "#f8f8f8"
+        },
+        {
+            "id": "NaNO2",
+            "name": "Sodium Nitrite",
+            "formula": "NaNO2",
+            "type": "salt",
+            "color": "#f8f8f8"
+        },
+        {
+            "id": "KNO2",
+            "name": "Potassium Nitrite",
+            "formula": "KNO2",
+            "type": "salt",
+            "color": "#f8f8f8"
+        },
+        {
+            "id": "NH4Br",
+            "name": "Ammonium Bromide",
+            "formula": "NH4Br",
+            "type": "salt",
+            "color": "#f2f2f2"
+        },
+        {
+            "id": "NH4I",
+            "name": "Ammonium Iodide",
+            "formula": "NH4I",
+            "type": "salt",
+            "color": "#f5f0d6"
+        },
+        {
+            "id": "LiCl",
+            "name": "Lithium Chloride",
+            "formula": "LiCl",
+            "type": "salt",
+            "color": "#f2f2f2"
+        },
+        {
+            "id": "LiBr",
+            "name": "Lithium Bromide",
+            "formula": "LiBr",
+            "type": "salt",
+            "color": "#f2e6d6"
+        },
+        {
+            "id": "LiI",
+            "name": "Lithium Iodide",
+            "formula": "LiI",
+            "type": "salt",
+            "color": "#f5f0cc"
+        },
+        {
+            "id": "MgCl2",
+            "name": "Magnesium Chloride",
+            "formula": "MgCl2",
+            "type": "salt",
+            "color": "#e6f2ff"
+        },
+        {
+            "id": "CaBr2",
+            "name": "Calcium Bromide",
+            "formula": "CaBr2",
+            "type": "salt",
+            "color": "#f0e6d6"
+        },
+        {
+            "id": "CaI2",
+            "name": "Calcium Iodide",
+            "formula": "CaI2",
+            "type": "salt",
+            "color": "#f5efcc"
+        },
+        {
+            "id": "SrBr2",
+            "name": "Strontium Bromide",
+            "formula": "SrBr2",
+            "type": "salt",
+            "color": "#f0e6d6"
+        },
+        {
+            "id": "SrI2",
+            "name": "Strontium Iodide",
+            "formula": "SrI2",
+            "type": "salt",
+            "color": "#f5efcc"
+        },
+        {
+            "id": "BaBr2",
+            "name": "Barium Bromide",
+            "formula": "BaBr2",
+            "type": "salt",
+            "color": "#f0e6d6"
+        },
+        {
+            "id": "BaI2",
+            "name": "Barium Iodide",
+            "formula": "BaI2",
+            "type": "salt",
+            "color": "#f5efcc"
+        },
+        {
+            "id": "NiCl2",
+            "name": "Nickel(II) Chloride",
+            "formula": "NiCl2",
+            "type": "salt",
+            "color": "#9fd39f"
+        },
+        {
+            "id": "CoCl2",
+            "name": "Cobalt(II) Chloride",
+            "formula": "CoCl2",
+            "type": "salt",
+            "color": "#ff9f9f"
+        },
+        {
+            "id": "MnCl2",
+            "name": "Manganese(II) Chloride",
+            "formula": "MnCl2",
+            "type": "salt",
+            "color": "#d6c6b3"
+        },
+        {
+            "id": "NiSO4",
+            "name": "Nickel(II) Sulfate",
+            "formula": "NiSO4",
+            "type": "salt",
+            "color": "#9fd39f"
+        },
+        {
+            "id": "CoSO4",
+            "name": "Cobalt(II) Sulfate",
+            "formula": "CoSO4",
+            "type": "salt",
+            "color": "#ff9f9f"
+        },
+        {
+            "id": "MnSO4",
+            "name": "Manganese(II) Sulfate",
+            "formula": "MnSO4",
+            "type": "salt",
+            "color": "#d6c6b3"
+        },
+        {
+            "id": "Ni(NO3)2",
+            "name": "Nickel(II) Nitrate",
+            "formula": "Ni(NO3)2",
+            "type": "salt",
+            "color": "#9fd39f"
+        },
+        {
+            "id": "Co(NO3)2",
+            "name": "Cobalt(II) Nitrate",
+            "formula": "Co(NO3)2",
+            "type": "salt",
+            "color": "#ff9f9f"
+        },
+        {
+            "id": "Mn(NO3)2",
+            "name": "Manganese(II) Nitrate",
+            "formula": "Mn(NO3)2",
+            "type": "salt",
+            "color": "#d6c6b3"
+        },
+        {
+            "id": "CrCl3",
+            "name": "Chromium(III) Chloride",
+            "formula": "CrCl3",
+            "type": "salt",
+            "color": "#8abf8a"
+        },
+        {
+            "id": "Cr(NO3)3",
+            "name": "Chromium(III) Nitrate",
+            "formula": "Cr(NO3)3",
+            "type": "salt",
+            "color": "#8abf8a"
+        },
+        {
+            "id": "Cr2(SO4)3",
+            "name": "Chromium(III) Sulfate",
+            "formula": "Cr2(SO4)3",
+            "type": "salt",
+            "color": "#8abf8a"
+        },
+        {
+            "id": "Zn(NO3)2",
+            "name": "Zinc Nitrate",
+            "formula": "Zn(NO3)2",
+            "type": "salt",
+            "color": "#f0f7ff"
+        },
+        {
+            "id": "Mg(NO3)2",
+            "name": "Magnesium Nitrate",
+            "formula": "Mg(NO3)2",
+            "type": "salt",
+            "color": "#f0f7ff"
+        },
+        {
+            "id": "Al(NO3)3",
+            "name": "Aluminium Nitrate",
+            "formula": "Al(NO3)3",
+            "type": "salt",
+            "color": "#f4f0e6"
+        },
+        {
+            "id": "Fe(NO3)2",
+            "name": "Iron(II) Nitrate",
+            "formula": "Fe(NO3)2",
+            "type": "salt",
+            "color": "#c2cdb8"
+        },
+        {
+            "id": "Fe(NO3)3",
+            "name": "Iron(III) Nitrate",
+            "formula": "Fe(NO3)3",
+            "type": "salt",
+            "color": "#d98a00"
+        },
+        {
+            "id": "Ba(OH)2",
+            "name": "Barium Hydroxide",
+            "formula": "Ba(OH)2",
+            "type": "base",
+            "color": "#f5e96a"
+        },
+        {
+            "id": "Ca(OH)2",
+            "name": "Calcium Hydroxide",
+            "formula": "Ca(OH)2",
+            "type": "base",
+            "color": "#f5e96a"
+        },
+        {
+            "id": "Sr(OH)2",
+            "name": "Strontium Hydroxide",
+            "formula": "Sr(OH)2",
+            "type": "base",
+            "color": "#f5e96a"
+        },
+        {
+            "id": "Na2S",
+            "name": "Sodium Sulfide",
+            "formula": "Na2S",
+            "type": "salt",
+            "color": "#f0f7e6"
+        },
+        {
+            "id": "NaBr",
+            "name": "Sodium Bromide",
+            "formula": "NaBr",
+            "type": "salt",
+            "color": "#fff3e6"
+        },
+        {
+            "id": "KBr",
+            "name": "Potassium Bromide",
+            "formula": "KBr",
+            "type": "salt",
+            "color": "#fff0e6"
+        },
+        {
+            "id": "KI",
+            "name": "Potassium Iodide",
+            "formula": "KI",
+            "type": "salt",
+            "color": "#fff7cc"
+        },
+        {
+            "id": "NH4Cl",
+            "name": "Ammonium Chloride",
+            "formula": "NH4Cl",
+            "type": "salt",
+            "color": "#f2f2f2"
+        },
+        {
+            "id": "NH4NO3",
+            "name": "Ammonium Nitrate",
+            "formula": "NH4NO3",
+            "type": "salt",
+            "color": "#f7f7f7"
+        },
+        {
+            "id": "(NH4)2SO4",
+            "name": "Ammonium Sulfate",
+            "formula": "(NH4)2SO4",
+            "type": "salt",
+            "color": "#f0f0f0"
+        },
+        {
+            "id": "CuCl2",
+            "name": "Copper(II) Chloride",
+            "formula": "CuCl2",
+            "type": "salt",
+            "color": "#6ec0ff"
+        },
+        {
+            "id": "ZnCl2",
+            "name": "Zinc Chloride",
+            "formula": "ZnCl2",
+            "type": "salt",
+            "color": "#e6f4ff"
+        },
+        {
+            "id": "AlCl3",
+            "name": "Aluminium Chloride",
+            "formula": "AlCl3",
+            "type": "salt",
+            "color": "#f0f0e6"
+        },
+        {
+            "id": "FeCl2",
+            "name": "Iron(II) Chloride",
+            "formula": "FeCl2",
+            "type": "salt",
+            "color": "#b3c0b3"
+        },
+        {
+            "id": "Ba(NO3)2",
+            "name": "Barium Nitrate",
+            "formula": "Ba(NO3)2",
+            "type": "salt",
+            "color": "#f7f7f7"
+        },
+        {
+            "id": "Ca(NO3)2",
+            "name": "Calcium Nitrate",
+            "formula": "Ca(NO3)2",
+            "type": "salt",
+            "color": "#f9f9f9"
+        },
+        {
+            "id": "SrCl2",
+            "name": "Strontium Chloride",
+            "formula": "SrCl2",
+            "type": "salt",
+            "color": "#f7f7f7"
+        },
+        {
+            "id": "Sr(NO3)2",
+            "name": "Strontium Nitrate",
+            "formula": "Sr(NO3)2",
+            "type": "salt",
+            "color": "#f7f7f7"
+        },
+        {
+            "id": "HBr",
+            "name": "Hydrobromic Acid",
+            "formula": "HBr",
+            "type": "acid",
+            "color": "#ff6a6a"
+        },
+        {
+            "id": "HI",
+            "name": "Hydroiodic Acid",
+            "formula": "HI",
+            "type": "acid",
+            "color": "#ff7a7a"
+        },
+        {
+            "id": "HClO4",
+            "name": "Perchloric Acid",
+            "formula": "HClO4",
+            "type": "acid",
+            "color": "#ff8a7a"
+        },
+        {
+            "id": "LiOH",
+            "name": "Lithium Hydroxide",
+            "formula": "LiOH",
+            "type": "base",
+            "color": "#f5e96a"
+        },
+        {
+            "id": "Pb(NO3)2",
+            "name": "Lead(II) Nitrate",
+            "formula": "Pb(NO3)2",
+            "type": "salt",
+            "color": "#f5f5f5"
+        },
+        {
+            "id": "BaCl2",
+            "name": "Barium Chloride",
+            "formula": "BaCl2",
+            "type": "salt",
+            "color": "#f9f9f9"
+        },
+        {
+            "id": "BaSO4",
+            "name": "Barium Sulfate",
+            "formula": "BaSO4",
+            "type": "salt",
+            "color": "#ffffff"
+        },
+        {
+            "id": "I2",
+            "name": "Iodine",
+            "formula": "I2",
+            "type": "reagent",
+            "color": "#663300"
+        },
+        {
+            "id": "Br2",
+            "name": "Bromine",
+            "formula": "Br2",
+            "type": "reagent",
+            "color": "#b30000"
+        },
+        {
+            "id": "NH3_gas",
+            "name": "Ammonia (gas)",
+            "formula": "NH3",
+            "type": "gas",
+            "color": "#d9e6ff"
+        },
+        {
+            "id": "Cl2_gas",
+            "name": "Chlorine (gas)",
+            "formula": "Cl2",
+            "type": "gas",
+            "color": "#ffff99"
+        },
+        {
+            "id": "H",
+            "name": "Hydrogen",
+            "formula": "H",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "He",
+            "name": "Helium",
+            "formula": "He",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Li",
+            "name": "Lithium",
+            "formula": "Li",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Be",
+            "name": "Beryllium",
+            "formula": "Be",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "B",
+            "name": "Boron",
+            "formula": "B",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "C",
+            "name": "Carbon",
+            "formula": "C",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "N",
+            "name": "Nitrogen",
+            "formula": "N",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "O",
+            "name": "Oxygen",
+            "formula": "O",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "F",
+            "name": "Fluorine",
+            "formula": "F",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ne",
+            "name": "Neon",
+            "formula": "Ne",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Na",
+            "name": "Sodium",
+            "formula": "Na",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Mg",
+            "name": "Magnesium",
+            "formula": "Mg",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Al",
+            "name": "Aluminium",
+            "formula": "Al",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Si",
+            "name": "Silicon",
+            "formula": "Si",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "P",
+            "name": "Phosphorus",
+            "formula": "P",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "S",
+            "name": "Sulfur",
+            "formula": "S",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cl",
+            "name": "Chlorine",
+            "formula": "Cl",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ar",
+            "name": "Argon",
+            "formula": "Ar",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "K",
+            "name": "Potassium",
+            "formula": "K",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ca",
+            "name": "Calcium",
+            "formula": "Ca",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Sc",
+            "name": "Scandium",
+            "formula": "Sc",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ti",
+            "name": "Titanium",
+            "formula": "Ti",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "V",
+            "name": "Vanadium",
+            "formula": "V",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cr",
+            "name": "Chromium",
+            "formula": "Cr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Mn",
+            "name": "Manganese",
+            "formula": "Mn",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Fe",
+            "name": "Iron",
+            "formula": "Fe",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Co",
+            "name": "Cobalt",
+            "formula": "Co",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ni",
+            "name": "Nickel",
+            "formula": "Ni",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cu",
+            "name": "Copper",
+            "formula": "Cu",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Zn",
+            "name": "Zinc",
+            "formula": "Zn",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ga",
+            "name": "Gallium",
+            "formula": "Ga",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ge",
+            "name": "Germanium",
+            "formula": "Ge",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "As",
+            "name": "Arsenic",
+            "formula": "As",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Se",
+            "name": "Selenium",
+            "formula": "Se",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Br",
+            "name": "Bromine",
+            "formula": "Br",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Kr",
+            "name": "Krypton",
+            "formula": "Kr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Rb",
+            "name": "Rubidium",
+            "formula": "Rb",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Sr",
+            "name": "Strontium",
+            "formula": "Sr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Y",
+            "name": "Yttrium",
+            "formula": "Y",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Zr",
+            "name": "Zirconium",
+            "formula": "Zr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Nb",
+            "name": "Niobium",
+            "formula": "Nb",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Mo",
+            "name": "Molybdenum",
+            "formula": "Mo",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Tc",
+            "name": "Technetium",
+            "formula": "Tc",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ru",
+            "name": "Ruthenium",
+            "formula": "Ru",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Rh",
+            "name": "Rhodium",
+            "formula": "Rh",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pd",
+            "name": "Palladium",
+            "formula": "Pd",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ag",
+            "name": "Silver",
+            "formula": "Ag",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cd",
+            "name": "Cadmium",
+            "formula": "Cd",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "In",
+            "name": "Indium",
+            "formula": "In",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Sn",
+            "name": "Tin",
+            "formula": "Sn",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Sb",
+            "name": "Antimony",
+            "formula": "Sb",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Te",
+            "name": "Tellurium",
+            "formula": "Te",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "I",
+            "name": "Iodine",
+            "formula": "I",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Xe",
+            "name": "Xenon",
+            "formula": "Xe",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cs",
+            "name": "Cesium",
+            "formula": "Cs",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ba",
+            "name": "Barium",
+            "formula": "Ba",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "La",
+            "name": "Lanthanum",
+            "formula": "La",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ce",
+            "name": "Cerium",
+            "formula": "Ce",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pr",
+            "name": "Praseodymium",
+            "formula": "Pr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Nd",
+            "name": "Neodymium",
+            "formula": "Nd",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pm",
+            "name": "Promethium",
+            "formula": "Pm",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Sm",
+            "name": "Samarium",
+            "formula": "Sm",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Eu",
+            "name": "Europium",
+            "formula": "Eu",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Gd",
+            "name": "Gadolinium",
+            "formula": "Gd",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Tb",
+            "name": "Terbium",
+            "formula": "Tb",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Dy",
+            "name": "Dysprosium",
+            "formula": "Dy",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ho",
+            "name": "Holmium",
+            "formula": "Ho",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Er",
+            "name": "Erbium",
+            "formula": "Er",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Tm",
+            "name": "Thulium",
+            "formula": "Tm",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Yb",
+            "name": "Ytterbium",
+            "formula": "Yb",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Lu",
+            "name": "Lutetium",
+            "formula": "Lu",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Hf",
+            "name": "Hafnium",
+            "formula": "Hf",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ta",
+            "name": "Tantalum",
+            "formula": "Ta",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "W",
+            "name": "Tungsten",
+            "formula": "W",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Re",
+            "name": "Rhenium",
+            "formula": "Re",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Os",
+            "name": "Osmium",
+            "formula": "Os",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ir",
+            "name": "Iridium",
+            "formula": "Ir",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pt",
+            "name": "Platinum",
+            "formula": "Pt",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Au",
+            "name": "Gold",
+            "formula": "Au",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Hg",
+            "name": "Mercury",
+            "formula": "Hg",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Tl",
+            "name": "Thallium",
+            "formula": "Tl",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pb",
+            "name": "Lead",
+            "formula": "Pb",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Bi",
+            "name": "Bismuth",
+            "formula": "Bi",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Po",
+            "name": "Polonium",
+            "formula": "Po",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "At",
+            "name": "Astatine",
+            "formula": "At",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Rn",
+            "name": "Radon",
+            "formula": "Rn",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Fr",
+            "name": "Francium",
+            "formula": "Fr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ra",
+            "name": "Radium",
+            "formula": "Ra",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ac",
+            "name": "Actinium",
+            "formula": "Ac",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Th",
+            "name": "Thorium",
+            "formula": "Th",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pa",
+            "name": "Protactinium",
+            "formula": "Pa",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "U",
+            "name": "Uranium",
+            "formula": "U",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Np",
+            "name": "Neptunium",
+            "formula": "Np",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Pu",
+            "name": "Plutonium",
+            "formula": "Pu",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Am",
+            "name": "Americium",
+            "formula": "Am",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cm",
+            "name": "Curium",
+            "formula": "Cm",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Bk",
+            "name": "Berkelium",
+            "formula": "Bk",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cf",
+            "name": "Californium",
+            "formula": "Cf",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Es",
+            "name": "Einsteinium",
+            "formula": "Es",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Fm",
+            "name": "Fermium",
+            "formula": "Fm",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Md",
+            "name": "Mendelevium",
+            "formula": "Md",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "No",
+            "name": "Nobelium",
+            "formula": "No",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Lr",
+            "name": "Lawrencium",
+            "formula": "Lr",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Rf",
+            "name": "Rutherfordium",
+            "formula": "Rf",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Db",
+            "name": "Dubnium",
+            "formula": "Db",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Sg",
+            "name": "Seaborgium",
+            "formula": "Sg",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Bh",
+            "name": "Bohrium",
+            "formula": "Bh",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Hs",
+            "name": "Hassium",
+            "formula": "Hs",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Mt",
+            "name": "Meitnerium",
+            "formula": "Mt",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ds",
+            "name": "Darmstadtium",
+            "formula": "Ds",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Rg",
+            "name": "Roentgenium",
+            "formula": "Rg",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Cn",
+            "name": "Copernicium",
+            "formula": "Cn",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Nh",
+            "name": "Nihonium",
+            "formula": "Nh",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Fl",
+            "name": "Flerovium",
+            "formula": "Fl",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Mc",
+            "name": "Moscovium",
+            "formula": "Mc",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Lv",
+            "name": "Livermorium",
+            "formula": "Lv",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Ts",
+            "name": "Tennessine",
+            "formula": "Ts",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "Og",
+            "name": "Oganesson",
+            "formula": "Og",
+            "type": "element",
+            "color": "#d9d9d9"
+        },
+        {
+            "id": "N2_gas",
+            "name": "Nitrogen (gas)",
+            "formula": "N2",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "SO2_gas",
+            "name": "Sulfur Dioxide (gas)",
+            "formula": "SO2",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "NO2_gas",
+            "name": "Nitrogen Dioxide (gas)",
+            "formula": "NO2",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "H2S_gas",
+            "name": "Hydrogen Sulfide (gas)",
+            "formula": "H2S",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "CH4_gas",
+            "name": "Methane (gas)",
+            "formula": "CH4",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "C2H4_gas",
+            "name": "Ethene (gas)",
+            "formula": "C2H4",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "C2H2_gas",
+            "name": "Ethyne (gas)",
+            "formula": "C2H2",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "C3H8_gas",
+            "name": "Propane (gas)",
+            "formula": "C3H8",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "C4H10_gas",
+            "name": "Butane (gas)",
+            "formula": "C4H10",
+            "type": "gas",
+            "color": "#dfe6e9"
+        },
+        {
+            "id": "O3_gas",
+            "name": "Ozone (gas)",
+            "formula": "O3",
+            "type": "gas",
+            "color": "#dfe6e9"
+        }
+    ]
+}

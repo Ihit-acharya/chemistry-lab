@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Volumetric Flask: transparent with outline -->
+  <!-- Neck -->
+  <rect x="40" y="10" width="20" height="35" fill="none" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- Neck opening -->
+  <line x1="40" y1="10" x2="60" y2="10" stroke="#9fb8c8" stroke-width="2.5"/>
+  <!-- Round bottom bulb -->
+  <path d="M 30 45 Q 30 135 50 140 Q 70 135 70 45 Z" fill="none" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- Calibration line -->
+  <line x1="25" y1="70" x2="75" y2="70" stroke="#666" stroke-width="1.5" stroke-dasharray="2,2"/>
+</svg>

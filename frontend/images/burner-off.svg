@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <g>
+    <rect x="18" y="40" width="28" height="6" rx="2" fill="#444"/>
+    <rect x="22" y="34" width="20" height="6" rx="2" fill="#666"/>
+    <!-- no flame -->
+  </g>
+</svg>

@@ -1,0 +1,1002 @@
+[
+  {
+    "question": "What is the chemical symbol for water?",
+    "options": [
+      "H2O",
+      "CO2",
+      "O2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has atomic number 1?",
+    "options": [
+      "Helium",
+      "Hydrogen",
+      "Lithium",
+      "Carbon"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the pH of pure water at room temperature?",
+    "options": [
+      "0",
+      "7",
+      "14",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas is released during photosynthesis?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the chemical formula for table salt?",
+    "options": [
+      "HCl",
+      "NaOH",
+      "NaCl",
+      "KCl"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of these is a noble gas?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Argon",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "At what temperature does water boil (°C) at 1 atm?",
+    "options": [
+      "0",
+      "50",
+      "100",
+      "150"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which acid is present in vinegar?",
+    "options": [
+      "Sulfuric Acid",
+      "Hydrochloric Acid",
+      "Acetic Acid",
+      "Nitric Acid"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the most abundant gas in Earth’s atmosphere?",
+    "options": [
+      "Oxygen",
+      "Carbon Dioxide",
+      "Nitrogen",
+      "Argon"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which element is essential for chlorophyll formation?",
+    "options": [
+      "Iron",
+      "Magnesium",
+      "Calcium",
+      "Potassium"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the chemical name for baking soda?",
+    "options": [
+      "Sodium Chloride",
+      "Sodium Bicarbonate",
+      "Sodium Hydroxide",
+      "Sodium Carbonate"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which type of bond involves sharing electrons?",
+    "options": [
+      "Ionic Bond",
+      "Covalent Bond",
+      "Metallic Bond",
+      "Hydrogen Bond"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the atomic mass of carbon (approx.)?",
+    "options": [
+      "6",
+      "12",
+      "14",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which compound is known as laughing gas?",
+    "options": [
+      "Nitrous Oxide",
+      "Carbon Monoxide",
+      "Sulfur Dioxide",
+      "Methane"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "The process of solid directly to gas is called:",
+    "options": [
+      "Melting",
+      "Freezing",
+      "Sublimation",
+      "Condensation"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the chemical symbol for sodium?",
+    "options": [
+      "S",
+      "So",
+      "Na",
+      "Sn"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the chemical symbol for oxygen?",
+    "options": [
+      "Ox",
+      "O",
+      "Og",
+      "Oz"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the common name for H2O2?",
+    "options": [
+      "Hydrogen peroxide",
+      "Hydrogen sulfide",
+      "Hydrochloric acid",
+      "Hydroxide"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the common name for NaOH?",
+    "options": [
+      "Baking soda",
+      "Caustic soda",
+      "Table salt",
+      "Bleach"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the common name for HCl?",
+    "options": [
+      "Nitric acid",
+      "Hydrochloric acid",
+      "Sulfuric acid",
+      "Acetic acid"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which indicator turns red in acids?",
+    "options": [
+      "Blue litmus",
+      "Red litmus",
+      "Phenolphthalein",
+      "Bromothymol blue"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which indicator turns blue in bases?",
+    "options": [
+      "Blue litmus",
+      "Red litmus",
+      "Phenolphthalein",
+      "Methyl orange"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which gas is dissolved in soda?",
+    "options": [
+      "O2",
+      "CO2",
+      "N2",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the formula of carbon dioxide?",
+    "options": [
+      "CO",
+      "CO2",
+      "C2O",
+      "C2O2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the formula of ammonia?",
+    "options": [
+      "NH3",
+      "NH4",
+      "N2H",
+      "NO3"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the formula of glucose?",
+    "options": [
+      "C6H12O6",
+      "C6H6",
+      "C12H22O11",
+      "CH4"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Liquid to gas is called:",
+    "options": [
+      "Evaporation",
+      "Freezing",
+      "Condensation",
+      "Sublimation"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Solid to liquid is called:",
+    "options": [
+      "Melting",
+      "Freezing",
+      "Condensation",
+      "Deposition"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Liquid to solid is called:",
+    "options": [
+      "Melting",
+      "Freezing",
+      "Boiling",
+      "Sublimation"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Gas to liquid is called:",
+    "options": [
+      "Condensation",
+      "Evaporation",
+      "Sublimation",
+      "Melting"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for potassium?",
+    "options": [
+      "P",
+      "Pt",
+      "K",
+      "Po"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the symbol for iron?",
+    "options": [
+      "Ir",
+      "In",
+      "Fe",
+      "I"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the symbol for copper?",
+    "options": [
+      "Co",
+      "Cu",
+      "Cp",
+      "C"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the symbol for silver?",
+    "options": [
+      "Si",
+      "Ag",
+      "Au",
+      "S"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the symbol for gold?",
+    "options": [
+      "Gd",
+      "Ag",
+      "Au",
+      "Go"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the symbol for chlorine?",
+    "options": [
+      "Cl",
+      "Cr",
+      "Cn",
+      "Ch"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for calcium?",
+    "options": [
+      "Ca",
+      "Cl",
+      "C",
+      "Cm"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for magnesium?",
+    "options": [
+      "Mn",
+      "Mg",
+      "Mo",
+      "Ma"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the symbol for nitrogen?",
+    "options": [
+      "N",
+      "Ni",
+      "Ne",
+      "No"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "The pH scale ranges from:",
+    "options": [
+      "0–7",
+      "1–14",
+      "0–14",
+      "7–14"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A neutral solution has pH:",
+    "options": [
+      "0",
+      "7",
+      "10",
+      "14"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "An acidic solution has pH:",
+    "options": [
+      "< 7",
+      "= 7",
+      "> 7",
+      "= 14"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "A basic solution has pH:",
+    "options": [
+      "< 7",
+      "= 7",
+      "> 7",
+      "= 0"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which gas is used in balloons?",
+    "options": [
+      "Hydrogen",
+      "Helium",
+      "Oxygen",
+      "Nitrogen"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which element is important for bones?",
+    "options": [
+      "Calcium",
+      "Sodium",
+      "Potassium",
+      "Iron"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Rust is mainly:",
+    "options": [
+      "Iron oxide",
+      "Copper oxide",
+      "Carbon",
+      "Sulfur"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "The most common solvent is:",
+    "options": [
+      "Alcohol",
+      "Water",
+      "Acetone",
+      "Oil"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The gas we breathe in is mostly:",
+    "options": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Argon"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The gas we breathe out is mostly:",
+    "options": [
+      "CO2",
+      "O2",
+      "N2",
+      "He"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Table salt contains sodium and:",
+    "options": [
+      "Chlorine",
+      "Oxygen",
+      "Carbon",
+      "Nitrogen"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which formula is sulfuric acid?",
+    "options": [
+      "H2SO4",
+      "HCl",
+      "HNO3",
+      "CH3COOH"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which formula is nitric acid?",
+    "options": [
+      "HNO3",
+      "H2SO4",
+      "HCl",
+      "H2CO3"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which formula is acetic acid?",
+    "options": [
+      "CH3COOH",
+      "HCl",
+      "H2SO4",
+      "HNO3"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a common antacid base?",
+    "options": [
+      "Mg(OH)2",
+      "HCl",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Phenolphthalein turns which color in base?",
+    "options": [
+      "Pink",
+      "Blue",
+      "Red",
+      "Green"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the chemical formula for ozone?",
+    "options": [
+      "O2",
+      "O3",
+      "O4",
+      "O"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which element has symbol P?",
+    "options": [
+      "Phosphorus",
+      "Potassium",
+      "Platinum",
+      "Polonium"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hydrogen gas has formula:",
+    "options": [
+      "H",
+      "H2",
+      "H3",
+      "He"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Oxygen gas has formula:",
+    "options": [
+      "O",
+      "O2",
+      "O3",
+      "Ox"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Nitrogen gas has formula:",
+    "options": [
+      "N",
+      "N2",
+      "N3",
+      "Ne"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is a noble gas?",
+    "options": [
+      "Neon",
+      "Chlorine",
+      "Oxygen",
+      "Nitrogen"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Plants take in which gas for photosynthesis?",
+    "options": [
+      "O2",
+      "CO2",
+      "N2",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Lemon juice is typically:",
+    "options": [
+      "Acidic",
+      "Basic",
+      "Neutral",
+      "Salty"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Dry ice is solid:",
+    "options": [
+      "CO2",
+      "O2",
+      "N2",
+      "H2O"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Baking soda formula is:",
+    "options": [
+      "NaHCO3",
+      "Na2CO3",
+      "NaCl",
+      "NaOH"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Calcium carbonate formula is:",
+    "options": [
+      "CaCO3",
+      "CaO",
+      "CaCl2",
+      "CaSO4"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Stomach acid is mostly:",
+    "options": [
+      "HCl",
+      "H2SO4",
+      "HNO3",
+      "CH3COOH"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Air is about 78%:",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide",
+      "Helium"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the symbol for lead?",
+    "options": [
+      "Pd",
+      "Pb",
+      "Pt",
+      "Pl"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the symbol for mercury?",
+    "options": [
+      "Hg",
+      "Mg",
+      "He",
+      "H"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for tin?",
+    "options": [
+      "Ti",
+      "Sn",
+      "Ta",
+      "Tn"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the symbol for zinc?",
+    "options": [
+      "Zn",
+      "Zr",
+      "Zu",
+      "Zi"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for aluminum?",
+    "options": [
+      "Al",
+      "Au",
+      "Ag",
+      "Am"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for silicon?",
+    "options": [
+      "Si",
+      "S",
+      "Sr",
+      "Sn"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Household bleach contains:",
+    "options": [
+      "NaOCl",
+      "NaCl",
+      "NaOH",
+      "H2O2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Methane formula is:",
+    "options": [
+      "CH4",
+      "C2H6",
+      "C3H8",
+      "CO2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Ethane formula is:",
+    "options": [
+      "C2H6",
+      "CH4",
+      "C3H8",
+      "C2H4"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Propane formula is:",
+    "options": [
+      "C3H8",
+      "C2H6",
+      "CH4",
+      "C3H6"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which state has definite shape and volume?",
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Plasma"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which state has definite volume but no definite shape?",
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Plasma"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which state has no definite shape or volume?",
+    "options": [
+      "Solid",
+      "Liquid",
+      "Gas",
+      "Plasma"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Temperature is commonly measured in:",
+    "options": [
+      "Celsius",
+      "Meters",
+      "Liters",
+      "Grams"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Amount of substance is measured in:",
+    "options": [
+      "Mole",
+      "Gram",
+      "Liter",
+      "Joule"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Atomic number equals number of:",
+    "options": [
+      "Protons",
+      "Neutrons",
+      "Electrons",
+      "Isotopes"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "A neutral atom has electrons equal to:",
+    "options": [
+      "Protons",
+      "Neutrons",
+      "Mass",
+      "Charge"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element is a nonmetal?",
+    "options": [
+      "Oxygen",
+      "Sodium",
+      "Iron",
+      "Copper"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element is a metal?",
+    "options": [
+      "Sodium",
+      "Oxygen",
+      "Chlorine",
+      "Neon"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Helium is a:",
+    "options": [
+      "Noble gas",
+      "Metal",
+      "Halogen",
+      "Metalloid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Copper is known for good:",
+    "options": [
+      "Conductivity",
+      "Magnetism",
+      "Radiation",
+      "Insulation"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Acid + base produces:",
+    "options": [
+      "Salt + water",
+      "Gas + metal",
+      "Acid + water",
+      "Base + salt"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Litmus is a type of:",
+    "options": [
+      "Indicator",
+      "Base",
+      "Salt",
+      "Metal"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Phenolphthalein in acid is:",
+    "options": [
+      "Colorless",
+      "Pink",
+      "Blue",
+      "Green"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for iodine?",
+    "options": [
+      "I",
+      "In",
+      "Ir",
+      "Io"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for bromine?",
+    "options": [
+      "Br",
+      "B",
+      "Bm",
+      "Bo"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the symbol for fluorine?",
+    "options": [
+      "F",
+      "Fl",
+      "Fr",
+      "Fn"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is a greenhouse gas?",
+    "options": [
+      "CO2",
+      "O2",
+      "N2",
+      "He"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is used to disinfect water?",
+    "options": [
+      "Chlorine",
+      "Neon",
+      "Helium",
+      "Nitrogen"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element is in CO2?",
+    "options": [
+      "Carbon",
+      "Sodium",
+      "Iron",
+      "Calcium"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element is in NH3?",
+    "options": [
+      "Nitrogen",
+      "Neon",
+      "Nickel",
+      "Sodium"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which substance is a base?",
+    "options": [
+      "NaOH",
+      "HCl",
+      "H2SO4",
+      "HNO3"
+    ],
+    "answer": 0
+  }
+]

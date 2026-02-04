@@ -1,0 +1,24 @@
+{
+  "equipment": [
+    { "id": "pipette", "name": "Pipette", "icon": "images/pipette.svg", "info": "5mL", "type": "tool" },
+    { "id": "dropper", "name": "Dropper", "icon": "images/dropper.svg", "type": "tool" },
+    { "id": "stirrer", "name": "Glass Stirrer", "icon": "images/stirrer.svg", "type": "tool" },
+    { "id": "spatula", "name": "Spatula", "icon": "images/spatula.svg", "type": "tool" },
+    { "id": "burner", "name": "Bunsen Burner", "icon": "images/burner-off.svg", "type": "heater" },
+    { "id": "beaker", "name": "Beaker", "icon": "images/beaker.svg", "type": "vessel" },
+    { "id": "graduated_cylinder", "name": "Graduated Cylinder", "icon": "images/graduated_cylinder.svg", "type": "vessel" },
+    { "id": "volumetric_flask", "name": "Volumetric Flask", "icon": "images/volumetric_flask.svg", "type": "vessel" },
+    { "id": "test_tube", "name": "Test Tube", "icon": "images/testtube.svg", "type": "vessel" },
+    { "id": "test_tube_rack", "name": "Test Tube Rack", "icon": "images/test_tube_rack.svg", "type": "support" },
+    { "id": "retort_stand", "name": "Retort Stand", "icon": "images/retort_stand.svg", "type": "support" },
+    { "id": "condenser", "name": "Condenser", "icon": "images/condenser.svg", "type": "apparatus" },
+    { "id": "funnel", "name": "Funnel", "icon": "images/funnel.svg", "type": "tool" },
+    { "id": "watch_glass", "name": "Watch Glass", "icon": "images/watch_glass.svg", "type": "vessel" },
+    { "id": "crucible", "name": "Crucible", "icon": "images/crucible.svg", "type": "vessel" },
+    { "id": "thermometer", "name": "Thermometer", "icon": "images/thermometer.svg", "type": "instrument" },
+    { "id": "balance", "name": "Analytical Balance", "icon": "images/balance.svg", "type": "instrument" },
+    { "id": "burette", "name": "Burette", "icon": "images/burette.svg", "type": "vessel" },
+    { "id": "pipette_filler", "name": "Pipette Filler", "icon": "images/pipette.svg", "type": "tool" },
+    { "id": "stand", "name": "Retort Stand (small)", "icon": "images/stand.svg", "type": "support" }
+  ]
+}

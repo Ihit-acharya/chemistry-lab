@@ -1,0 +1,209 @@
+/* 
+    GLOBAL RESET
+    Ensures consistent spacing and sizing across browsers.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+/* ================= PAGE LAYOUT FIX ================= */
+
+/* 
+    Make body a vertical flex container
+    This allows proper height distribution
+*/
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #eef1ff;
+    background: url("../images/lab-background.jpg") center/cover no-repeat fixed;
+    background-color: #0b0f1a;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(140, 210, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(210, 140, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 70% 70%, rgba(90, 255, 200, 0.12), transparent 45%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 80px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 80px);
+    opacity: 0.9;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background: rgba(8, 10, 18, 0.18);
+}
+
+body.page-scroll {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px) saturate(150%);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.14);
+    border-radius: 18px;
+}
+
+.glass-input {
+    background: rgba(10, 12, 20, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #eef1ff !important;
+}
+
+.glass-input::placeholder {
+    color: rgba(230, 235, 255, 0.6);
+}
+
+/* ================= NAVBAR ================= */
+
+/* 
+    Dark purple + black gradient for a serious lab theme.
+*/
+.custom-nav {
+    background: rgba(20, 22, 34, 0.55);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+    position: relative;
+    z-index: 1205;
+}
+
+.navbar .dropdown-menu {
+    z-index: 1210;
+}
+
+/* Brand/logo text styling */
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #e5e5f0 !important;
+}
+
+/* Navigation link default color */
+.nav-link {
+    color: #d6dbff !important;
+}
+
+/* Hover effect to improve interactivity */
+.nav-link:hover {
+    color: #7cc4ff !important;
+}
+
+.nav-link.active {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(124, 196, 255, 0.35);
+}
+
+/* ================= BUTTON THEME ================= */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    box-shadow: 0 6px 18px rgba(122, 92, 255, 0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #8a7bff, var(--secondary));
+}
+
+.btn-outline-light {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--primary);
+    color: #0b0f1a;
+}
+
+/* ================= FOOTER ================= */
+
+/* 
+    Footer is NOT fixed.
+    This prevents it from overlapping content on small screens.
+*/
+.footer {
+    background: rgba(20, 22, 34, 0.55);
+    color: #d6dbff;
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+/* ================= HISTORY / LEADERBOARD ROW ================= */
+.leaderboard-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(90, 110, 190, 0.14);
+    border: 1px solid rgba(150, 175, 235, 0.28);
+    color: #eef3ff;
+}
+
+.leaderboard-user {
+    color: #d6e5ff;
+}
+
+.leaderboard-score {
+    color: #e6f1ff;
+    font-weight: 600;
+}
+/* ================= LAB GLOBAL HELPERS ================= */
+
+/* Prevent text selection while dragging chemicals */
+.no-select {
+    user-select: none;
+}
+
+/* Glass-like panel effect */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+}
+
+:root {
+    --primary: #8b7bff;
+    --secondary: #6a5cff;
+    --accent: #3fe0b0;
+    --danger: #ff6b6b;
+    --warning: #ffc067;
+    --glass-bg: rgba(255, 255, 255, 0.14);
+    --glass-border: rgba(255, 255, 255, 0.22);
+}
+

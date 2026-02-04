@@ -1,0 +1,1002 @@
+[
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In a neutralization, the products are generally:",
+    "options": [
+      "Salt + Water",
+      "Acid + Base",
+      "Gas + Water",
+      "Metal + Acid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is an example of an alkali?",
+    "options": [
+      "NaOH",
+      "H2SO4",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has electron configuration 2,8,1?",
+    "options": [
+      "Magnesium",
+      "Sodium",
+      "Neon",
+      "Aluminum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the oxidation state of sulfur in H2SO4?",
+    "options": [
+      "+4",
+      "+6",
+      "-2",
+      "+2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "O2",
+      "CO2",
+      "NH3",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In a neutralization, the products are generally:",
+    "options": [
+      "Salt + Water",
+      "Acid + Base",
+      "Gas + Water",
+      "Metal + Acid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is an example of an alkali?",
+    "options": [
+      "NaOH",
+      "H2SO4",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has electron configuration 2,8,1?",
+    "options": [
+      "Magnesium",
+      "Sodium",
+      "Neon",
+      "Aluminum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the oxidation state of sulfur in H2SO4?",
+    "options": [
+      "+4",
+      "+6",
+      "-2",
+      "+2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "O2",
+      "CO2",
+      "NH3",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In a neutralization, the products are generally:",
+    "options": [
+      "Salt + Water",
+      "Acid + Base",
+      "Gas + Water",
+      "Metal + Acid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is an example of an alkali?",
+    "options": [
+      "NaOH",
+      "H2SO4",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has electron configuration 2,8,1?",
+    "options": [
+      "Magnesium",
+      "Sodium",
+      "Neon",
+      "Aluminum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the oxidation state of sulfur in H2SO4?",
+    "options": [
+      "+4",
+      "+6",
+      "-2",
+      "+2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "O2",
+      "CO2",
+      "NH3",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In a neutralization, the products are generally:",
+    "options": [
+      "Salt + Water",
+      "Acid + Base",
+      "Gas + Water",
+      "Metal + Acid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is an example of an alkali?",
+    "options": [
+      "NaOH",
+      "H2SO4",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has electron configuration 2,8,1?",
+    "options": [
+      "Magnesium",
+      "Sodium",
+      "Neon",
+      "Aluminum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the oxidation state of sulfur in H2SO4?",
+    "options": [
+      "+4",
+      "+6",
+      "-2",
+      "+2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "O2",
+      "CO2",
+      "NH3",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In a neutralization, the products are generally:",
+    "options": [
+      "Salt + Water",
+      "Acid + Base",
+      "Gas + Water",
+      "Metal + Acid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is an example of an alkali?",
+    "options": [
+      "NaOH",
+      "H2SO4",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has electron configuration 2,8,1?",
+    "options": [
+      "Magnesium",
+      "Sodium",
+      "Neon",
+      "Aluminum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the oxidation state of sulfur in H2SO4?",
+    "options": [
+      "+4",
+      "+6",
+      "-2",
+      "+2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "O2",
+      "CO2",
+      "NH3",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In a neutralization, the products are generally:",
+    "options": [
+      "Salt + Water",
+      "Acid + Base",
+      "Gas + Water",
+      "Metal + Acid"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is an example of an alkali?",
+    "options": [
+      "NaOH",
+      "H2SO4",
+      "CO2",
+      "NaCl"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which element has electron configuration 2,8,1?",
+    "options": [
+      "Magnesium",
+      "Sodium",
+      "Neon",
+      "Aluminum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the oxidation state of sulfur in H2SO4?",
+    "options": [
+      "+4",
+      "+6",
+      "-2",
+      "+2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas turns limewater milky?",
+    "options": [
+      "O2",
+      "CO2",
+      "NH3",
+      "H2"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which has the highest electronegativity?",
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Fluorine",
+      "Chlorine"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A solution with pH 3 is how many times more acidic than pH 5?",
+    "options": [
+      "2",
+      "10",
+      "100",
+      "1000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which ion is formed when sodium loses one electron?",
+    "options": [
+      "Na+",
+      "Na-",
+      "Na2+",
+      "Na2-"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the molar mass of H2O (g/mol)?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true for exothermic reactions?",
+    "options": [
+      "Heat is absorbed",
+      "Heat is released",
+      "Temperature always decreases",
+      "No energy change"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pair forms a precipitate when mixed?",
+    "options": [
+      "NaCl + KNO3",
+      "AgNO3 + NaCl",
+      "HCl + NaOH",
+      "KCl + NaNO3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many moles are in 44 g of CO2?",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct formula for aluminum sulfate?",
+    "options": [
+      "AlSO4",
+      "Al2(SO4)3",
+      "Al3SO4",
+      "Al2SO4"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The main component of natural gas is:",
+    "options": [
+      "Ethane",
+      "Methane",
+      "Propane",
+      "Butane"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which change increases reaction rate?",
+    "options": [
+      "Lower temperature",
+      "Smaller surface area",
+      "Adding a catalyst",
+      "Lower concentration"
+    ],
+    "answer": 2
+  }
+]

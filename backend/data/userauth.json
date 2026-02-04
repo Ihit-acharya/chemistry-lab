@@ -1,0 +1,17 @@
+[
+  {
+    "username": "student",
+    "password": "$2a$10$XjuuVZ87dRZhhxmfbPxJu.xd5Zi58nsekFlEVKFa/0eMTpBhNhAga",
+    "name": "Student User"
+  },
+  {
+    "username": "teacher",
+    "password": "$2a$10$7xlymVK0rFtYKTZzeIhcKeX4Wck4l7/K8ayPkK94/cignwEXW50v.",
+    "name": "Teacher User"
+  },
+  {
+    "username": "admin1",
+    "password": "$2a$10$eGJjLBo6JmYAh3HbMR2WF.uc6OB7QW2dQgXADIOHtJ71qD1mTDWPu",
+    "name": "Ihit Acharya"
+  }
+]

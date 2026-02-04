@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Quiz Home — Chemistry Lab</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleqhome.css">
+</head>
+<body class="page-scroll">
+	<nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+		<div class="container">
+			<a class="navbar-brand" href="homepage.html"><i class="fa-solid fa-flask-vial"></i> Chemistry Lab</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="homepage.html"><i class="fa-solid fa-house"></i> Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="labpage.html"><i class="fa-solid fa-atom"></i> Lab</a></li>
+					<li class="nav-item"><a class="nav-link active" href="quizhome.html"><i class="fa-solid fa-circle-question"></i> Quiz</a></li>
+					<li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container pt-4 quiz-hero-row">
+		<div class="row align-items-stretch g-4 justify-content-center">
+			<div class="col-lg-7">
+				<header class="quiz-hero glass-card text-center">
+					<div class="container">
+						<h1 class="display-5">Chemistry Quiz</h1>
+						<p class="lead">Test your knowledge — pick a difficulty and start the timed quiz.</p>
+						<div class="difficulty-slider-container mt-4">
+							<input type="range" min="0" max="100" value="0" id="difficultySlider" class="difficulty-slider">
+							<div class="slider-labels">
+								<span>Easy</span>
+								<span>Medium</span>
+								<span>Hard</span>
+							</div>
+						</div>
+
+						<div class="mt-4">
+							<button id="startQuizBtn" class="btn btn-lg btn-primary me-2"><i class="fa-solid fa-play"></i> Start Quiz</button>
+							<a href="quiz.html" id="openQuizDirect" class="d-none">Open</a>
+						</div>
+					</div>
+				</header>
+			</div>
+			<div class="col-lg-3">
+				<div class="leaderboard-card glass-card p-3">
+					<div class="leaderboard-header">
+						<h4 class="mb-0">Leaderboard</h4>
+						<span class="text-muted small" id="leaderboardDifficulty">Difficulty: --</span>
+					</div>
+					<div id="leaderboardList" class="leaderboard-list"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<main class="container py-4">
+		<div class="row mb-4">
+			<div class="col-lg-10 mx-auto">
+				<div class="row g-3">
+					<div class="col-md-4">
+						<div class="card feature-card h-100 text-start">
+							<div class="card-body">
+								<h5 class="card-title"><i class="fa-solid fa-seedling me-2 text-success"></i> Beginner Friendly</h5>
+								<p class="card-text">Easy quizzes focus on fundamentals and safety. Great for quick practice.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card feature-card h-100 text-start">
+							<div class="card-body">
+								<h5 class="card-title"><i class="fa-solid fa-flask-vial me-2 text-warning"></i> Challenge Yourself</h5>
+								<p class="card-text">Medium sets add applied questions and simple calculations.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card feature-card h-100 text-start">
+							<div class="card-body">
+								<h5 class="card-title"><i class="fa-solid fa-atom me-2 text-danger"></i> Expert Mode</h5>
+								<p class="card-text">Hard quizzes include mechanism, stoichiometry, and reasoning problems.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 mx-auto text-center">
+				<p class="text-muted">Quizzes are available for signed-up users only. Click Start to begin — you'll be prompted to sign up if needed.</p>
+			</div>
+		</div>
+
+	</main>
+
+	<footer class="footer mt-auto">
+		<p class="text-center mt-4"><i class="fa-solid fa-graduation-cap"></i> Chemistry Lab Project | Grade 11 | Nepal</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/auth.js"></script>
+	<script>
+		// render profile/login in navbar (don't force immediate redirect)
+		if (window.auth && typeof window.auth.renderProfileInNavbar === 'function') {
+			window.auth.renderProfileInNavbar();
+		}
+	</script>
+	<script>
+		// difficulty slider and card highlight
+		document.addEventListener('DOMContentLoaded', function(){
+			const slider = document.getElementById('difficultySlider');
+			const cards = document.querySelectorAll('.feature-card');
+			const difficultyMap = ['easy', 'medium', 'hard'];
+			const leaderboardList = document.getElementById('leaderboardList');
+			const leaderboardDifficulty = document.getElementById('leaderboardDifficulty');
+			
+			function getDifficultyIndex(value) {
+				const v = Number(value);
+				if (v < 25) return 0;
+				if (v > 75) return 2;
+				return 1;
+			}
+
+			function getSnapValue(value) {
+				const v = Number(value);
+				if (v < 25) return 10;
+				if (v > 75) return 90;
+				return 50;
+			}
+
+			function animateSliderTo(target) {
+				const start = Number(slider.value);
+				const duration = 260;
+				const startTime = performance.now();
+				function easeOutCubic(t) {
+					return 1 - Math.pow(1 - t, 3);
+				}
+				function step(now) {
+					const elapsed = now - startTime;
+					const t = Math.min(elapsed / duration, 1);
+					const eased = easeOutCubic(t);
+					slider.value = (start + (target - start) * eased).toFixed(0);
+					updateCardHighlight();
+					if (t < 1) requestAnimationFrame(step);
+				}
+				requestAnimationFrame(step);
+			}
+
+			function setDifficultyByIndex(idx) {
+				const target = idx === 0 ? 10 : (idx === 1 ? 50 : 90);
+				animateSliderTo(target);
+			}
+
+			function updateCardHighlight() {
+				const idx = getDifficultyIndex(slider.value);
+				cards.forEach((card, i) => {
+					if (i === idx) {
+						card.classList.add('highlight');
+					} else {
+						card.classList.remove('highlight');
+					}
+				});
+				loadLeaderboard();
+			}
+			
+			slider && slider.addEventListener('input', updateCardHighlight);
+			slider && slider.addEventListener('change', function(){
+				const target = getSnapValue(slider.value);
+				animateSliderTo(target);
+			});
+			slider && slider.addEventListener('mouseup', function(){
+				const target = getSnapValue(slider.value);
+				animateSliderTo(target);
+			});
+			slider && slider.addEventListener('touchend', function(){
+				const target = getSnapValue(slider.value);
+				animateSliderTo(target);
+			});
+
+			cards.forEach((card, idx) => {
+				card.addEventListener('click', function(){
+					setDifficultyByIndex(idx);
+				});
+			});
+
+			async function loadLeaderboard() {
+				if (!leaderboardList) return;
+				const idx = getDifficultyIndex(slider.value);
+				const difficulty = difficultyMap[idx] || 'easy';
+				if (leaderboardDifficulty) {
+					leaderboardDifficulty.textContent = `Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
+				}
+				leaderboardList.innerHTML = '<div class="text-muted">Loading leaderboard...</div>';
+				try {
+					const res = await fetch(`/api/quiz/leaderboard?difficulty=${encodeURIComponent(difficulty)}`);
+					const data = await res.json();
+					if (!res.ok || !data.success) throw new Error('Failed to load leaderboard');
+					if (!data.scores || data.scores.length === 0) {
+						leaderboardList.innerHTML = '<div class="text-muted">No scores yet. Be the first to play!</div>';
+						return;
+					}
+					leaderboardList.innerHTML = '';
+					data.scores.forEach((row, index) => {
+						const el = document.createElement('div');
+						el.className = 'leaderboard-row';
+						el.innerHTML = `
+							<span class="leaderboard-rank">#${index + 1}</span>
+							<span class="leaderboard-user">${row.username}</span>
+							<span class="leaderboard-score">${row.score}/${row.total}</span>
+						`;
+						leaderboardList.appendChild(el);
+					});
+				} catch (err) {
+					try {
+						const res = await fetch('data/quiz_scores.json', { cache: 'no-store' });
+						const all = await res.json();
+						const scores = (Array.isArray(all) ? all : [])
+							.filter(s => s.difficulty === difficulty)
+							.sort((a, b) => {
+								if (b.score !== a.score) return b.score - a.score;
+								return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+							})
+							.slice(0, 10);
+						if (scores.length === 0) {
+							leaderboardList.innerHTML = '<div class="text-muted">No scores yet. Be the first to play!</div>';
+							return;
+						}
+						leaderboardList.innerHTML = '';
+						scores.forEach((row, index) => {
+							const el = document.createElement('div');
+							el.className = 'leaderboard-row';
+							el.innerHTML = `
+								<span class="leaderboard-rank">#${index + 1}</span>
+								<span class="leaderboard-user">${row.username}</span>
+								<span class="leaderboard-score">${row.score}/${row.total}</span>
+							`;
+							leaderboardList.appendChild(el);
+						});
+					} catch (fallbackErr) {
+						leaderboardList.innerHTML = '<div class="text-muted">Leaderboard unavailable.</div>';
+					}
+				}
+			}
+			
+			const startBtn = document.getElementById('startQuizBtn');
+			startBtn && startBtn.addEventListener('click', function(){
+				const idx = getDifficultyIndex(slider.value);
+				const diff = difficultyMap[idx] || 'easy';
+				// if not logged in, send to signup and remember quiz target
+				if (window.auth && typeof window.auth.isLoggedIn === 'function' && !window.auth.isLoggedIn()) {
+					localStorage.setItem('postLoginRedirect', 'quiz.html');
+					localStorage.setItem('quizDifficulty', diff);
+					window.location.href = 'signup.html';
+					return;
+				}
+				localStorage.setItem('quizDifficulty', diff);
+				window.location.href = 'quiz.html';
+			});
+			
+			// restore previously selected difficulty
+			const prev = localStorage.getItem('quizDifficulty');
+			if (prev) {
+				const idx = difficultyMap.indexOf(prev);
+				if (idx === 0) slider.value = 10;
+				if (idx === 1) slider.value = 50;
+				if (idx === 2) slider.value = 90;
+				updateCardHighlight();
+			}
+			if (!prev) {
+				updateCardHighlight();
+			}
+		});
+	</script>
+</body>
+</html>

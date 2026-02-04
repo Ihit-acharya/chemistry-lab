@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Beaker: transparent with outline -->
+  <path d="M 25 15 L 75 15 L 80 140 Q 80 150 70 150 L 30 150 Q 20 150 20 140 Z" fill="none" stroke="#9fb8c8" stroke-width="2"/>
+  <!-- Rim -->
+  <line x1="25" y1="15" x2="75" y2="15" stroke="#9fb8c8" stroke-width="2.5"/>
+  <!-- Graduation marks -->
+  <line x1="20" y1="45" x2="23" y2="45" stroke="#666" stroke-width="1.5"/>
+  <line x1="20" y1="75" x2="23" y2="75" stroke="#666" stroke-width="1.5"/>
+  <line x1="20" y1="105" x2="23" y2="105" stroke="#666" stroke-width="1.5"/>
+</svg>

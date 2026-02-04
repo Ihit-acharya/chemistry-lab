@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up — Chemistry Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* smaller, responsive spacing — avoid forced full-height and scroll */
+    .signup-card { max-width: 680px; }
+
+    /* Remove internal scrollbar and allow the page to scroll */
+    .signup-card .card-body { max-height: none; overflow: visible; }
+  </style>
+</head>
+<body class="page-scroll">
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+  <div class="container">
+    <a class="navbar-brand" href="homepage.html"><i class="fa-solid fa-flask-vial"></i> Chemistry Lab</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="homepage.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="labpage.html"><i class="fa-solid fa-atom"></i> Lab</a></li>
+        <li class="nav-item"><a class="nav-link" href="quizhome.html"><i class="fa-solid fa-circle-question"></i> Quiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <div class="card signup-card glass-card mt-5 mb-4">
+        <div class="card-body p-4">
+          <div class="text-center mb-3">
+            <div class="flask-lg text-primary"><i class="fa-solid fa-user-plus fa-2x"></i></div>
+            <h3 class="card-title mt-2">Create an account</h3>
+            <p class="text-muted">Register to access the Virtual Chemistry Lab</p>
+          </div>
+
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="regName" class="form-label">Full name</label>
+              <input type="text" class="form-control glass-input" id="regName" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regUsername" class="form-label">Username</label>
+              <input type="text" class="form-control glass-input" id="regUsername" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Password</label>
+              <input type="password" class="form-control glass-input" id="regPassword" required minlength="6">
+            </div>
+
+            <div class="mb-3">
+              <label for="regPassword2" class="form-label">Confirm password</label>
+              <input type="password" class="form-control glass-input" id="regPassword2" required minlength="6">
+            </div>
+
+            <div id="regAlert" class="alert d-none" role="alert"></div>
+
+            <div class="d-grid">
+              <button type="submit" id="registerBtn" class="btn btn-success">Create account</button>
+            </div>
+          </form>
+
+          <div class="text-center mt-3 small">
+            Already have an account? <a href="Loginpage.html">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer mt-auto">
+  <p class="text-center mt-4"><i class="fa-solid fa-graduation-cap"></i> Chemistry Lab Project | Grade 11 | Nepal</p>
+</footer>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const name = document.getElementById('regName').value.trim();
+  const username = document.getElementById('regUsername').value.trim();
+  const password = document.getElementById('regPassword').value;
+  const password2 = document.getElementById('regPassword2').value;
+  const alertEl = document.getElementById('regAlert');
+  alertEl.className = 'alert d-none';
+
+  if (!name || !username || !password) {
+    alertEl.textContent = 'Please fill all fields';
+    alertEl.className = 'alert alert-danger';
+    return;
+  }
+
+  if (password !== password2) {
+    alertEl.textContent = 'Passwords do not match';
+    alertEl.className = 'alert alert-danger';
+    return;
+  }
+
+  if (password.length < 6) {
+    alertEl.textContent = 'Password must be at least 6 characters';
+    alertEl.className = 'alert alert-danger';
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password, name })
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      alertEl.textContent = data.message || 'Registration failed';
+      alertEl.className = 'alert alert-danger';
+      return;
+    }
+
+    alertEl.textContent = 'Registration successful — redirecting to login...';
+    alertEl.className = 'alert alert-success';
+    setTimeout(()=> window.location.href = 'Loginpage.html', 1400);
+
+  } catch (err) {
+    alertEl.textContent = 'Server error — please try again';
+    alertEl.className = 'alert alert-danger';
+  }
+});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    if (window.auth && typeof window.auth.renderProfileInNavbar === 'function') {
+      window.auth.renderProfileInNavbar();
+    }
+  </script>
+
+</body>
+</html>
