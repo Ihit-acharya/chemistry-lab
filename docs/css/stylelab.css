@@ -1575,9 +1575,10 @@ input[type="range"]::-webkit-slider-thumb {
         gap: 12px;
     }
     .drawer {
-        width: calc(100vw - 24px);
-        right: 12px;
-        max-height: calc(100vh - 180px);
+        width: min(82vw, 360px);
+        right: 10px;
+        max-height: 55vh;
+        top: 100px;
     }
     .lab-bench {
         min-height: 55vh;
@@ -1620,10 +1621,10 @@ input[type="range"]::-webkit-slider-thumb {
         overflow: hidden;
     }
     .drawer {
-        width: calc(100vw - 20px);
-        right: 10px;
-        top: 110px;
-        max-height: calc(100vh - 170px);
+        width: min(88vw, 320px);
+        right: 8px;
+        top: 90px;
+        max-height: 50vh;
     }
     .flask {
         width: 100px;
