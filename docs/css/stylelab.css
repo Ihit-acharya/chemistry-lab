@@ -903,6 +903,7 @@ body.dual-windows #warningsWindow {
     display: flex;
     align-items: center;
     gap: 8px;
+    touch-action: none;
 }
 
 .chemical-item .chem-info {
@@ -973,6 +974,17 @@ body.dual-windows #warningsWindow {
     padding: 2px 8px;
     border-radius: 10px;
     font-size: 0.8rem;
+}
+
+.drag-ghost {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transform: translate(-9999px, -9999px);
 }
 
 /* controls-panel drawer base already defined above */
@@ -1562,6 +1574,11 @@ input[type="range"]::-webkit-slider-thumb {
     .lab-container {
         gap: 12px;
     }
+    .drawer {
+        width: calc(100vw - 24px);
+        right: 12px;
+        max-height: calc(100vh - 180px);
+    }
     .lab-bench {
         min-height: 55vh;
     }
@@ -1600,6 +1617,13 @@ input[type="range"]::-webkit-slider-thumb {
     }
     .lab-bench {
         min-height: 50vh;
+        overflow: hidden;
+    }
+    .drawer {
+        width: calc(100vw - 20px);
+        right: 10px;
+        top: 110px;
+        max-height: calc(100vh - 170px);
     }
     .flask {
         width: 100px;
@@ -1609,6 +1633,16 @@ input[type="range"]::-webkit-slider-thumb {
     .movable-apparatus {
         width: 84px;
         height: 84px;
+    }
+    .chemical-item {
+        padding: 8px 10px;
+        margin: 8px 0;
+    }
+    .chemical-item .chem-name {
+        font-size: 0.8rem;
+    }
+    .chemical-item .chem-formula {
+        font-size: 0.7rem;
     }
     .lab-bottom-section {
         padding: 10px;

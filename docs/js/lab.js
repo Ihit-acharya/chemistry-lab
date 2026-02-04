@@ -529,9 +529,101 @@ function setContainerState(containerId, state) {
 }
 
 // ================= CHEMICAL DRAGGING =================
+let activeTouchDrag = null;
+
+function startTouchDrag(e, item) {
+    if (e.pointerType && e.pointerType !== 'touch' && e.pointerType !== 'pen') return;
+    e.preventDefault();
+
+    const type = item.getAttribute('data-chemical') ? 'chemical' : 'equipment';
+    const name = item.getAttribute('data-chemical') || item.getAttribute('data-equipment');
+    const color = item.getAttribute('data-color') || '#8a2be2';
+    const formula = item.getAttribute('data-formula') || '';
+    const chemType = item.getAttribute('data-type') || '';
+
+    const ghost = item.cloneNode(true);
+    ghost.classList.add('drag-ghost');
+    ghost.style.width = `${item.offsetWidth}px`;
+    ghost.style.height = `${item.offsetHeight}px`;
+    document.body.appendChild(ghost);
+
+    const offsetX = item.offsetWidth / 2;
+    const offsetY = item.offsetHeight / 2;
+
+    const moveGhost = (x, y) => {
+        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+    };
+
+    moveGhost(e.clientX, e.clientY);
+    document.body.classList.add('dragging');
+
+    activeTouchDrag = { type, name, color, formula, chemType, ghost };
+
+    const onMove = (ev) => {
+        moveGhost(ev.clientX, ev.clientY);
+    };
+
+    const onUp = (ev) => {
+        try { item.releasePointerCapture(ev.pointerId); } catch (_) {}
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+        document.removeEventListener('pointercancel', onUp);
+        document.body.classList.remove('dragging');
+
+        if (ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
+
+        const dropTarget = document.elementFromPoint(ev.clientX, ev.clientY);
+        if (!dropTarget) {
+            activeTouchDrag = null;
+            return;
+        }
+
+        const containerEl = dropTarget.closest('.movable-apparatus[data-container-id]');
+        if (containerEl && containerEl.dataset.containerId) {
+            const id = containerEl.dataset.containerId;
+            if (type === 'chemical') {
+                addChemicalToContainer(id, name, color, formula, chemType);
+            } else if (type === 'equipment') {
+                useEquipment(name);
+            }
+            activeTouchDrag = null;
+            return;
+        }
+
+        if (dropTarget.closest('#mainFlask')) {
+            if (type === 'chemical') {
+                addChemicalToFlask(name, color, formula, chemType);
+            } else if (type === 'equipment') {
+                useEquipment(name);
+            }
+            activeTouchDrag = null;
+            return;
+        }
+
+        if (type === 'equipment' && labBench && labBench.contains(dropTarget)) {
+            const rect = labBench.getBoundingClientRect();
+            pushHistory();
+            placeApparatus(name, ev.clientX - rect.left, ev.clientY - rect.top);
+        }
+
+        activeTouchDrag = null;
+    };
+
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    document.addEventListener('pointercancel', onUp);
+
+    try { item.setPointerCapture(e.pointerId); } catch (_) {}
+}
+
 function enableChemicalDragging() {
     document.querySelectorAll('.chemical-item').forEach(item => {
         item.draggable = true;
+
+        if (!item.dataset.touchDragBound) {
+            item.dataset.touchDragBound = 'true';
+            item.addEventListener('pointerdown', (e) => startTouchDrag(e, item));
+        }
 
         item.addEventListener('dragstart', e => {
             document.body.classList.add('dragging');
@@ -1161,9 +1253,11 @@ function makeMovable(el) {
     function onPointerMove(e) {
         const dx = e.clientX - startX; const dy = e.clientY - startY;
         const benchRect = labBench.getBoundingClientRect();
+        const maxW = labBench.clientWidth || benchRect.width;
+        const maxH = labBench.clientHeight || benchRect.height;
         let nx = origX + dx; let ny = origY + dy;
-        nx = Math.max(0, Math.min(benchRect.width - el.offsetWidth, nx));
-        ny = Math.max(0, Math.min(benchRect.height - el.offsetHeight, ny));
+        nx = Math.max(0, Math.min(maxW - el.offsetWidth, nx));
+        ny = Math.max(0, Math.min(maxH - el.offsetHeight, ny));
         el.style.left = nx + 'px';
         el.style.top = ny + 'px';
     }
@@ -1181,8 +1275,10 @@ function makeMovable(el) {
             const rect = el.getBoundingClientRect();
             const snappedLeft = snapToGrid(rect.left - benchRect.left);
             const snappedTop = snapToGrid(rect.top - benchRect.top);
-            el.style.left = `${snappedLeft}px`;
-            el.style.top = `${snappedTop}px`;
+            const maxW = labBench.clientWidth || benchRect.width;
+            const maxH = labBench.clientHeight || benchRect.height;
+            el.style.left = `${Math.max(0, Math.min(maxW - el.offsetWidth, snappedLeft))}px`;
+            el.style.top = `${Math.max(0, Math.min(maxH - el.offsetHeight, snappedTop))}px`;
         }
     }
 
