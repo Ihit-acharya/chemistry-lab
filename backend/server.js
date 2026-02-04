@@ -127,6 +127,33 @@ app.get('/data/userauth.json', (req, res) => {
 
 app.use('/data', express.static(STATIC_DATA_DIR));
 
+function isAdminRequest(req) {
+  const token = process.env.ADMIN_TOKEN;
+  if (!token) return false;
+  const header = req.headers['x-admin-token'];
+  const query = req.query && req.query.token;
+  return header === token || query === token;
+}
+
+// Admin export of runtime data (users + quiz scores)
+app.get('/admin/export', (req, res) => {
+  if (!isAdminRequest(req)) {
+    return res.status(403).json({ success: false, message: 'Forbidden' });
+  }
+
+  try {
+    const usersRaw = fs.readFileSync(USERS_FILE, 'utf8');
+    const scoresRaw = fs.readFileSync(QUIZ_SCORES_FILE, 'utf8');
+    return res.json({
+      success: true,
+      users: JSON.parse(usersRaw),
+      quiz_scores: JSON.parse(scoresRaw)
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: 'Failed to export data' });
+  }
+});
+
 // Simple login endpoint
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body || {};
