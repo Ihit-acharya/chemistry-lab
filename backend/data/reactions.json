@@ -1,7 +1,7 @@
 {
   "(NH4)2SO4+BA(NO3)2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -14,7 +14,7 @@
   },
   "(NH4)2SO4+BABR2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -27,7 +27,7 @@
   },
   "(NH4)2SO4+BACL2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -40,7 +40,7 @@
   },
   "(NH4)2SO4+BAI2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -790,7 +790,7 @@
   },
   "ACETONE+BACL2+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7483,7 +7483,7 @@
   },
   "AL2(SO4)3+BA(NO3)2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7496,7 +7496,7 @@
   },
   "AL2(SO4)3+BA(OH)2": {
     "product": "AL(OH)3 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7509,7 +7509,7 @@
   },
   "AL2(SO4)3+BABR2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7522,7 +7522,7 @@
   },
   "AL2(SO4)3+BACL2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7535,7 +7535,7 @@
   },
   "AL2(SO4)3+BAI2": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8377,7 +8377,7 @@
   },
   "BA(NO3)2+BASO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8403,7 +8403,7 @@
   },
   "BA(NO3)2+COSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8416,7 +8416,7 @@
   },
   "BA(NO3)2+CR2(SO4)3": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8429,7 +8429,7 @@
   },
   "BA(NO3)2+CUSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8442,7 +8442,7 @@
   },
   "BA(NO3)2+FESO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8468,7 +8468,7 @@
   },
   "BA(NO3)2+K2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8494,7 +8494,7 @@
   },
   "BA(NO3)2+MGSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8507,7 +8507,7 @@
   },
   "BA(NO3)2+MNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8546,7 +8546,7 @@
   },
   "BA(NO3)2+NA2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8585,7 +8585,7 @@
   },
   "BA(NO3)2+NISO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8598,7 +8598,7 @@
   },
   "BA(NO3)2+ZNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9450,7 +9450,7 @@
   },
   "BABR2+BASO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9599,7 +9599,7 @@
   },
   "BABR2+COSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9612,7 +9612,7 @@
   },
   "BABR2+CR2(SO4)3": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9625,7 +9625,7 @@
   },
   "BABR2+CUSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
