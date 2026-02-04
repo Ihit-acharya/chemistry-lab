@@ -197,7 +197,7 @@
   },
   "ACETONE+AGNO3+BABR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -225,7 +225,7 @@
   },
   "ACETONE+AGNO3+BAI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -239,7 +239,7 @@
   },
   "ACETONE+AGNO3+CABR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -267,7 +267,7 @@
   },
   "ACETONE+AGNO3+CAI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -351,7 +351,7 @@
   },
   "ACETONE+AGNO3+KBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -379,7 +379,7 @@
   },
   "ACETONE+AGNO3+KI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -393,7 +393,7 @@
   },
   "ACETONE+AGNO3+LIBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -421,7 +421,7 @@
   },
   "ACETONE+AGNO3+LII": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -477,7 +477,7 @@
   },
   "ACETONE+AGNO3+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -503,7 +503,7 @@
   },
   "ACETONE+AGNO3+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -517,7 +517,7 @@
   },
   "ACETONE+AGNO3+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -545,7 +545,7 @@
   },
   "ACETONE+AGNO3+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -573,7 +573,7 @@
   },
   "ACETONE+AGNO3+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -601,7 +601,7 @@
   },
   "ACETONE+AGNO3+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -762,7 +762,7 @@
   },
   "ACETONE+BABR2+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -1151,7 +1151,7 @@
   },
   "ACETONE+CABR2+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -1738,7 +1738,7 @@
   },
   "ACETONE+H2O2+KMNO4": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -2269,7 +2269,7 @@
   },
   "ACETONE+KBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -2408,7 +2408,7 @@
   },
   "ACETONE+LIBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -2716,7 +2716,7 @@
   },
   "ACETONE+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -2730,7 +2730,7 @@
   },
   "ACETONE+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -2830,7 +2830,7 @@
   },
   "ACETONE+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -2886,7 +2886,7 @@
   },
   "ACETONE+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3103,7 +3103,7 @@
   },
   "AGNO3+BABR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3116,7 +3116,7 @@
   },
   "AGNO3+BABR2+BROMOTHYMOLBLUE": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3130,7 +3130,7 @@
   },
   "AGNO3+BABR2+H2O": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3144,7 +3144,7 @@
   },
   "AGNO3+BABR2+IPA": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3158,7 +3158,7 @@
   },
   "AGNO3+BABR2+LITMUS": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3172,7 +3172,7 @@
   },
   "AGNO3+BABR2+MEOH": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3186,7 +3186,7 @@
   },
   "AGNO3+BABR2+METHYLORANGE": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3200,7 +3200,7 @@
   },
   "AGNO3+BABR2+METHYLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3214,7 +3214,7 @@
   },
   "AGNO3+BABR2+PHENOLPHTHALEIN": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3228,7 +3228,7 @@
   },
   "AGNO3+BABR2+PHENOLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3381,7 +3381,7 @@
   },
   "AGNO3+BAI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3394,7 +3394,7 @@
   },
   "AGNO3+BAI2+BROMOTHYMOLBLUE": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3408,7 +3408,7 @@
   },
   "AGNO3+BAI2+H2O": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3422,7 +3422,7 @@
   },
   "AGNO3+BAI2+IPA": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3436,7 +3436,7 @@
   },
   "AGNO3+BAI2+LITMUS": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3450,7 +3450,7 @@
   },
   "AGNO3+BAI2+MEOH": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3464,7 +3464,7 @@
   },
   "AGNO3+BAI2+METHYLORANGE": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3478,7 +3478,7 @@
   },
   "AGNO3+BAI2+METHYLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3492,7 +3492,7 @@
   },
   "AGNO3+BAI2+PHENOLPHTHALEIN": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3506,7 +3506,7 @@
   },
   "AGNO3+BAI2+PHENOLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3520,7 +3520,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+CABR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3548,7 +3548,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+CAI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3632,7 +3632,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+KBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3660,7 +3660,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+KI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3674,7 +3674,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+LIBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3702,7 +3702,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+LII": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3758,7 +3758,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3784,7 +3784,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3798,7 +3798,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3826,7 +3826,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3854,7 +3854,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3882,7 +3882,7 @@
   },
   "AGNO3+BROMOTHYMOLBLUE+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3910,7 +3910,7 @@
   },
   "AGNO3+CABR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3923,7 +3923,7 @@
   },
   "AGNO3+CABR2+H2O": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3937,7 +3937,7 @@
   },
   "AGNO3+CABR2+IPA": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3951,7 +3951,7 @@
   },
   "AGNO3+CABR2+LITMUS": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3965,7 +3965,7 @@
   },
   "AGNO3+CABR2+MEOH": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3979,7 +3979,7 @@
   },
   "AGNO3+CABR2+METHYLORANGE": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -3993,7 +3993,7 @@
   },
   "AGNO3+CABR2+METHYLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4007,7 +4007,7 @@
   },
   "AGNO3+CABR2+PHENOLPHTHALEIN": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4021,7 +4021,7 @@
   },
   "AGNO3+CABR2+PHENOLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4160,7 +4160,7 @@
   },
   "AGNO3+CAI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4173,7 +4173,7 @@
   },
   "AGNO3+CAI2+H2O": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4187,7 +4187,7 @@
   },
   "AGNO3+CAI2+IPA": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4201,7 +4201,7 @@
   },
   "AGNO3+CAI2+LITMUS": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4215,7 +4215,7 @@
   },
   "AGNO3+CAI2+MEOH": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4229,7 +4229,7 @@
   },
   "AGNO3+CAI2+METHYLORANGE": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4243,7 +4243,7 @@
   },
   "AGNO3+CAI2+METHYLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4257,7 +4257,7 @@
   },
   "AGNO3+CAI2+PHENOLPHTHALEIN": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4271,7 +4271,7 @@
   },
   "AGNO3+CAI2+PHENOLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4910,7 +4910,7 @@
   },
   "AGNO3+H2O+KBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4938,7 +4938,7 @@
   },
   "AGNO3+H2O+KI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4952,7 +4952,7 @@
   },
   "AGNO3+H2O+LIBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -4980,7 +4980,7 @@
   },
   "AGNO3+H2O+LII": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5036,7 +5036,7 @@
   },
   "AGNO3+H2O+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5062,7 +5062,7 @@
   },
   "AGNO3+H2O+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5076,7 +5076,7 @@
   },
   "AGNO3+H2O+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5104,7 +5104,7 @@
   },
   "AGNO3+H2O+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5132,7 +5132,7 @@
   },
   "AGNO3+H2O+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5160,7 +5160,7 @@
   },
   "AGNO3+H2O+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5188,7 +5188,7 @@
   },
   "AGNO3+IPA+KBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5216,7 +5216,7 @@
   },
   "AGNO3+IPA+KI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5230,7 +5230,7 @@
   },
   "AGNO3+IPA+LIBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5258,7 +5258,7 @@
   },
   "AGNO3+IPA+LII": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5314,7 +5314,7 @@
   },
   "AGNO3+IPA+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5340,7 +5340,7 @@
   },
   "AGNO3+IPA+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5354,7 +5354,7 @@
   },
   "AGNO3+IPA+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5382,7 +5382,7 @@
   },
   "AGNO3+IPA+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5410,7 +5410,7 @@
   },
   "AGNO3+IPA+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5438,7 +5438,7 @@
   },
   "AGNO3+IPA+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5466,7 +5466,7 @@
   },
   "AGNO3+KBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5479,7 +5479,7 @@
   },
   "AGNO3+KBR+LITMUS": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5493,7 +5493,7 @@
   },
   "AGNO3+KBR+MEOH": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5507,7 +5507,7 @@
   },
   "AGNO3+KBR+METHYLORANGE": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5521,7 +5521,7 @@
   },
   "AGNO3+KBR+METHYLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5535,7 +5535,7 @@
   },
   "AGNO3+KBR+PHENOLPHTHALEIN": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5549,7 +5549,7 @@
   },
   "AGNO3+KBR+PHENOLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5660,7 +5660,7 @@
   },
   "AGNO3+KI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5673,7 +5673,7 @@
   },
   "AGNO3+KI+LITMUS": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5687,7 +5687,7 @@
   },
   "AGNO3+KI+MEOH": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5701,7 +5701,7 @@
   },
   "AGNO3+KI+METHYLORANGE": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5715,7 +5715,7 @@
   },
   "AGNO3+KI+METHYLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5729,7 +5729,7 @@
   },
   "AGNO3+KI+PHENOLPHTHALEIN": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5743,7 +5743,7 @@
   },
   "AGNO3+KI+PHENOLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5757,7 +5757,7 @@
   },
   "AGNO3+LIBR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5770,7 +5770,7 @@
   },
   "AGNO3+LIBR+LITMUS": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5784,7 +5784,7 @@
   },
   "AGNO3+LIBR+MEOH": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5798,7 +5798,7 @@
   },
   "AGNO3+LIBR+METHYLORANGE": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5812,7 +5812,7 @@
   },
   "AGNO3+LIBR+METHYLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5826,7 +5826,7 @@
   },
   "AGNO3+LIBR+PHENOLPHTHALEIN": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5840,7 +5840,7 @@
   },
   "AGNO3+LIBR+PHENOLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5951,7 +5951,7 @@
   },
   "AGNO3+LII": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5964,7 +5964,7 @@
   },
   "AGNO3+LII+LITMUS": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5978,7 +5978,7 @@
   },
   "AGNO3+LII+MEOH": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -5992,7 +5992,7 @@
   },
   "AGNO3+LII+METHYLORANGE": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6006,7 +6006,7 @@
   },
   "AGNO3+LII+METHYLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6020,7 +6020,7 @@
   },
   "AGNO3+LII+PHENOLPHTHALEIN": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6034,7 +6034,7 @@
   },
   "AGNO3+LII+PHENOLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6090,7 +6090,7 @@
   },
   "AGNO3+LITMUS+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6116,7 +6116,7 @@
   },
   "AGNO3+LITMUS+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6130,7 +6130,7 @@
   },
   "AGNO3+LITMUS+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6158,7 +6158,7 @@
   },
   "AGNO3+LITMUS+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6186,7 +6186,7 @@
   },
   "AGNO3+LITMUS+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6214,7 +6214,7 @@
   },
   "AGNO3+LITMUS+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6284,7 +6284,7 @@
   },
   "AGNO3+MEOH+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6310,7 +6310,7 @@
   },
   "AGNO3+MEOH+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6324,7 +6324,7 @@
   },
   "AGNO3+MEOH+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6352,7 +6352,7 @@
   },
   "AGNO3+MEOH+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6380,7 +6380,7 @@
   },
   "AGNO3+MEOH+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6408,7 +6408,7 @@
   },
   "AGNO3+MEOH+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6478,7 +6478,7 @@
   },
   "AGNO3+METHYLORANGE+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6504,7 +6504,7 @@
   },
   "AGNO3+METHYLORANGE+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6518,7 +6518,7 @@
   },
   "AGNO3+METHYLORANGE+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6546,7 +6546,7 @@
   },
   "AGNO3+METHYLORANGE+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6574,7 +6574,7 @@
   },
   "AGNO3+METHYLORANGE+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6602,7 +6602,7 @@
   },
   "AGNO3+METHYLORANGE+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6672,7 +6672,7 @@
   },
   "AGNO3+METHYLRED+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6698,7 +6698,7 @@
   },
   "AGNO3+METHYLRED+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6712,7 +6712,7 @@
   },
   "AGNO3+METHYLRED+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6740,7 +6740,7 @@
   },
   "AGNO3+METHYLRED+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6768,7 +6768,7 @@
   },
   "AGNO3+METHYLRED+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6796,7 +6796,7 @@
   },
   "AGNO3+METHYLRED+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6947,7 +6947,7 @@
   },
   "AGNO3+NABR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6960,7 +6960,7 @@
   },
   "AGNO3+NABR+PHENOLPHTHALEIN": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -6974,7 +6974,7 @@
   },
   "AGNO3+NABR+PHENOLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7023,7 +7023,7 @@
   },
   "AGNO3+NAI": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7036,7 +7036,7 @@
   },
   "AGNO3+NAI+PHENOLPHTHALEIN": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7050,7 +7050,7 @@
   },
   "AGNO3+NAI+PHENOLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7064,7 +7064,7 @@
   },
   "AGNO3+NH4BR": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7077,7 +7077,7 @@
   },
   "AGNO3+NH4BR+PHENOLPHTHALEIN": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7091,7 +7091,7 @@
   },
   "AGNO3+NH4BR+PHENOLRED": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7146,7 +7146,7 @@
   },
   "AGNO3+NH4I": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7159,7 +7159,7 @@
   },
   "AGNO3+NH4I+PHENOLPHTHALEIN": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7173,7 +7173,7 @@
   },
   "AGNO3+NH4I+PHENOLRED": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7228,7 +7228,7 @@
   },
   "AGNO3+PHENOLPHTHALEIN+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7256,7 +7256,7 @@
   },
   "AGNO3+PHENOLPHTHALEIN+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7284,7 +7284,7 @@
   },
   "AGNO3+PHENOLRED+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7312,7 +7312,7 @@
   },
   "AGNO3+PHENOLRED+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7340,7 +7340,7 @@
   },
   "AGNO3+SRBR2": {
     "product": "AgBr (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7366,7 +7366,7 @@
   },
   "AGNO3+SRI2": {
     "product": "AgI (s)",
-    "color": "#ffff99",
+    "color": "#ffff66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -7496,7 +7496,7 @@
   },
   "AL2(SO4)3+BA(OH)2": {
     "product": "AL(OH)3 (s)",
-    "color": "#fbfbf9",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8891,7 +8891,7 @@
   },
   "BA(OH)2+FE(NO3)2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8917,7 +8917,7 @@
   },
   "BA(OH)2+FECL2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -8943,7 +8943,7 @@
   },
   "BA(OH)2+FESO4": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9474,7 +9474,7 @@
   },
   "BABR2+BROMOTHYMOLBLUE+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9638,7 +9638,7 @@
   },
   "BABR2+FESO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9651,7 +9651,7 @@
   },
   "BABR2+H2O+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9665,7 +9665,7 @@
   },
   "BABR2+IPA+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9692,7 +9692,7 @@
   },
   "BABR2+K2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9718,7 +9718,7 @@
   },
   "BABR2+LITMUS+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9732,7 +9732,7 @@
   },
   "BABR2+MEOH+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9746,7 +9746,7 @@
   },
   "BABR2+METHYLORANGE+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9760,7 +9760,7 @@
   },
   "BABR2+METHYLRED+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9774,7 +9774,7 @@
   },
   "BABR2+MGSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9787,7 +9787,7 @@
   },
   "BABR2+MNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9826,7 +9826,7 @@
   },
   "BABR2+NA2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9865,7 +9865,7 @@
   },
   "BABR2+NISO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9878,7 +9878,7 @@
   },
   "BABR2+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9891,7 +9891,7 @@
   },
   "BABR2+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9905,7 +9905,7 @@
   },
   "BABR2+PB(NO3)2+PHENOLRED": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9919,7 +9919,7 @@
   },
   "BABR2+ZNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9932,7 +9932,7 @@
   },
   "BACL2+BASO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -9959,7 +9959,7 @@
   },
   "BACL2+BROMOTHYMOLBLUE+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10000,7 +10000,7 @@
   },
   "BACL2+COSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10013,7 +10013,7 @@
   },
   "BACL2+CR2(SO4)3": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10026,7 +10026,7 @@
   },
   "BACL2+CUSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10039,7 +10039,7 @@
   },
   "BACL2+FESO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10066,7 +10066,7 @@
   },
   "BACL2+H2O+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10108,7 +10108,7 @@
   },
   "BACL2+IPA+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10149,7 +10149,7 @@
   },
   "BACL2+K2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10189,7 +10189,7 @@
   },
   "BACL2+LITMUS+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10231,7 +10231,7 @@
   },
   "BACL2+MEOH+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10273,7 +10273,7 @@
   },
   "BACL2+METHYLORANGE+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10315,7 +10315,7 @@
   },
   "BACL2+METHYLRED+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10343,7 +10343,7 @@
   },
   "BACL2+MGSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10356,7 +10356,7 @@
   },
   "BACL2+MNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10423,7 +10423,7 @@
   },
   "BACL2+NA2SO4": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10436,7 +10436,7 @@
   },
   "BACL2+NA2SO4+PHENOLPHTHALEIN": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10450,7 +10450,7 @@
   },
   "BACL2+NA2SO4+PHENOLRED": {
     "product": "BaSO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10490,7 +10490,7 @@
   },
   "BACL2+NISO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10544,7 +10544,7 @@
   },
   "BACL2+ZNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10557,7 +10557,7 @@
   },
   "BAI2+BASO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10815,7 +10815,7 @@
   },
   "BAI2+COSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10828,7 +10828,7 @@
   },
   "BAI2+CR2(SO4)3": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10841,7 +10841,7 @@
   },
   "BAI2+CUSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10854,7 +10854,7 @@
   },
   "BAI2+FESO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10908,7 +10908,7 @@
   },
   "BAI2+K2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -10990,7 +10990,7 @@
   },
   "BAI2+MGSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -11003,7 +11003,7 @@
   },
   "BAI2+MNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -11042,7 +11042,7 @@
   },
   "BAI2+NA2SO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -11081,7 +11081,7 @@
   },
   "BAI2+NISO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -11135,7 +11135,7 @@
   },
   "BAI2+ZNSO4": {
     "product": "BASO4 (s)",
-    "color": "#ffffff",
+    "color": "#fbfbf9",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -12228,7 +12228,7 @@
   },
   "BROMOTHYMOLBLUE+CABR2+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -13014,7 +13014,7 @@
   },
   "BROMOTHYMOLBLUE+H2O2+KMNO4": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -13824,7 +13824,7 @@
   },
   "BROMOTHYMOLBLUE+KBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -13984,7 +13984,7 @@
   },
   "BROMOTHYMOLBLUE+LIBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -14346,7 +14346,7 @@
   },
   "BROMOTHYMOLBLUE+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -14360,7 +14360,7 @@
   },
   "BROMOTHYMOLBLUE+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -14480,7 +14480,7 @@
   },
   "BROMOTHYMOLBLUE+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -14536,7 +14536,7 @@
   },
   "BROMOTHYMOLBLUE+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15092,7 +15092,7 @@
   },
   "CA(OH)2+FE(NO3)2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15118,7 +15118,7 @@
   },
   "CA(OH)2+FECL2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15144,7 +15144,7 @@
   },
   "CA(OH)2+FESO4": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15814,7 +15814,7 @@
   },
   "CABR2+H2O+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15828,7 +15828,7 @@
   },
   "CABR2+IPA+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15907,7 +15907,7 @@
   },
   "CABR2+LITMUS+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15921,7 +15921,7 @@
   },
   "CABR2+MEOH+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15935,7 +15935,7 @@
   },
   "CABR2+METHYLORANGE+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -15949,7 +15949,7 @@
   },
   "CABR2+METHYLRED+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -16093,7 +16093,7 @@
   },
   "CABR2+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -16106,7 +16106,7 @@
   },
   "CABR2+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -16120,7 +16120,7 @@
   },
   "CABR2+PB(NO3)2+PHENOLRED": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22403,7 +22403,7 @@
   },
   "FE(NO3)2+KOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22416,7 +22416,7 @@
   },
   "FE(NO3)2+LIOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22481,7 +22481,7 @@
   },
   "FE(NO3)2+NAOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22494,7 +22494,7 @@
   },
   "FE(NO3)2+NH3": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22507,7 +22507,7 @@
   },
   "FE(NO3)2+SR(OH)2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22639,7 +22639,7 @@
   },
   "FECL2+KOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22652,7 +22652,7 @@
   },
   "FECL2+LIOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22773,7 +22773,7 @@
   },
   "FECL2+NAOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22786,7 +22786,7 @@
   },
   "FECL2+NH3": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -22840,7 +22840,7 @@
   },
   "FECL2+SR(OH)2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -23625,7 +23625,7 @@
   },
   "FESO4+LIOH": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -23994,7 +23994,7 @@
   },
   "FESO4+SR(OH)2": {
     "product": "FE(OH)2 (s)",
-    "color": "#8B4513",
+    "color": "#66cc66",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -24046,7 +24046,7 @@
   },
   "H2O+H2O2+KMNO4": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -24577,7 +24577,7 @@
   },
   "H2O+KBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -24716,7 +24716,7 @@
   },
   "H2O+LIBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -25035,7 +25035,7 @@
   },
   "H2O+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -25049,7 +25049,7 @@
   },
   "H2O+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -25149,7 +25149,7 @@
   },
   "H2O+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -25205,7 +25205,7 @@
   },
   "H2O+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -25294,7 +25294,7 @@
   },
   "H2O2+IPA+KMNO4": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -25307,7 +25307,7 @@
   },
   "H2O2+KMNO4": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "min_temp": 40,
@@ -25321,7 +25321,7 @@
   },
   "H2O2+KMNO4+LITMUS": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -25334,7 +25334,7 @@
   },
   "H2O2+KMNO4+MEOH": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -25347,7 +25347,7 @@
   },
   "H2O2+KMNO4+METHYLORANGE": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -25360,7 +25360,7 @@
   },
   "H2O2+KMNO4+METHYLRED": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -25373,7 +25373,7 @@
   },
   "H2O2+KMNO4+PHENOLPHTHALEIN": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -25386,7 +25386,7 @@
   },
   "H2O2+KMNO4+PHENOLRED": {
     "product": "MnO2 + H2O + O2",
-    "color": "#800080",
+    "color": "#4b3b2b",
     "type": "redox",
     "heat": "exothermic",
     "observations": [
@@ -28432,7 +28432,7 @@
   },
   "IPA+KBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -28571,7 +28571,7 @@
   },
   "IPA+LIBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -28879,7 +28879,7 @@
   },
   "IPA+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -28893,7 +28893,7 @@
   },
   "IPA+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -28993,7 +28993,7 @@
   },
   "IPA+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29049,7 +29049,7 @@
   },
   "IPA+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29595,7 +29595,7 @@
   },
   "KBR+LITMUS+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29609,7 +29609,7 @@
   },
   "KBR+MEOH+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29623,7 +29623,7 @@
   },
   "KBR+METHYLORANGE+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29637,7 +29637,7 @@
   },
   "KBR+METHYLRED+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29651,7 +29651,7 @@
   },
   "KBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29664,7 +29664,7 @@
   },
   "KBR+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -29678,7 +29678,7 @@
   },
   "KBR+PB(NO3)2+PHENOLRED": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30522,7 +30522,7 @@
   },
   "LIBR+LITMUS+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30536,7 +30536,7 @@
   },
   "LIBR+MEOH+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30550,7 +30550,7 @@
   },
   "LIBR+METHYLORANGE+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30564,7 +30564,7 @@
   },
   "LIBR+METHYLRED+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30578,7 +30578,7 @@
   },
   "LIBR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30591,7 +30591,7 @@
   },
   "LIBR+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -30605,7 +30605,7 @@
   },
   "LIBR+PB(NO3)2+PHENOLRED": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31408,7 +31408,7 @@
   },
   "LITMUS+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31422,7 +31422,7 @@
   },
   "LITMUS+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31542,7 +31542,7 @@
   },
   "LITMUS+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31598,7 +31598,7 @@
   },
   "LITMUS+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31864,7 +31864,7 @@
   },
   "MEOH+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31878,7 +31878,7 @@
   },
   "MEOH+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -31978,7 +31978,7 @@
   },
   "MEOH+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32034,7 +32034,7 @@
   },
   "MEOH+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32257,7 +32257,7 @@
   },
   "METHYLORANGE+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32271,7 +32271,7 @@
   },
   "METHYLORANGE+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32391,7 +32391,7 @@
   },
   "METHYLORANGE+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32447,7 +32447,7 @@
   },
   "METHYLORANGE+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32647,7 +32647,7 @@
   },
   "METHYLRED+NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32661,7 +32661,7 @@
   },
   "METHYLRED+NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32781,7 +32781,7 @@
   },
   "METHYLRED+NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -32837,7 +32837,7 @@
   },
   "METHYLRED+PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34280,7 +34280,7 @@
   },
   "NABR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34293,7 +34293,7 @@
   },
   "NABR+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34307,7 +34307,7 @@
   },
   "NABR+PB(NO3)2+PHENOLRED": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34321,7 +34321,7 @@
   },
   "NACL+PB(NO3)2": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34334,7 +34334,7 @@
   },
   "NACL+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34348,7 +34348,7 @@
   },
   "NACL+PB(NO3)2+PHENOLRED": {
     "product": "PbCl2 (s)",
-    "color": "#ffffcc",
+    "color": "#ffffff",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34846,7 +34846,7 @@
   },
   "NH4BR+PB(NO3)2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34859,7 +34859,7 @@
   },
   "NH4BR+PB(NO3)2+PHENOLPHTHALEIN": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -34873,7 +34873,7 @@
   },
   "NH4BR+PB(NO3)2+PHENOLRED": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -35114,7 +35114,7 @@
   },
   "PB(NO3)2+PHENOLPHTHALEIN+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -35170,7 +35170,7 @@
   },
   "PB(NO3)2+PHENOLRED+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [
@@ -35239,7 +35239,7 @@
   },
   "PB(NO3)2+SRBR2": {
     "product": "PbBr2 (s)",
-    "color": "#ffffff",
+    "color": "#fff3a1",
     "type": "precipitation",
     "heat": "negligible",
     "observations": [

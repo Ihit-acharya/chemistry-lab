@@ -1692,15 +1692,11 @@ function completeReaction(type, chemicals) {
         }
     }
 
-    // Update flask color ONLY if there's a visible change (handle SVG rects)
+    // Update flask contents/color ONLY if there's a visible change
     if (shouldChangeColor && color) {
-        if (flaskLiquid && flaskLiquid.namespaceURI === 'http://www.w3.org/2000/svg') {
-            Array.from(flaskLiquid.children).forEach(r => {
-                try { r.setAttribute('fill', color); } catch (e) {}
-            });
-        } else if (flaskContent) {
-            flaskContent.style.backgroundColor = color;
-        }
+        const totalAmount = labState.flaskContent.reduce((sum, chem) => sum + (chem.amount || 10), 0);
+        labState.flaskContent = [{ name: pending?.product || 'Product', color, formula: pending?.product || '', amount: totalAmount || 10 }];
+        updateFlaskDisplay();
     }
 
     // Add observation (success)
