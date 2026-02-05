@@ -19,10 +19,11 @@ app.use(express.json());
 const FRONTEND_DIR = path.join(__dirname, '..', 'docs');
 const STATIC_DATA_DIR = path.join(__dirname, 'data');
 
+// Serve static data files FIRST (quiz questions, equipment, etc.)
+app.use('/data', express.static(STATIC_DATA_DIR));
+
 // Serve the static frontend
-if (process.env.NODE_ENV !== 'production') {
-  app.use(express.static(FRONTEND_DIR));
-}
+app.use(express.static(FRONTEND_DIR));
 
 // MongoDB Connection
 mongoose.connect(MONGODB_URI, {
@@ -107,9 +108,6 @@ app.get('/data/quiz_scores.json', (req, res) => {
 app.get('/data/userauth.json', (req, res) => {
   res.status(404).end();
 });
-
-// Serve other static data files (reactions, equipment, etc.)
-app.use('/data', express.static(STATIC_DATA_DIR));
 
 function isAdminRequest(req) {
   const token = process.env.ADMIN_TOKEN;
