@@ -180,13 +180,27 @@ async function loadLeaderboard() {
     const difficulty = getDifficulty();
     leaderboardList.innerHTML = '<div class="text-muted">Loading leaderboard...</div>';
     try {
-        const res = await fetch(window.apiUrl(`/api/quiz/leaderboard?difficulty=${encodeURIComponent(difficulty)}`));
+        const url = window.apiUrl(`/api/quiz/leaderboard?difficulty=${encodeURIComponent(difficulty)}`);
+        console.log('[Leaderboard] Fetching from:', url);
+        
+        const res = await fetch(url);
         const data = await res.json();
-        if (!res.ok || !data.success) throw new Error('Failed to load leaderboard');
+        
+        console.log('[Leaderboard] Response:', data);
+        
+        if (!res.ok) {
+            throw new Error(`HTTP ${res.status}: ${data.message || 'Unknown error'}`);
+        }
+        
+        if (!data.success) {
+            throw new Error(data.message || 'Failed to load leaderboard');
+        }
+        
         if (!data.scores || data.scores.length === 0) {
             leaderboardList.innerHTML = '<div class="text-muted">No scores yet. Be the first to play!</div>';
             return;
         }
+        
         leaderboardList.innerHTML = '';
         data.scores.forEach((row, index) => {
             const el = document.createElement('div');
@@ -199,9 +213,11 @@ async function loadLeaderboard() {
             leaderboardList.appendChild(el);
         });
     } catch (err) {
-        leaderboardList.innerHTML = '<div class="text-muted">Leaderboard unavailable.</div>';
+        console.error('[Leaderboard] Error:', err);
+        leaderboardList.innerHTML = `<div class="text-muted text-danger">Leaderboard unavailable: ${err.message}</div>`;
     }
 }
+
 
 async function initQuiz() {
     if (!quizContainer || !questionElement || !optionsElement) return;
