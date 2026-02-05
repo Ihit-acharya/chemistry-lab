@@ -1827,13 +1827,21 @@ function renderFilterButtonsFromChemicals(chemicals) {
     });
 }
 
+// Detect if device is touch-capable (mobile/tablet)
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+}
+
 function renderChemicals(chemicals) {
     chemicalStockContainer.innerHTML = '';
+    const isMobile = isTouchDevice();
     
     chemicals.forEach(chem => {
         const div = document.createElement('div');
         div.className = 'chemical-item';
-        div.draggable = true;
+        div.draggable = !isMobile; // Disable drag on mobile, use click instead
 
         div.setAttribute('data-chemical', chem.id);
         div.setAttribute('data-color', chem.color);
@@ -1843,17 +1851,45 @@ function renderChemicals(chemicals) {
         const state = getChemicalState(chem);
         const hazard = getHazardColor(chem.type);
 
-        div.innerHTML = `
-            <span class="chem-info">
-                <span class="chem-name">${chem.name}</span>
-                <span class="chem-formula">${chem.formula}</span>
-                <span class="chem-meta">
-                    <span class="hazard-dot" style="background:${hazard}"></span>
-                    <span>${chem.type || 'unknown'}</span>
-                    <span class="chem-state">${state}</span>
+        // On mobile: show simplified view with quick-add button
+        if (isMobile) {
+            div.innerHTML = `
+                <span class="chem-info">
+                    <span class="chem-name">${chem.name}</span>
+                    <span class="chem-formula">${chem.formula}</span>
+                    <span class="chem-meta">
+                        <span class="hazard-dot" style="background:${hazard}"></span>
+                        <span>${chem.type || 'unknown'}</span>
+                        <span class="chem-state">${state}</span>
+                    </span>
                 </span>
-            </span>
-        `;
+                <button class="chem-quick-add" title="Add to flask" data-chem="${chem.id}">
+                    <i class="fas fa-plus"></i>
+                </button>
+            `;
+            
+            // Add click handler for quick-add button
+            const addBtn = div.querySelector('.chem-quick-add');
+            if (addBtn) {
+                addBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    addChemicalToFlask(chem.name, chem.color, chem.formula, chem.type);
+                });
+            }
+        } else {
+            // Desktop: show full drag-friendly view
+            div.innerHTML = `
+                <span class="chem-info">
+                    <span class="chem-name">${chem.name}</span>
+                    <span class="chem-formula">${chem.formula}</span>
+                    <span class="chem-meta">
+                        <span class="hazard-dot" style="background:${hazard}"></span>
+                        <span>${chem.type || 'unknown'}</span>
+                        <span class="chem-state">${state}</span>
+                    </span>
+                </span>
+            `;
+        }
 
         chemicalStockContainer.appendChild(div);
     });
