@@ -4,63 +4,74 @@ let allEquipment = [];
 // ================= TOUCH SUPPORT SYSTEM =================
 // Comprehensive touch event system for desktop/touchscreen compatibility
 const TouchSupport = {
-    // Add touch-active/press classes for visual feedback
+    // Add touch-active/press classes for visual feedback with cleanup
     addTouchListeners: (element) => {
         if (!element) return;
         
-        let touchStartTime = 0;
         let isTouching = false;
+        let feedbackTimeout = null;
         
-        // Pointer down - start touch
-        element.addEventListener('pointerdown', (e) => {
-            touchStartTime = Date.now();
+        const handlePointerDown = (e) => {
             isTouching = true;
             element.classList.add('touch-active');
             element.classList.remove('touch-press');
-        }, { passive: true });
+        };
         
-        // Pointer move - detect if still pressing
-        element.addEventListener('pointermove', (e) => {
-            if (isTouching) {
+        const handlePointerMove = (e) => {
+            if (isTouching && !element.classList.contains('touch-press')) {
                 element.classList.add('touch-press');
             }
-        }, { passive: true });
+        };
         
-        // Pointer up - end touch
-        element.addEventListener('pointerup', (e) => {
+        const handlePointerUp = (e) => {
             isTouching = false;
             element.classList.add('touch-press');
-            setTimeout(() => {
+            if (feedbackTimeout) clearTimeout(feedbackTimeout);
+            feedbackTimeout = setTimeout(() => {
                 element.classList.remove('touch-active', 'touch-press');
+                feedbackTimeout = null;
             }, 150);
-        }, { passive: true });
+        };
         
-        // Pointer leave - cancel touch
-        element.addEventListener('pointerleave', (e) => {
+        const handlePointerLeave = (e) => {
             isTouching = false;
             element.classList.remove('touch-active', 'touch-press');
-        }, { passive: true });
+            if (feedbackTimeout) clearTimeout(feedbackTimeout);
+        };
+        
+        element.addEventListener('pointerdown', handlePointerDown, { passive: true });
+        element.addEventListener('pointermove', handlePointerMove, { passive: true });
+        element.addEventListener('pointerup', handlePointerUp, { passive: true });
+        element.addEventListener('pointerleave', handlePointerLeave, { passive: true });
     },
     
     // Initialize touch support for all interactive elements
     init: () => {
-        // Add to all buttons
-        document.querySelectorAll('button').forEach(btn => {
+        // Use event delegation for better performance
+        const initButton = (btn) => {
+            if (btn.hasAttribute('data-touch-init')) return;
+            btn.setAttribute('data-touch-init', 'true');
             TouchSupport.addTouchListeners(btn);
-        });
+        };
         
-        // Add to all interactive controls
+        document.querySelectorAll('button').forEach(initButton);
         document.querySelectorAll('input[type="range"], select').forEach(el => {
+            if (el.hasAttribute('data-touch-init')) return;
+            el.setAttribute('data-touch-init', 'true');
             TouchSupport.addTouchListeners(el);
         });
     }
 };
 
-// Initialize touch support when DOM is ready
+// Initialize touch support when DOM is ready with error handling
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => TouchSupport.init());
+    document.addEventListener('DOMContentLoaded', TouchSupport.init, { once: true });
 } else {
-    TouchSupport.init();
+    try {
+        TouchSupport.init();
+    } catch (e) {
+        console.warn('Touch support initialization failed:', e);
+    }
 }
 
 // ================= LAB STATE =================
@@ -205,8 +216,15 @@ function updateHazardIndicator() {
         color = '#ffb347';
     }
 
-    hazardText.textContent = label;
-    hazardDot.style.background = color;
+    // Only update DOM if values changed to prevent unnecessary reflows
+    if (hazardText.textContent !== label) {
+        hazardText.textContent = label;
+    }
+    if (hazardDot.style.background !== color) {
+        hazardDot.style.background = color;
+        hazardDot.style.boxShadow = `0 0 8px ${color}88`;
+    }
+}
     hazardDot.style.boxShadow = `0 0 8px ${color}aa`;
 }
 
@@ -962,18 +980,24 @@ function enableChemicalDragging() {
 // ================= EQUIPMENT LOADING =================
 async function loadEquipmentStock() {
     try {
-           const response = await fetch(window.apiUrl('/data/equipment.json'));
+        const response = await fetch(window.apiUrl('/data/equipment.json'));
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
         const data = await response.json();
-        allEquipment = data.equipment || [];
+        allEquipment = Array.isArray(data.equipment) ? data.equipment : [];
 
         const container = document.getElementById('apparatusStock');
-        if (!container) return;
+        if (!container) {
+            console.warn('Equipment container not found');
+            return;
+        }
         container.innerHTML = '';
 
         renderEquipment(allEquipment);
-        enableChemicalDragging(); // reuse existing drag setup
+        enableChemicalDragging();
+        addObservation('Equipment loaded', 'info');
     } catch (err) {
-        console.error('Failed to load equipment.json', err);
+        console.error('Failed to load equipment.json:', err);
         addObservation('⚠ Failed to load equipment stock', 'danger');
     }
 }
@@ -981,8 +1005,12 @@ async function loadEquipmentStock() {
 // ================= REACTIONS LOADING =================
 async function loadReactions() {
     try {
-           const res = await fetch(window.apiUrl('/data/reactions.json'));
+        const res = await fetch(window.apiUrl('/data/reactions.json'));
+        if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load reactions`);
+        
         const data = await res.json();
+        if (!data || typeof data !== 'object') throw new Error('Invalid reactions data format');
+        
         labState.reactions = {};
 
         // Normalize keys: split on '+', uppercase, sort => store map for fast lookup

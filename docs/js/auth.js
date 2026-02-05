@@ -1,15 +1,29 @@
 // Simple auth UI helpers used by multiple pages
 function isLoggedIn() {
-    return localStorage.getItem('loggedIn') === 'true';
+    try {
+        return localStorage.getItem('loggedIn') === 'true';
+    } catch (e) {
+        console.warn('localStorage access failed:', e);
+        return false;
+    }
 }
 
 function getUserName() {
-    return localStorage.getItem('userName') || '';
+    try {
+        return localStorage.getItem('userName') || '';
+    } catch (e) {
+        console.warn('localStorage access failed:', e);
+        return '';
+    }
 }
 
 function logout() {
-    localStorage.removeItem('loggedIn');
-    localStorage.removeItem('userName');
+    try {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('userName');
+    } catch (e) {
+        console.warn('localStorage clear failed:', e);
+    }
     // reload to update UI and allow redirects
     window.location.reload();
 }
@@ -18,7 +32,8 @@ function renderProfileInNavbar() {
     try {
         const nav = document.querySelector('.navbar-nav');
         if (!nav) return;
-        // remove any previous profile nodes we may have appended
+        
+        // Remove any previous profile nodes
         const prev = document.getElementById('navProfile');
         if (prev) prev.remove();
 
@@ -30,7 +45,7 @@ function renderProfileInNavbar() {
 
             li.innerHTML = `
                 <a class="nav-link dropdown-toggle" href="#" id="profileMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-user"></i> ${name}
+                    <i class="fa-solid fa-user"></i> ${name || 'User'}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileMenu">
                     <li><a class="dropdown-item" href="#" id="viewProfile">View profile</a></li>
@@ -40,11 +55,22 @@ function renderProfileInNavbar() {
 
             nav.appendChild(li);
 
-            // attach handlers (dropdown toggle behavior is handled by Bootstrap JS)
+            // Attach handlers
             const logoutBtn = document.getElementById('doLogout');
-            if (logoutBtn) logoutBtn.addEventListener('click', (e) => { e.preventDefault(); logout(); });
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', (e) => { 
+                    e.preventDefault(); 
+                    logout(); 
+                });
+            }
+            
             const viewBtn = document.getElementById('viewProfile');
-            if (viewBtn) viewBtn.addEventListener('click', (e) => { e.preventDefault(); window.location.href = 'profile.html'; });
+            if (viewBtn) {
+                viewBtn.addEventListener('click', (e) => { 
+                    e.preventDefault(); 
+                    window.location.href = 'profile.html'; 
+                });
+            }
         } else {
             const li = document.createElement('li');
             li.className = 'nav-item';
@@ -54,14 +80,19 @@ function renderProfileInNavbar() {
         }
 
     } catch (err) {
-        console.warn('renderProfileInNavbar error', err);
+        console.error('renderProfileInNavbar error:', err);
     }
 }
 
 function requireAuthRedirect() {
     if (!isLoggedIn()) {
-        // preserve the target so user can return later
-        localStorage.setItem('postLoginRedirect', window.location.pathname.split('/').pop());
+        try {
+            // preserve the target so user can return later
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            localStorage.setItem('postLoginRedirect', currentPage);
+        } catch (e) {
+            console.warn('Could not save redirect target:', e);
+        }
         window.location.href = 'signup.html';
     }
 }
