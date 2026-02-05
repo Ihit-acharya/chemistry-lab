@@ -219,9 +219,10 @@ function nextQuestion() {
     if (!feedbackShown) {
         showCorrectnessFeedback();
         feedbackShown = true;
-        // Change button text to "Next Question"
+        // Change button text based on whether it's the last question
+        const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
         nextButton.innerHTML = `
-            <span id="nextBtnText">Next Question</span>
+            <span id="nextBtnText">${isLastQuestion ? 'View Results' : 'Next Question'}</span>
             <i class="fas fa-arrow-right ms-2"></i>
         `;
         return;
