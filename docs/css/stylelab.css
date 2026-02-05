@@ -86,10 +86,11 @@
     position: fixed;
     top: 60px;
     left: 24px;
-    right: 24px;
+    right: auto;
+    width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 3.6px 9px;
     gap: 7.2px;
     background: rgba(20, 22, 34, 0.5);
@@ -103,7 +104,7 @@
 .lab-status-bar.collapsed {
     opacity: 0;
     pointer-events: none;
-    transform: translateX(200px);
+    transform: translateX(calc(100vw + 50px));
 }
 
 .status-fab {
@@ -136,7 +137,6 @@
     gap: 7.2px;
     flex-wrap: wrap;
     overflow-x: auto;
-    flex: 1;
 }
 
 .status-pill {
