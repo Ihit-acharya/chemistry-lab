@@ -1863,7 +1863,7 @@ function renderChemicals(chemicals) {
                         <span class="chem-state">${state}</span>
                     </span>
                 </span>
-                <button class="chem-quick-add" title="Add to flask" data-chem="${chem.id}">
+                <button class="chem-quick-add" title="Add to flask" type="button">
                     <i class="fas fa-plus"></i>
                 </button>
             `;
@@ -1871,10 +1871,12 @@ function renderChemicals(chemicals) {
             // Add click handler for quick-add button
             const addBtn = div.querySelector('.chem-quick-add');
             if (addBtn) {
-                addBtn.addEventListener('click', (e) => {
+                addBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
                     e.stopPropagation();
+                    e.stopImmediatePropagation();
                     addChemicalToFlask(chem.name, chem.color, chem.formula, chem.type);
-                });
+                }, true);
             }
         } else {
             // Desktop without touch: show full view

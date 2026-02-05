@@ -1160,12 +1160,12 @@ body.dual-windows #warningsWindow {
 }
 
 .chemical-item .chem-name {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
 .chemical-item .chem-formula {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -1173,7 +1173,7 @@ body.dual-windows #warningsWindow {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: rgba(255, 255, 255, 0.7);
 }
 
