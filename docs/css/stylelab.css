@@ -19,7 +19,7 @@
 
 .panel-title {
     margin: 0 0 14px 0;
-    font-size: 1.05rem;
+    font-size: 0.945rem;
     font-weight: 600;
     letter-spacing: 0.4px;
     display: flex;
@@ -103,12 +103,12 @@
 .lab-status-bar.collapsed {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-8px);
+    transform: translateX(200px);
 }
 
 .status-fab {
     position: fixed;
-    top: 115px;
+    top: 60px;
     right: 24px;
     width: 32.4px;
     height: 32.4px;
@@ -385,7 +385,7 @@ body.dual-windows #warningsWindow {
     justify-content: space-between;
     gap: 8px;
     padding: 10px 12px;
-    font-size: 0.85rem;
+    font-size: 0.765rem;
     font-weight: 600;
     color: #e7e2ff;
     background: linear-gradient(135deg, rgba(30, 32, 50, 0.5), rgba(20, 22, 40, 0.45));
@@ -406,7 +406,7 @@ body.dual-windows #warningsWindow {
 }
 
 .window-header i {
-    font-size: 0.95rem;
+    font-size: 0.855rem;
 }
 
 .window-body {
@@ -428,7 +428,7 @@ body.dual-windows #warningsWindow {
     padding: 10px 12px;
     border-radius: 10px;
     color: #d7c7ff;
-    font-size: 0.82rem;
+    font-size: 0.738rem;
     line-height: 1.4;
     text-align: center;
     font-style: italic;
@@ -437,7 +437,7 @@ body.dual-windows #warningsWindow {
 .bubble {
     padding: 12px 14px;
     border-radius: 12px;
-    font-size: 0.82rem;
+    font-size: 0.738rem;
     line-height: 1.4;
     border: 1.5px solid rgba(138, 43, 226, 0.35);
     background: linear-gradient(135deg, rgba(40, 30, 70, 0.4), rgba(30, 25, 50, 0.35));
@@ -460,7 +460,7 @@ body.dual-windows #warningsWindow {
 .bubble i {
     flex-shrink: 0;
     margin-top: 2px;
-    font-size: 0.95rem;
+    font-size: 0.855rem;
     opacity: 0.95;
 }
 
