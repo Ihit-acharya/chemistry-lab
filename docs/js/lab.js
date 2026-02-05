@@ -4,74 +4,63 @@ let allEquipment = [];
 // ================= TOUCH SUPPORT SYSTEM =================
 // Comprehensive touch event system for desktop/touchscreen compatibility
 const TouchSupport = {
-    // Add touch-active/press classes for visual feedback with cleanup
+    // Add touch-active/press classes for visual feedback
     addTouchListeners: (element) => {
         if (!element) return;
         
+        let touchStartTime = 0;
         let isTouching = false;
-        let feedbackTimeout = null;
         
-        const handlePointerDown = (e) => {
+        // Pointer down - start touch
+        element.addEventListener('pointerdown', (e) => {
+            touchStartTime = Date.now();
             isTouching = true;
             element.classList.add('touch-active');
             element.classList.remove('touch-press');
-        };
+        }, { passive: true });
         
-        const handlePointerMove = (e) => {
-            if (isTouching && !element.classList.contains('touch-press')) {
+        // Pointer move - detect if still pressing
+        element.addEventListener('pointermove', (e) => {
+            if (isTouching) {
                 element.classList.add('touch-press');
             }
-        };
+        }, { passive: true });
         
-        const handlePointerUp = (e) => {
+        // Pointer up - end touch
+        element.addEventListener('pointerup', (e) => {
             isTouching = false;
             element.classList.add('touch-press');
-            if (feedbackTimeout) clearTimeout(feedbackTimeout);
-            feedbackTimeout = setTimeout(() => {
+            setTimeout(() => {
                 element.classList.remove('touch-active', 'touch-press');
-                feedbackTimeout = null;
             }, 150);
-        };
+        }, { passive: true });
         
-        const handlePointerLeave = (e) => {
+        // Pointer leave - cancel touch
+        element.addEventListener('pointerleave', (e) => {
             isTouching = false;
             element.classList.remove('touch-active', 'touch-press');
-            if (feedbackTimeout) clearTimeout(feedbackTimeout);
-        };
-        
-        element.addEventListener('pointerdown', handlePointerDown, { passive: true });
-        element.addEventListener('pointermove', handlePointerMove, { passive: true });
-        element.addEventListener('pointerup', handlePointerUp, { passive: true });
-        element.addEventListener('pointerleave', handlePointerLeave, { passive: true });
+        }, { passive: true });
     },
     
     // Initialize touch support for all interactive elements
     init: () => {
-        // Use event delegation for better performance
-        const initButton = (btn) => {
-            if (btn.hasAttribute('data-touch-init')) return;
-            btn.setAttribute('data-touch-init', 'true');
+        // Add to all buttons
+        document.querySelectorAll('button').forEach(btn => {
             TouchSupport.addTouchListeners(btn);
-        };
+        });
         
-        document.querySelectorAll('button').forEach(initButton);
+        // Add to all interactive controls
         document.querySelectorAll('input[type="range"], select').forEach(el => {
-            if (el.hasAttribute('data-touch-init')) return;
-            el.setAttribute('data-touch-init', 'true');
             TouchSupport.addTouchListeners(el);
         });
     }
 };
 
-// Initialize touch support when DOM is ready with error handling
+// Initialize touch support when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', TouchSupport.init, { once: true });
+    document.addEventListener('DOMContentLoaded', () => TouchSupport.init());
 } else {
-    try {
-        TouchSupport.init();
-    } catch (e) {
-        console.warn('Touch support initialization failed:', e);
-    }
+    TouchSupport.init();
 }
 
 // ================= LAB STATE =================
@@ -216,15 +205,8 @@ function updateHazardIndicator() {
         color = '#ffb347';
     }
 
-    // Only update DOM if values changed to prevent unnecessary reflows
-    if (hazardText.textContent !== label) {
-        hazardText.textContent = label;
-    }
-    if (hazardDot.style.background !== color) {
-        hazardDot.style.background = color;
-        hazardDot.style.boxShadow = `0 0 8px ${color}88`;
-    }
-}
+    hazardText.textContent = label;
+    hazardDot.style.background = color;
     hazardDot.style.boxShadow = `0 0 8px ${color}aa`;
 }
 
@@ -980,24 +962,18 @@ function enableChemicalDragging() {
 // ================= EQUIPMENT LOADING =================
 async function loadEquipmentStock() {
     try {
-        const response = await fetch(window.apiUrl('/data/equipment.json'));
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        
+           const response = await fetch(window.apiUrl('/data/equipment.json'));
         const data = await response.json();
-        allEquipment = Array.isArray(data.equipment) ? data.equipment : [];
+        allEquipment = data.equipment || [];
 
         const container = document.getElementById('apparatusStock');
-        if (!container) {
-            console.warn('Equipment container not found');
-            return;
-        }
+        if (!container) return;
         container.innerHTML = '';
 
         renderEquipment(allEquipment);
-        enableChemicalDragging();
-        addObservation('Equipment loaded', 'info');
+        enableChemicalDragging(); // reuse existing drag setup
     } catch (err) {
-        console.error('Failed to load equipment.json:', err);
+        console.error('Failed to load equipment.json', err);
         addObservation('⚠ Failed to load equipment stock', 'danger');
     }
 }
@@ -1005,12 +981,8 @@ async function loadEquipmentStock() {
 // ================= REACTIONS LOADING =================
 async function loadReactions() {
     try {
-        const res = await fetch(window.apiUrl('/data/reactions.json'));
-        if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load reactions`);
-        
+           const res = await fetch(window.apiUrl('/data/reactions.json'));
         const data = await res.json();
-        if (!data || typeof data !== 'object') throw new Error('Invalid reactions data format');
-        
         labState.reactions = {};
 
         // Normalize keys: split on '+', uppercase, sort => store map for fast lookup

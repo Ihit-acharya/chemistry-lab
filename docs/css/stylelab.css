@@ -88,11 +88,13 @@
     left: 24px;
     right: auto;
     width: fit-content;
+    max-width: calc(100vw - 200px);
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
     padding: 3.6px 9px;
-    gap: 7.2px;
+    gap: 10.8px;
     background: rgba(20, 22, 34, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 14.4px;
@@ -133,10 +135,18 @@
 
 .status-left {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 7.2px;
-    flex-wrap: wrap;
+    overflow: hidden;
     overflow-x: auto;
+    flex-shrink: 0;
+    max-width: 600px;
+    scrollbar-width: none;
+}
+
+.status-left::-webkit-scrollbar {
+    display: none;
 }
 
 .status-pill {
@@ -173,9 +183,10 @@
 .status-actions {
     display: flex;
     align-items: center;
-    gap: 7.2px;
+    gap: 5.4px;
     flex-wrap: nowrap;
     flex-shrink: 0;
+    margin-left: auto;
 }
 
 .icon-btn {

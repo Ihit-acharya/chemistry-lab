@@ -21,7 +21,6 @@ const leaderboardDifficulty = document.getElementById('leaderboardDifficulty');
 
 function shuffle(array) {
     const arr = array.slice();
-    // Fisher-Yates algorithm with optimized iteration
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -38,10 +37,7 @@ function getQuestionKey(question) {
 function uniqueQuestions(questions) {
     const seen = new Set();
     const unique = [];
-    
-    // Validate and filter questions
     questions.forEach(q => {
-        if (!q || !q.question) return; // Skip invalid questions
         const key = getQuestionKey(q);
         if (!seen.has(key)) {
             seen.add(key);
@@ -63,79 +59,51 @@ function getDifficulty() {
 }
 
 async function loadQuestions() {
-    try {
-        const difficulty = getDifficulty();
-        const res = await fetch(window.apiUrl(`/data/quiz_${difficulty}.json`), { cache: 'no-store' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load quiz`);
-        
-        const data = await res.json();
-        if (!Array.isArray(data)) throw new Error('Invalid quiz data format');
-        
-        allQuestions = data;
-        const uniquePool = uniqueQuestions(allQuestions);
-        const randomized = shuffle(uniquePool);
-        quizQuestions = randomized.slice(0, Math.min(QUIZ_LENGTH, randomized.length));
-        
-        if (quizQuestions.length === 0) throw new Error('No questions available');
-        
-        userAnswers = new Array(quizQuestions.length).fill(null);
-    } catch (err) {
-        console.error('Error loading questions:', err);
-        throw err; // Re-throw for caller to handle
+    const difficulty = getDifficulty();
+    const res = await fetch(window.apiUrl(`/data/quiz_${difficulty}.json`), { cache: 'no-store' });
+    if (!res.ok) {
+        throw new Error('Failed to load quiz data');
     }
+    allQuestions = await res.json();
+    const uniquePool = uniqueQuestions(allQuestions);
+    const randomized = shuffle(uniquePool);
+    quizQuestions = randomized.slice(0, Math.min(QUIZ_LENGTH, randomized.length));
+    userAnswers = new Array(quizQuestions.length).fill(null);
 }
 
 function renderQuestion() {
-    if (!quizQuestions[currentQuestionIndex]) {
-        console.error('No question at index', currentQuestionIndex);
-        return;
-    }
-    
     const question = quizQuestions[currentQuestionIndex];
     
     // Reset feedback for new question
     feedbackShown = false;
-    if (feedbackMessage) {
-        feedbackMessage.classList.add('d-none');
-        feedbackMessage.innerHTML = '';
-    }
+    feedbackMessage.classList.add('d-none');
+    feedbackMessage.innerHTML = '';
     
-    // Validate and render question
-    const questionText = question.question || 'Question unavailable';
-    const options = Array.isArray(question.options) ? question.options : [];
-    
-    if (questionElement) {
-        questionElement.innerHTML = `
-            <h3 class="question-number">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</h3>
-            <p class="question-content">${questionText}</p>
+    // Render question
+    questionElement.innerHTML = `
+        <h3 class="question-number">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</h3>
+        <p class="question-content">${question.question}</p>
+    `;
+
+    optionsElement.innerHTML = '';
+    question.options.forEach((option, index) => {
+        const optionBtn = document.createElement('button');
+        optionBtn.type = 'button';
+        optionBtn.className = 'option-btn';
+        optionBtn.setAttribute('data-index', index.toString());
+        optionBtn.innerHTML = `
+            <span class="option-key">${String.fromCharCode(65 + index)}</span>
+            <span class="option-text">${option}</span>
+            <i class="fas fa-check-circle option-check"></i>
         `;
-    }
 
-    if (optionsElement) {
-        optionsElement.innerHTML = '';
-        options.forEach((option, index) => {
-            const optionBtn = document.createElement('button');
-            optionBtn.type = 'button';
-            optionBtn.className = 'option-btn';
-            optionBtn.setAttribute('data-index', index.toString());
-            optionBtn.innerHTML = `
-                <span class="option-key">${String.fromCharCode(65 + index)}</span>
-                <span class="option-text">${option}</span>
-                <i class="fas fa-check-circle option-check"></i>
-            `;
+        if (userAnswers[currentQuestionIndex] === index) {
+            optionBtn.classList.add('selected');
+            answerStatus.classList.add('d-none');
+        }
 
-            if (userAnswers[currentQuestionIndex] === index) {
-                optionBtn.classList.add('selected');
-                if (answerStatus) answerStatus.classList.add('d-none');
-            }
-
-            optionBtn.addEventListener('click', () => selectAnswer(index, optionBtn));
-            optionsElement.appendChild(optionBtn);
-        });
-    }
-
-    updateProgress();
-}
+        optionBtn.addEventListener('click', () => selectAnswer(index, optionBtn));
+        optionsElement.appendChild(optionBtn);
     });
 
     updateAnswerStatus();
