@@ -1,68 +1,6 @@
 let allChemicals = [];
 let allEquipment = [];
 
-// ================= TOUCH SUPPORT SYSTEM =================
-// Comprehensive touch event system for desktop/touchscreen compatibility
-const TouchSupport = {
-    // Add touch-active/press classes for visual feedback
-    addTouchListeners: (element) => {
-        if (!element) return;
-        
-        let touchStartTime = 0;
-        let isTouching = false;
-        
-        // Pointer down - start touch
-        element.addEventListener('pointerdown', (e) => {
-            touchStartTime = Date.now();
-            isTouching = true;
-            element.classList.add('touch-active');
-            element.classList.remove('touch-press');
-        }, { passive: true });
-        
-        // Pointer move - detect if still pressing
-        element.addEventListener('pointermove', (e) => {
-            if (isTouching) {
-                element.classList.add('touch-press');
-            }
-        }, { passive: true });
-        
-        // Pointer up - end touch
-        element.addEventListener('pointerup', (e) => {
-            isTouching = false;
-            element.classList.add('touch-press');
-            setTimeout(() => {
-                element.classList.remove('touch-active', 'touch-press');
-            }, 150);
-        }, { passive: true });
-        
-        // Pointer leave - cancel touch
-        element.addEventListener('pointerleave', (e) => {
-            isTouching = false;
-            element.classList.remove('touch-active', 'touch-press');
-        }, { passive: true });
-    },
-    
-    // Initialize touch support for all interactive elements
-    init: () => {
-        // Add to all buttons
-        document.querySelectorAll('button').forEach(btn => {
-            TouchSupport.addTouchListeners(btn);
-        });
-        
-        // Add to all interactive controls
-        document.querySelectorAll('input[type="range"], select').forEach(el => {
-            TouchSupport.addTouchListeners(el);
-        });
-    }
-};
-
-// Initialize touch support when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => TouchSupport.init());
-} else {
-    TouchSupport.init();
-}
-
 // ================= LAB STATE =================
 let labState = {
     flaskContent: [],
@@ -937,6 +875,14 @@ function startLegacyTouchDrag(e, item) {
 function enableChemicalDragging() {
     document.querySelectorAll('.chemical-item').forEach(item => {
         item.draggable = true;
+
+        if (!item.dataset.touchDragBound) {
+            item.dataset.touchDragBound = 'true';
+            item.addEventListener('pointerdown', (e) => startTouchDrag(e, item));
+            if (!supportsPointerEvents) {
+                item.addEventListener('touchstart', (e) => startLegacyTouchDrag(e, item), { passive: false });
+            }
+        }
 
         item.addEventListener('dragstart', e => {
             document.body.classList.add('dragging');
@@ -1825,7 +1771,7 @@ function renderChemicals(chemicals) {
     chemicals.forEach(chem => {
         const div = document.createElement('div');
         div.className = 'chemical-item';
-        div.draggable = true; // Always enable drag
+        div.draggable = true;
 
         div.setAttribute('data-chemical', chem.id);
         div.setAttribute('data-color', chem.color);
@@ -1835,7 +1781,6 @@ function renderChemicals(chemicals) {
         const state = getChemicalState(chem);
         const hazard = getHazardColor(chem.type);
 
-        // Show quick-add button on all devices
         div.innerHTML = `
             <span class="chem-info">
                 <span class="chem-name">${chem.name}</span>
@@ -1846,21 +1791,7 @@ function renderChemicals(chemicals) {
                     <span class="chem-state">${state}</span>
                 </span>
             </span>
-            <button class="chem-quick-add" title="Add to flask" type="button">
-                <i class="fas fa-plus"></i>
-            </button>
         `;
-        
-        // Add click handler for quick-add button
-        const addBtn = div.querySelector('.chem-quick-add');
-        if (addBtn) {
-            addBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                e.stopImmediatePropagation();
-                addChemicalToFlask(chem.name, chem.color, chem.formula, chem.type);
-            }, true);
-        }
 
         chemicalStockContainer.appendChild(div);
     });
