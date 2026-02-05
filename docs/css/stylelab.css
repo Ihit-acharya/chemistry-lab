@@ -90,11 +90,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4px 10px;
-    gap: 8px;
+    padding: 3.6px 9px;
+    gap: 7.2px;
     background: rgba(20, 22, 34, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
+    border-radius: 14.4px;
     backdrop-filter: blur(10px) saturate(150%);
     box-shadow: 0 10px 26px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
     z-index: 200;
@@ -106,12 +106,20 @@
     transform: translateY(-8px);
 }
 
-.status-fab {
+/* Floating buttons container - static below status bar */
+.status-fab-container {
     position: fixed;
-    top: 60px;
+    top: 110px;
     right: 24px;
-    width: 36px;
-    height: 36px;
+    display: flex;
+    gap: 7.2px;
+    z-index: 201;
+    flex-direction: column;
+}
+
+.status-fab {
+    width: 32.4px;
+    height: 32.4px;
     border-radius: 50%;
     border: 1px solid rgba(190, 180, 255, 0.5);
     background: linear-gradient(135deg, rgba(70, 76, 110, 0.6), rgba(32, 36, 60, 0.55));
@@ -121,10 +129,10 @@
     justify-content: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 16px rgba(160, 140, 255, 0.2);
     backdrop-filter: blur(12px) saturate(150%);
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1;
+    pointer-events: auto;
     transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 210;
+    cursor: pointer;
 }
 
 .status-fab.visible {
@@ -135,34 +143,37 @@
 .status-left {
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex-wrap: nowrap;
+    gap: 7.2px;
+    flex-wrap: wrap;
     overflow-x: auto;
+    flex: 1;
 }
 
 .status-pill {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: #e7e2ff;
-    padding: 3px 6px;
+    padding: 2.7px 5.4px;
     border-radius: 999px;
-    font-size: 0.65rem;
+    font-size: 0.585rem;
     display: inline-flex;
-    gap: 4px;
+    gap: 3.6px;
     align-items: center;
+    white-space: nowrap;
 }
 
 .hazard-pill {
-    gap: 8px;
+    gap: 7.2px;
 }
 
 .hazard-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: #9aa3b2;
     box-shadow: 0 0 8px rgba(154, 163, 178, 0.6);
     display: inline-block;
+    flex-shrink: 0;
 }
 
 .status-value {
@@ -172,20 +183,20 @@
 .status-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 7.2px;
     flex-wrap: nowrap;
     flex-shrink: 0;
 }
 
 .icon-btn {
-    border: 1.5px solid rgba(160, 140, 255, 0.35);
+    border: 1.35px solid rgba(160, 140, 255, 0.35);
     background: linear-gradient(135deg, rgba(50, 45, 85, 0.5), rgba(35, 32, 60, 0.45));
     color: #d7c7ff;
-    padding: 10px 12px;
-    border-radius: 10px;
+    padding: 9px 10.8px;
+    border-radius: 9px;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 0.9rem;
+    font-size: 0.81rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1112,15 +1123,15 @@ body.dual-windows #warningsWindow {
     color: white;
     text-align: left;
     transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border: 1.5px solid rgba(160, 140, 255, 0.4);
+    border: 1.35px solid rgba(160, 140, 255, 0.4);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10.8px;
     touch-action: none;
     overflow: visible;
-    min-height: 48px;
+    min-height: 43.2px;
 }
 
 .chemical-item::before {
@@ -1156,32 +1167,32 @@ body.dual-windows #warningsWindow {
 .chemical-item .chem-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1.8px;
     flex: 1;
     min-width: 0;
 }
 
 .chemical-item .chem-name {
-    font-size: 0.75rem;
+    font-size: 0.675rem;
     font-weight: 600;
 }
 
 .chemical-item .chem-formula {
-    font-size: 0.65rem;
+    font-size: 0.585rem;
     color: rgba(255, 255, 255, 0.8);
 }
 
 .chemical-item .chem-meta {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.6rem;
+    gap: 5.4px;
+    font-size: 0.54rem;
     color: rgba(255, 255, 255, 0.7);
 }
 
 .chemical-item .hazard-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     display: inline-block;
     box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
@@ -1199,11 +1210,11 @@ body.dual-windows #warningsWindow {
 /* Mobile quick-add button */
 .chem-quick-add {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(0, 255, 136, 0.6), rgba(0, 200, 100, 0.55));
-    border: 1.5px solid rgba(0, 255, 136, 0.5);
+    border: 1.35px solid rgba(0, 255, 136, 0.5);
     color: #00ff88;
     cursor: pointer;
     display: flex;
@@ -1212,7 +1223,7 @@ body.dual-windows #warningsWindow {
     transition: all 0.2s ease;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    font-size: 1.1rem;
+    font-size: 0.99rem;
     box-shadow: 0 4px 12px rgba(0, 255, 136, 0.2);
 }
 
@@ -2081,6 +2092,26 @@ input[type="range"]::-moz-range-thumb:hover {
     .lab-container {
         gap: 12px;
     }
+    
+    /* Status bar 2 lines on mobile */
+    .lab-status-bar {
+        flex-wrap: wrap;
+        padding: 3.6px 9px;
+        gap: 7.2px;
+        height: auto;
+        min-height: 60px;
+    }
+    
+    .status-left {
+        width: 100%;
+        gap: 5.4px;
+    }
+    
+    .status-actions {
+        width: 100%;
+        gap: 5.4px;
+    }
+    
     .drawer {
         width: min(82vw, 360px);
         right: 10px;
