@@ -1,6 +1,68 @@
 let allChemicals = [];
 let allEquipment = [];
 
+// ================= TOUCH SUPPORT SYSTEM =================
+// Comprehensive touch event system for desktop/touchscreen compatibility
+const TouchSupport = {
+    // Add touch-active/press classes for visual feedback
+    addTouchListeners: (element) => {
+        if (!element) return;
+        
+        let touchStartTime = 0;
+        let isTouching = false;
+        
+        // Pointer down - start touch
+        element.addEventListener('pointerdown', (e) => {
+            touchStartTime = Date.now();
+            isTouching = true;
+            element.classList.add('touch-active');
+            element.classList.remove('touch-press');
+        }, { passive: true });
+        
+        // Pointer move - detect if still pressing
+        element.addEventListener('pointermove', (e) => {
+            if (isTouching) {
+                element.classList.add('touch-press');
+            }
+        }, { passive: true });
+        
+        // Pointer up - end touch
+        element.addEventListener('pointerup', (e) => {
+            isTouching = false;
+            element.classList.add('touch-press');
+            setTimeout(() => {
+                element.classList.remove('touch-active', 'touch-press');
+            }, 150);
+        }, { passive: true });
+        
+        // Pointer leave - cancel touch
+        element.addEventListener('pointerleave', (e) => {
+            isTouching = false;
+            element.classList.remove('touch-active', 'touch-press');
+        }, { passive: true });
+    },
+    
+    // Initialize touch support for all interactive elements
+    init: () => {
+        // Add to all buttons
+        document.querySelectorAll('button').forEach(btn => {
+            TouchSupport.addTouchListeners(btn);
+        });
+        
+        // Add to all interactive controls
+        document.querySelectorAll('input[type="range"], select').forEach(el => {
+            TouchSupport.addTouchListeners(el);
+        });
+    }
+};
+
+// Initialize touch support when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => TouchSupport.init());
+} else {
+    TouchSupport.init();
+}
+
 // ================= LAB STATE =================
 let labState = {
     flaskContent: [],
