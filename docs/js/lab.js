@@ -2761,3 +2761,206 @@ document.querySelectorAll('.equipment, .chemical-item').forEach(item => {
         }
     });
 });
+// ============================================
+// QoL FEATURES - Button Event Listeners
+// ============================================
+
+// Undo/Redo Buttons
+document.querySelectorAll('[data-action="undo"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        undo();
+        showToast('Undo applied', 'info');
+    });
+});
+
+document.querySelectorAll('[data-action="redo"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        redo();
+        showToast('Redo applied', 'info');
+    });
+});
+
+// Save Experiment Button
+document.querySelectorAll('[data-action="save"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const experimentName = prompt('Enter experiment name:', `Experiment_${new Date().toLocaleString()}`);
+        if (experimentName) {
+            const experimentData = {
+                name: experimentName,
+                timestamp: new Date().toISOString(),
+                apparatusList: [...document.querySelectorAll('.apparatus-item')].map(item => ({
+                    id: item.id,
+                    type: item.dataset.type,
+                    position: {
+                        left: item.style.left || item.offsetLeft,
+                        top: item.style.top || item.offsetTop
+                    }
+                })),
+                flasks: [...document.querySelectorAll('.flask')].map(flask => ({
+                    id: flask.id,
+                    contents: flask.dataset.contents || '',
+                    position: {
+                        left: flask.style.left,
+                        top: flask.style.top,
+                        bottom: flask.style.bottom
+                    }
+                })),
+                observations: [...document.querySelectorAll('.observation-item')].map(obs => obs.textContent)
+            };
+            
+            // Save to localStorage
+            const experiments = JSON.parse(localStorage.getItem('saved_experiments') || '[]');
+            experiments.push(experimentData);
+            localStorage.setItem('saved_experiments', JSON.stringify(experiments));
+            
+            showToast(`Experiment "${experimentName}" saved!`, 'success');
+        }
+    });
+});
+
+// Load Experiment Button
+document.querySelectorAll('[data-action="load"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const experiments = JSON.parse(localStorage.getItem('saved_experiments') || '[]');
+        
+        if (experiments.length === 0) {
+            showToast('No saved experiments found', 'warning');
+            return;
+        }
+        
+        // Create a simple selection dialog
+        const experimentNames = experiments.map((exp, idx) => `${idx + 1}. ${exp.name}`).join('\n');
+        const choice = prompt(`Select experiment to load:\n\n${experimentNames}\n\nEnter number (1-${experiments.length}):`, '1');
+        
+        if (choice) {
+            const idx = parseInt(choice) - 1;
+            if (idx >= 0 && idx < experiments.length) {
+                const experimentData = experiments[idx];
+                
+                // Clear current experiment
+                document.querySelectorAll('.apparatus-item').forEach(item => item.remove());
+                document.querySelectorAll('.flask').forEach(flask => flask.remove());
+                
+                // Restore apparatus positions
+                experimentData.apparatusList.forEach(app => {
+                    const element = document.createElement('div');
+                    element.id = app.id;
+                    element.className = 'apparatus-item';
+                    element.dataset.type = app.type;
+                    element.style.left = app.position.left;
+                    element.style.top = app.position.top;
+                    // Note: You may need to adjust this based on your actual apparatus rendering
+                });
+                
+                // Restore flask contents and positions
+                experimentData.flasks.forEach(flask => {
+                    const flaskEl = document.getElementById(flask.id);
+                    if (flaskEl) {
+                        flaskEl.dataset.contents = flask.contents;
+                        flaskEl.style.left = flask.position.left;
+                        flaskEl.style.top = flask.position.top;
+                        flaskEl.style.bottom = flask.position.bottom;
+                    }
+                });
+                
+                showToast(`Experiment "${experimentData.name}" loaded!`, 'success');
+                addObservation(`Loaded experiment: ${experimentData.name}`, 'info');
+            } else {
+                showToast('Invalid selection', 'error');
+            }
+        }
+    });
+});
+
+// Pause/Resume Button
+if (pauseBtn) {
+    pauseBtn.addEventListener('click', () => {
+        labState.paused = !labState.paused;
+        setPaused(labState.paused);
+        
+        pauseBtn.innerHTML = labState.paused 
+            ? '<i class="fas fa-play"></i>' 
+            : '<i class="fas fa-pause"></i>';
+        
+        showToast(labState.paused ? 'Simulation paused' : 'Simulation resumed', 'info');
+    });
+}
+
+// Start Reaction Button
+if (statusStartReaction) {
+    statusStartReaction.addEventListener('click', () => {
+        // Check if a flask is selected
+        if (!labState.activeFlask) {
+            showToast('Please select a flask first', 'warning');
+            return;
+        }
+        
+        // Start the reaction
+        const flask = document.getElementById(labState.activeFlask);
+        if (flask && flask.dataset.contents) {
+            startReaction(flask);
+            showToast('Reaction started', 'success');
+        } else {
+            showToast('Flask must contain reactants', 'warning');
+        }
+    });
+}
+
+// Toast/Alert Helper Function
+function showToast(message, type = 'info') {
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast-${type}`;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : type === 'warning' ? '#ffc107' : '#17a2b8'};
+        color: ${type === 'warning' ? '#000' : '#fff'};
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 10000;
+        animation: slideIn 0.3s ease-in-out;
+        font-weight: 500;
+        max-width: 300px;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease-in-out';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// Add toast animation styles if not already present
+if (!document.getElementById('toast-styles')) {
+    const style = document.createElement('style');
+    style.id = 'toast-styles';
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
