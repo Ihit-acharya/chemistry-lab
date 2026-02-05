@@ -266,10 +266,20 @@ function serializeLab() {
     const apparatus = Array.from(document.querySelectorAll('.movable-apparatus')).map(el => {
         const id = el.dataset.containerId;
         const container = id ? labState.containers[id] : null;
+        // Extract position from transform
+        const transform = el.style.transform;
+        let x = 0, y = 0;
+        if (transform && transform.includes('translate3d')) {
+            const match = transform.match(/translate3d\(([^,]+),\s*([^,]+),/);
+            if (match) {
+                x = match[1];
+                y = match[2];
+            }
+        }
         return {
             type: el.dataset.type,
-            left: el.style.left,
-            top: el.style.top,
+            x,
+            y,
             content: container ? container.content : null
         };
     });
@@ -317,8 +327,10 @@ function restoreLab(state) {
             placeApparatus(item.type, 0, 0, { silent: true });
             const el = document.querySelector(`.movable-apparatus[data-type="${item.type}"]:last-of-type`);
             if (el) {
-                if (item.left) el.style.left = item.left;
-                if (item.top) el.style.top = item.top;
+                // Restore position from x/y (new format) or fall back to left/top (old format)
+                const x = item.x || '0px';
+                const y = item.y || '0px';
+                el.style.transform = `translate3d(${x}, ${y}, 0)`;
                 const id = el.dataset.containerId;
                 if (id && item.content && labState.containers[id]) {
                     labState.containers[id].content = item.content;
@@ -555,7 +567,7 @@ function startTouchTransfer(e, sourceType, sourceId, handleEl) {
     const offsetY = handleEl.offsetHeight / 2;
 
     const moveGhost = (x, y) => {
-        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+        ghost.style.transform = `translate3d(${x - offsetX}px, ${y - offsetY}px, 0)`;
     };
 
     moveGhost(e.clientX, e.clientY);
@@ -626,7 +638,7 @@ function startLegacyTouchTransfer(e, sourceType, sourceId, handleEl) {
     const offsetY = handleEl.offsetHeight / 2;
 
     const moveGhost = (x, y) => {
-        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+        ghost.style.transform = `translate3d(${x - offsetX}px, ${y - offsetY}px, 0)`;
     };
 
     const touch = e.touches[0];
@@ -703,7 +715,7 @@ function startTouchDrag(e, item) {
     const offsetY = item.offsetHeight / 2;
 
     const moveGhost = (x, y) => {
-        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+        ghost.style.transform = `translate3d(${x - offsetX}px, ${y - offsetY}px, 0)`;
     };
 
     moveGhost(e.clientX, e.clientY);
@@ -789,7 +801,7 @@ function startLegacyTouchDrag(e, item) {
     const offsetY = item.offsetHeight / 2;
 
     const moveGhost = (x, y) => {
-        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+        ghost.style.transform = `translate3d(${x - offsetX}px, ${y - offsetY}px, 0)`;
     };
 
     const touch = e.touches[0];
@@ -1030,8 +1042,9 @@ function placeApparatus(name, x, y, options = {}) {
     const half = 60;
     const snappedX = snapToGrid(x - half);
     const snappedY = snapToGrid(y - half);
-    el.style.left = `${snappedX}px`;
-    el.style.top = `${snappedY}px`;
+    el.style.transform = `translate3d(${snappedX}px, ${snappedY}px, 0)`;
+    el.style.left = `0px`;
+    el.style.top = `0px`;
 
     labBench.appendChild(el);
     makeMovable(el);
@@ -1484,20 +1497,35 @@ function completeReactionFor(containerId) {
 // Make an element movable with pointer events
 function makeMovable(el) {
     let startX = 0, startY = 0, origX = 0, origY = 0;
+    let isDragging = false;
+    const isFlask = el.dataset.type === 'flask' || el.id === 'mainFlask';
 
     function onPointerDown(e) {
         e.preventDefault();
+        isDragging = true;
         el.setPointerCapture(e.pointerId);
         startX = e.clientX; startY = e.clientY;
         const rect = el.getBoundingClientRect();
         const benchRect = labBench.getBoundingClientRect();
         origX = rect.left - benchRect.left; origY = rect.top - benchRect.top;
+        
+        // For flask, convert from bottom/left positioning to absolute top/left
+        if (isFlask) {
+            el.style.bottom = 'auto';
+            el.style.left = '0px';
+            el.style.right = 'auto';
+            el.style.transform = `translate3d(${origX}px, ${origY}px, 0)`;
+        }
+        
         el.style.cursor = 'grabbing';
+        el.style.willChange = 'transform';
+        el.style.transition = 'none';
         document.addEventListener('pointermove', onPointerMove);
         document.addEventListener('pointerup', onPointerUp);
     }
 
     function onPointerMove(e) {
+        if (!isDragging) return;
         const dx = e.clientX - startX; const dy = e.clientY - startY;
         const benchRect = labBench.getBoundingClientRect();
         const maxW = labBench.clientWidth || benchRect.width;
@@ -1505,18 +1533,25 @@ function makeMovable(el) {
         let nx = origX + dx; let ny = origY + dy;
         nx = Math.max(0, Math.min(maxW - el.offsetWidth, nx));
         ny = Math.max(0, Math.min(maxH - el.offsetHeight, ny));
-        el.style.left = nx + 'px';
-        el.style.top = ny + 'px';
+        el.style.transform = `translate3d(${nx}px, ${ny}px, 0)`;
     }
 
     function onPointerUp(e) {
+        isDragging = false;
         el.style.cursor = 'grab';
+        el.style.willChange = 'auto';
         try { el.releasePointerCapture(e.pointerId); } catch(_){}
         document.removeEventListener('pointermove', onPointerMove);
         document.removeEventListener('pointerup', onPointerUp);
         // Keep burner under flask if any burner element exists
         if (el.dataset.type === 'burner') {
             positionBurnerUnderFlask();
+        } else if (isFlask) {
+            // Keep flask at dropped position - don't snap back
+            el.style.transition = 'none';
+            el.style.bottom = 'auto';
+            el.style.left = '0px';
+            el.style.right = 'auto';
         } else {
             const benchRect = labBench.getBoundingClientRect();
             const rect = el.getBoundingClientRect();
@@ -1524,8 +1559,10 @@ function makeMovable(el) {
             const snappedTop = snapToGrid(rect.top - benchRect.top);
             const maxW = labBench.clientWidth || benchRect.width;
             const maxH = labBench.clientHeight || benchRect.height;
-            el.style.left = `${Math.max(0, Math.min(maxW - el.offsetWidth, snappedLeft))}px`;
-            el.style.top = `${Math.max(0, Math.min(maxH - el.offsetHeight, snappedTop))}px`;
+            const finalX = Math.max(0, Math.min(maxW - el.offsetWidth, snappedLeft));
+            const finalY = Math.max(0, Math.min(maxH - el.offsetHeight, snappedTop));
+            el.style.transform = `translate3d(${finalX}px, ${finalY}px, 0)`;
+            el.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
         }
     }
 
@@ -1535,15 +1572,27 @@ function makeMovable(el) {
         el.addEventListener('touchstart', (e) => {
             if (!e.touches || !e.touches.length) return;
             e.preventDefault();
+            isDragging = true;
             const touch = e.touches[0];
             startX = touch.clientX; startY = touch.clientY;
             const rect = el.getBoundingClientRect();
             const benchRect = labBench.getBoundingClientRect();
             origX = rect.left - benchRect.left; origY = rect.top - benchRect.top;
+            
+            // For flask, convert from bottom/left positioning to absolute top/left
+            if (isFlask) {
+                el.style.bottom = 'auto';
+                el.style.left = '0px';
+                el.style.right = 'auto';
+                el.style.transform = `translate3d(${origX}px, ${origY}px, 0)`;
+            }
+            
             el.style.cursor = 'grabbing';
+            el.style.willChange = 'transform';
+            el.style.transition = 'none';
 
             const onTouchMove = (ev) => {
-                if (!ev.touches || !ev.touches.length) return;
+                if (!isDragging || !ev.touches || !ev.touches.length) return;
                 const t = ev.touches[0];
                 const dx = t.clientX - startX; const dy = t.clientY - startY;
                 const benchRectMove = labBench.getBoundingClientRect();
@@ -1552,17 +1601,24 @@ function makeMovable(el) {
                 let nx = origX + dx; let ny = origY + dy;
                 nx = Math.max(0, Math.min(maxW - el.offsetWidth, nx));
                 ny = Math.max(0, Math.min(maxH - el.offsetHeight, ny));
-                el.style.left = nx + 'px';
-                el.style.top = ny + 'px';
+                el.style.transform = `translate3d(${nx}px, ${ny}px, 0)`;
             };
 
             const onTouchEnd = () => {
+                isDragging = false;
                 el.style.cursor = 'grab';
+                el.style.willChange = 'auto';
                 document.removeEventListener('touchmove', onTouchMove);
                 document.removeEventListener('touchend', onTouchEnd);
                 document.removeEventListener('touchcancel', onTouchEnd);
                 if (el.dataset.type === 'burner') {
                     positionBurnerUnderFlask();
+                } else if (isFlask) {
+                    // Keep flask at dropped position - don't snap back
+                    el.style.transition = 'none';
+                    el.style.bottom = 'auto';
+                    el.style.left = '0px';
+                    el.style.right = 'auto';
                 } else {
                     const benchRectEnd = labBench.getBoundingClientRect();
                     const rectEnd = el.getBoundingClientRect();
@@ -1570,8 +1626,10 @@ function makeMovable(el) {
                     const snappedTop = snapToGrid(rectEnd.top - benchRectEnd.top);
                     const maxW = labBench.clientWidth || benchRectEnd.width;
                     const maxH = labBench.clientHeight || benchRectEnd.height;
-                    el.style.left = `${Math.max(0, Math.min(maxW - el.offsetWidth, snappedLeft))}px`;
-                    el.style.top = `${Math.max(0, Math.min(maxH - el.offsetHeight, snappedTop))}px`;
+                    const finalX = Math.max(0, Math.min(maxW - el.offsetWidth, snappedLeft));
+                    const finalY = Math.max(0, Math.min(maxH - el.offsetHeight, snappedTop));
+                    el.style.transform = `translate3d(${finalX}px, ${finalY}px, 0)`;
+                    el.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
                 }
             };
 
@@ -1591,10 +1649,9 @@ function positionBurnerUnderFlask() {
     const burnerRect = placed.getBoundingClientRect();
     const left = flaskRect.left - benchRect.left + (flaskRect.width / 2) - (burnerRect.width / 2);
     // place burner horizontally centered under the flask
-    placed.style.left = `${left}px`;
-    // put the burner slightly below the flask
     const top = flaskRect.bottom - benchRect.top + 8;
-    placed.style.top = `${top}px`;
+    // put the burner slightly below the flask
+    placed.style.transform = `translate3d(${left}px, ${top}px, 0)`;
 }
 
 // Allow dropping equipment onto the bench to place movable apparatus

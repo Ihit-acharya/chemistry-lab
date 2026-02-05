@@ -378,12 +378,13 @@
                 let startRight = 0;
 
                 button.style.cursor = 'grab';
+                button.style.touchAction = 'none';
 
-                const onMouseDown = (e) => {
+                const setupDrag = (clientX, clientY) => {
                     isDragging = true;
                     const rect = button.getBoundingClientRect();
-                    startX = e.clientX;
-                    startY = e.clientY;
+                    startX = clientX;
+                    startY = clientY;
                     startTop = rect.top;
                     startRight = window.innerWidth - rect.right;
                     button.style.position = 'fixed';
@@ -391,14 +392,16 @@
                     button.style.top = `${startTop}px`;
                     button.style.bottom = 'auto';
                     button.style.cursor = 'grabbing';
-                    document.addEventListener('mousemove', onMouseMove);
-                    document.addEventListener('mouseup', onMouseUp);
+                    button.style.willChange = 'transform, box-shadow';
+                    button.style.transition = 'none';
+                    button.style.boxShadow = '0 20px 40px rgba(0,0,0,0.7), 0 0 24px rgba(138, 43, 226, 0.5)';
+                    button.style.transform = 'scale(1.15)';
                 };
 
-                const onMouseMove = (e) => {
+                const moveDrag = (clientX, clientY) => {
                     if (!isDragging) return;
-                    const dx = e.clientX - startX;
-                    const dy = e.clientY - startY;
+                    const dx = clientX - startX;
+                    const dy = clientY - startY;
                     const newRight = Math.min(Math.max(12, startRight - dx), window.innerWidth - button.offsetWidth - 12);
                     const newTop = Math.min(Math.max(80, startTop + dy), window.innerHeight - button.offsetHeight - 12);
                     button.style.right = `${newRight}px`;
@@ -406,15 +409,58 @@
                     normalizeFabPositions(button);
                 };
 
-                const onMouseUp = () => {
+                const endDrag = () => {
                     isDragging = false;
                     button.style.cursor = 'grab';
+                    button.style.willChange = 'transform';
+                    button.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease';
+                    button.style.transform = 'scale(1)';
+                    button.style.boxShadow = '';
                     document.removeEventListener('mousemove', onMouseMove);
                     document.removeEventListener('mouseup', onMouseUp);
+                    document.removeEventListener('touchmove', onTouchMove);
+                    document.removeEventListener('touchend', onTouchEnd);
+                    document.removeEventListener('touchcancel', onTouchEnd);
                     normalizeFabPositions(button);
                 };
 
+                const onMouseDown = (e) => {
+                    setupDrag(e.clientX, e.clientY);
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                };
+
+                const onMouseMove = (e) => {
+                    moveDrag(e.clientX, e.clientY);
+                };
+
+                const onMouseUp = () => {
+                    endDrag();
+                };
+
+                const onTouchStart = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    setupDrag(touch.clientX, touch.clientY);
+                    document.addEventListener('touchmove', onTouchMove, { passive: false });
+                    document.addEventListener('touchend', onTouchEnd);
+                    document.addEventListener('touchcancel', onTouchEnd);
+                };
+
+                const onTouchMove = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    moveDrag(touch.clientX, touch.clientY);
+                };
+
+                const onTouchEnd = () => {
+                    endDrag();
+                };
+
                 button.addEventListener('mousedown', onMouseDown);
+                button.addEventListener('touchstart', onTouchStart, { passive: false });
             }
 
             function normalizeFabPositions(activeBtn = null) {
@@ -488,40 +534,85 @@
                 let startLeft = 0;
 
                 handle.style.cursor = 'grab';
+                handle.style.touchAction = 'none';
+                drawer.style.touchAction = 'none';
 
-                const onMouseDown = (e) => {
+                const setupDrag = (clientX, clientY) => {
                     isDragging = true;
                     const rect = drawer.getBoundingClientRect();
-                    startX = e.clientX;
-                    startY = e.clientY;
+                    startX = clientX;
+                    startY = clientY;
                     startTop = rect.top;
                     startLeft = rect.left;
                     drawer.style.left = `${startLeft}px`;
                     drawer.style.right = 'auto';
                     drawer.dataset.autoPositioned = 'false';
                     handle.style.cursor = 'grabbing';
-                    document.addEventListener('mousemove', onMouseMove);
-                    document.addEventListener('mouseup', onMouseUp);
+                    drawer.style.willChange = 'transform, box-shadow';
+                    drawer.style.transition = 'none';
+                    drawer.style.boxShadow = '0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(160, 140, 255, 0.6), 0 0 48px rgba(160, 140, 255, 0.45)';
                 };
 
-                const onMouseMove = (e) => {
+                const moveDrag = (clientX, clientY) => {
                     if (!isDragging) return;
-                    const dx = e.clientX - startX;
-                    const dy = e.clientY - startY;
+                    const dx = clientX - startX;
+                    const dy = clientY - startY;
                     const newLeft = Math.min(Math.max(12, startLeft + dx), window.innerWidth - drawer.offsetWidth - 12);
                     const newTop = Math.min(Math.max(80, startTop + dy), window.innerHeight - drawer.offsetHeight - 12);
                     drawer.style.left = `${newLeft}px`;
                     drawer.style.top = `${newTop}px`;
                 };
 
-                const onMouseUp = () => {
+                const endDrag = () => {
                     isDragging = false;
                     handle.style.cursor = 'grab';
+                    drawer.style.willChange = 'transform';
+                    drawer.style.transition = '';
+                    drawer.style.boxShadow = '';
                     document.removeEventListener('mousemove', onMouseMove);
                     document.removeEventListener('mouseup', onMouseUp);
+                    document.removeEventListener('touchmove', onTouchMove);
+                    document.removeEventListener('touchend', onTouchEnd);
+                    document.removeEventListener('touchcancel', onTouchEnd);
+                };
+
+                const onMouseDown = (e) => {
+                    setupDrag(e.clientX, e.clientY);
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                };
+
+                const onMouseMove = (e) => {
+                    moveDrag(e.clientX, e.clientY);
+                };
+
+                const onMouseUp = () => {
+                    endDrag();
+                };
+
+                const onTouchStart = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    setupDrag(touch.clientX, touch.clientY);
+                    document.addEventListener('touchmove', onTouchMove, { passive: false });
+                    document.addEventListener('touchend', onTouchEnd);
+                    document.addEventListener('touchcancel', onTouchEnd);
+                };
+
+                const onTouchMove = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    moveDrag(touch.clientX, touch.clientY);
+                };
+
+                const onTouchEnd = () => {
+                    endDrag();
                 };
 
                 handle.addEventListener('mousedown', onMouseDown);
+                handle.addEventListener('touchstart', onTouchStart, { passive: false });
             }
 
             function makeWindowDraggable(win) {
@@ -534,40 +625,85 @@
                 let startLeft = 0;
 
                 handle.style.cursor = 'grab';
+                handle.style.touchAction = 'none';
+                win.style.touchAction = 'none';
 
-                const onMouseDown = (e) => {
+                const setupDrag = (clientX, clientY) => {
                     isDragging = true;
                     const rect = win.getBoundingClientRect();
-                    startX = e.clientX;
-                    startY = e.clientY;
+                    startX = clientX;
+                    startY = clientY;
                     startTop = rect.top;
                     startLeft = rect.left;
                     win.style.left = `${startLeft}px`;
                     win.style.top = `${startTop}px`;
                     win.style.right = 'auto';
                     handle.style.cursor = 'grabbing';
-                    document.addEventListener('mousemove', onMouseMove);
-                    document.addEventListener('mouseup', onMouseUp);
+                    win.style.willChange = 'transform, box-shadow';
+                    win.style.transition = 'none';
+                    win.style.boxShadow = '0 16px 48px rgba(0,0,0,0.5), 0 0 20px rgba(138, 43, 226, 0.4)';
                 };
 
-                const onMouseMove = (e) => {
+                const moveDrag = (clientX, clientY) => {
                     if (!isDragging) return;
-                    const dx = e.clientX - startX;
-                    const dy = e.clientY - startY;
+                    const dx = clientX - startX;
+                    const dy = clientY - startY;
                     const newLeft = Math.min(Math.max(12, startLeft + dx), window.innerWidth - win.offsetWidth - 12);
                     const newTop = Math.min(Math.max(80, startTop + dy), window.innerHeight - win.offsetHeight - 12);
                     win.style.left = `${newLeft}px`;
                     win.style.top = `${newTop}px`;
                 };
 
-                const onMouseUp = () => {
+                const endDrag = () => {
                     isDragging = false;
                     handle.style.cursor = 'grab';
+                    win.style.willChange = 'transform';
+                    win.style.transition = '';
+                    win.style.boxShadow = '';
                     document.removeEventListener('mousemove', onMouseMove);
                     document.removeEventListener('mouseup', onMouseUp);
+                    document.removeEventListener('touchmove', onTouchMove);
+                    document.removeEventListener('touchend', onTouchEnd);
+                    document.removeEventListener('touchcancel', onTouchEnd);
+                };
+
+                const onMouseDown = (e) => {
+                    setupDrag(e.clientX, e.clientY);
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('mouseup', onMouseUp);
+                };
+
+                const onMouseMove = (e) => {
+                    moveDrag(e.clientX, e.clientY);
+                };
+
+                const onMouseUp = () => {
+                    endDrag();
+                };
+
+                const onTouchStart = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    setupDrag(touch.clientX, touch.clientY);
+                    document.addEventListener('touchmove', onTouchMove, { passive: false });
+                    document.addEventListener('touchend', onTouchEnd);
+                    document.addEventListener('touchcancel', onTouchEnd);
+                };
+
+                const onTouchMove = (e) => {
+                    if (!e.touches || !e.touches.length) return;
+                    e.preventDefault();
+                    const touch = e.touches[0];
+                    moveDrag(touch.clientX, touch.clientY);
+                };
+
+                const onTouchEnd = () => {
+                    endDrag();
                 };
 
                 handle.addEventListener('mousedown', onMouseDown);
+                handle.addEventListener('touchstart', onTouchStart, { passive: false });
             }
 
             document.querySelectorAll('[data-drawer-open]').forEach(btn => {
@@ -676,6 +812,32 @@
             window.addEventListener('resize', () => {
                 normalizeFabPositions();
             });
+
+            // GLOBAL TOUCH IMPROVEMENTS
+            // Add touch feedback to all buttons and interactive elements
+            document.addEventListener('touchstart', (e) => {
+                const target = e.target.closest('button, [role="button"], .fab, .filter-btn, .icon-btn, .action-btn');
+                if (target) {
+                    target.style.opacity = '0.85';
+                    target.style.transform = 'scale(0.98)';
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                const target = e.target.closest('button, [role="button"], .fab, .filter-btn, .icon-btn, .action-btn');
+                if (target) {
+                    target.style.opacity = '';
+                    target.style.transform = '';
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchcancel', (e) => {
+                const target = e.target.closest('button, [role="button"], .fab, .filter-btn, .icon-btn, .action-btn');
+                if (target) {
+                    target.style.opacity = '';
+                    target.style.transform = '';
+                }
+            }, { passive: true });
         });
     </script>
 
