@@ -7,8 +7,9 @@ let userAnswers = [];
 const quizContainer = document.getElementById('quiz-container');
 const questionElement = document.getElementById('question');
 const optionsElement = document.getElementById('options');
+const answerStatus = document.getElementById('answerStatus');
+const feedbackMessage = document.getElementById('feedbackMessage');
 const nextButton = document.getElementById('next-btn');
-const prevButton = document.getElementById('prev-btn');
 const submitButton = document.getElementById('submit-btn');
 const resultElement = document.getElementById('result');
 const questionCounter = document.getElementById('questionCounter');
@@ -71,9 +72,15 @@ async function loadQuestions() {
 
 function renderQuestion() {
     const question = quizQuestions[currentQuestionIndex];
+    
+    // Clear feedback
+    feedbackMessage.classList.add('d-none');
+    feedbackMessage.innerHTML = '';
+    
+    // Render question
     questionElement.innerHTML = `
-        <h4>Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</h4>
-        <p>${question.question}</p>
+        <h3 class="question-number">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</h3>
+        <p class="question-content">${question.question}</p>
     `;
 
     optionsElement.innerHTML = '';
@@ -85,29 +92,82 @@ function renderQuestion() {
         optionBtn.innerHTML = `
             <span class="option-key">${String.fromCharCode(65 + index)}</span>
             <span class="option-text">${option}</span>
+            <i class="fas fa-check-circle option-check"></i>
         `;
 
         if (userAnswers[currentQuestionIndex] === index) {
             optionBtn.classList.add('selected');
+            answerStatus.classList.add('d-none');
         }
 
-        optionBtn.addEventListener('click', () => {
-            userAnswers[currentQuestionIndex] = index;
-            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
-            optionBtn.classList.add('selected');
-        });
-
+        optionBtn.addEventListener('click', () => selectAnswer(index, optionBtn));
         optionsElement.appendChild(optionBtn);
     });
 
+    updateAnswerStatus();
     updateButtons();
     updateProgress();
 }
 
+function selectAnswer(index, optionBtn) {
+    userAnswers[currentQuestionIndex] = index;
+    
+    // Remove selection from all buttons
+    document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+    
+    // Add selection to clicked button with animation
+    optionBtn.classList.add('selected');
+    optionBtn.style.animation = 'none';
+    setTimeout(() => {
+        optionBtn.style.animation = 'answerPulse 0.6s ease-out';
+    }, 10);
+    
+    // Show immediate feedback
+    showAnswerFeedback();
+    
+    // Hide "no answer selected" status
+    answerStatus.classList.add('d-none');
+    
+    // Update buttons
+    updateButtons();
+}
+
+function showAnswerFeedback() {
+    feedbackMessage.classList.remove('d-none');
+    feedbackMessage.classList.add('feedback-selected');
+    feedbackMessage.innerHTML = `
+        <i class="fas fa-check-circle"></i>
+        <span>Answer recorded! Ready to continue.</span>
+    `;
+    
+    // Add animation
+    feedbackMessage.style.animation = 'feedbackSlideIn 0.3s ease-out';
+}
+
+function updateAnswerStatus() {
+    if (userAnswers[currentQuestionIndex] === null) {
+        answerStatus.classList.remove('d-none');
+        answerStatus.innerHTML = `
+            <span class="answer-indicator">
+                <i class="fas fa-circle-question"></i> Please select an answer to continue
+            </span>
+        `;
+    } else {
+        answerStatus.classList.add('d-none');
+    }
+}
+
 function updateButtons() {
-    prevButton.disabled = currentQuestionIndex === 0;
-    nextButton.disabled = currentQuestionIndex === quizQuestions.length - 1;
-    submitButton.style.display = currentQuestionIndex === quizQuestions.length - 1 ? 'inline-block' : 'none';
+    const hasAnswer = userAnswers[currentQuestionIndex] !== null;
+    const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
+    
+    // Next button: enabled only if answer selected and not last question
+    nextButton.disabled = !hasAnswer || isLastQuestion;
+    nextButton.style.display = isLastQuestion ? 'none' : 'inline-block';
+    
+    // Submit button: enabled only if answer selected and is last question
+    submitButton.disabled = !hasAnswer;
+    submitButton.style.display = isLastQuestion ? 'inline-block' : 'none';
 }
 
 function updateProgress() {
@@ -122,16 +182,11 @@ function updateProgress() {
 }
 
 function nextQuestion() {
-    if (currentQuestionIndex < quizQuestions.length - 1) {
+    if (currentQuestionIndex < quizQuestions.length - 1 && userAnswers[currentQuestionIndex] !== null) {
         currentQuestionIndex++;
         renderQuestion();
-    }
-}
-
-function previousQuestion() {
-    if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        renderQuestion();
+        // Scroll to top
+        document.querySelector('.quiz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
 
@@ -164,12 +219,25 @@ async function submitQuiz() {
         console.warn('Quiz submit failed', err);
     }
 
+    // Show result with celebration animation
     resultElement.innerHTML = `
-        <h3>Quiz Completed!</h3>
-        <p class="mb-2">Score: <strong>${score}</strong> / ${total}</p>
-        <p class="mb-0">You did better than <strong>${betterThanPct}%</strong> of participants at this difficulty.</p>
+        <div class="result-content">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Quiz Completed!</h3>
+            <div class="score-display">
+                <div class="score-number">${score}</div>
+                <div class="score-total">out of ${total}</div>
+            </div>
+            <p class="result-percentile">You did better than <strong>${betterThanPct}%</strong> of participants at this difficulty level.</p>
+            <a href="quizhome.html" class="btn btn-primary mt-3">
+                <i class="fas fa-home me-2"></i>Back to Quiz Home
+            </a>
+        </div>
     `;
     resultElement.style.display = 'block';
+    resultElement.style.animation = 'resultPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
 
     quizContainer.style.display = 'none';
     await loadLeaderboard();
@@ -235,7 +303,6 @@ async function initQuiz() {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (nextButton) nextButton.addEventListener('click', nextQuestion);
-    if (prevButton) prevButton.addEventListener('click', previousQuestion);
     if (submitButton) submitButton.addEventListener('click', submitQuiz);
     initQuiz();
 });

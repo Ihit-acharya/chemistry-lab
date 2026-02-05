@@ -44,13 +44,35 @@
 			</div>
 
 			<div id="quiz-container" class="quiz-card">
-				<div id="question" class="question-text"></div>
-				<div id="options" class="options-list"></div>
+				<div class="quiz-content">
+					<!-- Question Display -->
+					<div id="question" class="question-text"></div>
+					
+					<!-- Answer Indicator -->
+					<div id="answerStatus" class="answer-status d-none">
+						<span class="answer-indicator">
+							<i class="fas fa-circle-question"></i> No answer selected yet
+						</span>
+					</div>
+					
+					<!-- Options -->
+					<div id="options" class="options-list"></div>
+					
+					<!-- Feedback Message -->
+					<div id="feedbackMessage" class="feedback-message d-none"></div>
+				</div>
+
+				<!-- Action Buttons -->
 				<div class="quiz-actions">
-					<button id="prev-btn" class="btn btn-outline-light" type="button">Previous</button>
 					<div class="action-spacer"></div>
-					<button id="next-btn" class="btn btn-primary" type="button">Next</button>
-					<button id="submit-btn" class="btn btn-success" type="button">Submit Quiz</button>
+					<button id="next-btn" class="btn btn-primary" type="button" disabled>
+						<span id="nextBtnText">Next Question</span>
+						<i class="fas fa-arrow-right ms-2"></i>
+					</button>
+					<button id="submit-btn" class="btn btn-success" type="button" disabled>
+						<i class="fas fa-check-circle me-2"></i>
+						<span>Submit Quiz</span>
+					</button>
 				</div>
 			</div>
 
