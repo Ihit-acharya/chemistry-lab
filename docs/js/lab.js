@@ -1836,12 +1836,12 @@ function isTouchDevice() {
 
 function renderChemicals(chemicals) {
     chemicalStockContainer.innerHTML = '';
-    const isMobile = isTouchDevice();
+    const hasTouch = isTouchDevice();
     
     chemicals.forEach(chem => {
         const div = document.createElement('div');
         div.className = 'chemical-item';
-        div.draggable = !isMobile; // Disable drag on mobile, use click instead
+        div.draggable = true; // Always enable drag - works for both mouse and touch
 
         div.setAttribute('data-chemical', chem.id);
         div.setAttribute('data-color', chem.color);
@@ -1851,8 +1851,8 @@ function renderChemicals(chemicals) {
         const state = getChemicalState(chem);
         const hazard = getHazardColor(chem.type);
 
-        // On mobile: show simplified view with quick-add button
-        if (isMobile) {
+        // On touch devices: show quick-add button for convenience (in addition to drag)
+        if (hasTouch) {
             div.innerHTML = `
                 <span class="chem-info">
                     <span class="chem-name">${chem.name}</span>
@@ -1877,7 +1877,7 @@ function renderChemicals(chemicals) {
                 });
             }
         } else {
-            // Desktop: show full drag-friendly view
+            // Desktop without touch: show full view
             div.innerHTML = `
                 <span class="chem-info">
                     <span class="chem-name">${chem.name}</span>
