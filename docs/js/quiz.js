@@ -26,6 +26,25 @@ function shuffle(array) {
     return arr;
 }
 
+function getQuestionKey(question) {
+    const text = typeof question.question === 'string' ? question.question.trim() : '';
+    const options = Array.isArray(question.options) ? question.options.map(opt => String(opt).trim()) : [];
+    return `${text}::${options.join('||')}`;
+}
+
+function uniqueQuestions(questions) {
+    const seen = new Set();
+    const unique = [];
+    questions.forEach(q => {
+        const key = getQuestionKey(q);
+        if (!seen.has(key)) {
+            seen.add(key);
+            unique.push(q);
+        }
+    });
+    return unique;
+}
+
 function getDifficulty() {
     const diff = (localStorage.getItem('quizDifficulty') || 'easy').toLowerCase();
     if (selectedDifficultyEl) {
@@ -44,8 +63,9 @@ async function loadQuestions() {
         throw new Error('Failed to load quiz data');
     }
     allQuestions = await res.json();
-    const randomized = shuffle(allQuestions);
-    quizQuestions = randomized.slice(0, QUIZ_LENGTH);
+    const uniquePool = uniqueQuestions(allQuestions);
+    const randomized = shuffle(uniquePool);
+    quizQuestions = randomized.slice(0, Math.min(QUIZ_LENGTH, randomized.length));
     userAnswers = new Array(quizQuestions.length).fill(null);
 }
 
