@@ -107,9 +107,7 @@
 }
 
 .status-fab {
-    position: fixed;
-    top: 60px;
-    right: 24px;
+    position: static;
     width: 32.4px;
     height: 32.4px;
     border-radius: 50%;
@@ -124,7 +122,7 @@
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 210;
+    cursor: pointer;
 }
 
 .status-fab.visible {
