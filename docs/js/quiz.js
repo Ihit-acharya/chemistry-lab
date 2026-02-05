@@ -228,8 +228,14 @@ function nextQuestion() {
         return;
     }
     
-    // Feedback already shown, move to next question
-    if (currentQuestionIndex < quizQuestions.length - 1) {
+    // Feedback already shown
+    const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
+    
+    if (isLastQuestion) {
+        // On last question after feedback, submit the quiz
+        submitQuiz();
+    } else {
+        // Move to next question
         currentQuestionIndex++;
         renderQuestion();
         // Scroll to top
