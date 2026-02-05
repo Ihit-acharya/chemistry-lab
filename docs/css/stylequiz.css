@@ -159,11 +159,40 @@ body.page-scroll {
 	color: #ffffff;
 }
 
-.option-btn.selected .option-key {
-	background: #7a5cff;
-	border-color: #7a5cff;
+.option-btn.correct-answer {
+	background: rgba(0, 255, 136, 0.2);
+	border-color: rgba(0, 255, 136, 0.6);
+	box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
 	color: #ffffff;
-	transform: scale(1.1);
+	animation: correctPulse 0.4s ease-out;
+}
+
+.option-btn.correct-answer .option-key {
+	background: #00cc6f;
+	border-color: #00cc6f;
+	color: #ffffff;
+}
+
+.option-btn.correct-answer .correct-icon {
+	color: #00ff88;
+}
+
+.option-btn.wrong-answer {
+	background: rgba(255, 68, 68, 0.2);
+	border-color: rgba(255, 68, 68, 0.6);
+	box-shadow: 0 0 30px rgba(255, 68, 68, 0.25);
+	color: #ffffff;
+	animation: wrongShake 0.4s ease-out;
+}
+
+.option-btn.wrong-answer .option-key {
+	background: #ff4444;
+	border-color: #ff4444;
+	color: #ffffff;
+}
+
+.option-btn.wrong-answer .wrong-icon {
+	color: #ff6b6b;
 }
 
 .option-check {
@@ -176,6 +205,12 @@ body.page-scroll {
 
 .option-btn.selected .option-check {
 	opacity: 1;
+}
+
+.option-indicator {
+	margin-left: auto;
+	font-size: 1.3rem;
+	transition: opacity 0.3s ease;
 }
 
 .option-key {
@@ -215,6 +250,43 @@ body.page-scroll {
 
 .feedback-message i {
 	font-size: 1.1rem;
+}
+
+.feedback-message.feedback-correct {
+	background: rgba(0, 255, 136, 0.15);
+	border-color: rgba(0, 255, 136, 0.4);
+	color: #00ff88;
+}
+
+.feedback-message.feedback-correct i {
+	color: #00ff88;
+}
+
+.feedback-message.feedback-wrong {
+	background: rgba(255, 68, 68, 0.15);
+	border-color: rgba(255, 68, 68, 0.4);
+	color: #ff6b6b;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.feedback-message.feedback-wrong i {
+	color: #ff6b6b;
+}
+
+.feedback-content {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	width: 100%;
+}
+
+.feedback-correct-answer {
+	font-size: 0.9rem;
+	opacity: 0.9;
+	padding-top: 6px;
+	border-top: 1px solid rgba(255, 68, 68, 0.3);
+	padding-top: 8px;
 }
 
 .quiz-actions {
@@ -480,6 +552,33 @@ body.page-scroll {
 	}
 	50% {
 		transform: translateY(-20px);
+	}
+}
+
+@keyframes correctPulse {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+	}
+	50% {
+		transform: scale(1.02);
+		box-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
+	}
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+	}
+}
+
+@keyframes wrongShake {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-5px);
+	}
+	75% {
+		transform: translateX(5px);
 	}
 }
 

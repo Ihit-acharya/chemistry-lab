@@ -3,6 +3,7 @@ let allQuestions = [];
 let quizQuestions = [];
 let currentQuestionIndex = 0;
 let userAnswers = [];
+let feedbackShown = false; // Track if feedback for current question is shown
 
 const quizContainer = document.getElementById('quiz-container');
 const questionElement = document.getElementById('question');
@@ -73,7 +74,8 @@ async function loadQuestions() {
 function renderQuestion() {
     const question = quizQuestions[currentQuestionIndex];
     
-    // Clear feedback
+    // Reset feedback for new question
+    feedbackShown = false;
     feedbackMessage.classList.add('d-none');
     feedbackMessage.innerHTML = '';
     
@@ -161,13 +163,42 @@ function updateButtons() {
     const hasAnswer = userAnswers[currentQuestionIndex] !== null;
     const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
     
-    // Next button: enabled only if answer selected and not last question
-    nextButton.disabled = !hasAnswer || isLastQuestion;
-    nextButton.style.display = isLastQuestion ? 'none' : 'inline-block';
-    
-    // Submit button: enabled only if answer selected and is last question
-    submitButton.disabled = !hasAnswer;
-    submitButton.style.display = isLastQuestion ? 'inline-block' : 'none';
+    if (isLastQuestion) {
+        // Last question: show Submit button instead of Next
+        if (feedbackShown) {
+            // After feedback shown, enable submit
+            submitButton.disabled = false;
+            nextButton.style.display = 'none';
+            submitButton.style.display = 'inline-block';
+        } else {
+            // Before feedback shown, show Next button (which will show feedback)
+            nextButton.disabled = !hasAnswer;
+            nextButton.innerHTML = `
+                <span id="nextBtnText">Show Answer</span>
+                <i class="fas fa-arrow-right ms-2"></i>
+            `;
+            nextButton.style.display = 'inline-block';
+            submitButton.style.display = 'none';
+        }
+    } else {
+        // Not last question
+        if (feedbackShown) {
+            // After feedback shown, enable next
+            nextButton.disabled = false;
+            nextButton.innerHTML = `
+                <span id="nextBtnText">Next Question</span>
+                <i class="fas fa-arrow-right ms-2"></i>
+            `;
+        } else {
+            // Before feedback shown, show "Show Answer" button
+            nextButton.disabled = !hasAnswer;
+            nextButton.innerHTML = `
+                <span id="nextBtnText">Show Answer</span>
+                <i class="fas fa-arrow-right ms-2"></i>
+            `;
+        }
+        submitButton.style.display = 'none';
+    }
 }
 
 function updateProgress() {
@@ -182,12 +213,77 @@ function updateProgress() {
 }
 
 function nextQuestion() {
-    if (currentQuestionIndex < quizQuestions.length - 1 && userAnswers[currentQuestionIndex] !== null) {
+    if (userAnswers[currentQuestionIndex] === null) return;
+    
+    // If feedback hasn't been shown yet, show it
+    if (!feedbackShown) {
+        showCorrectnessFeedback();
+        feedbackShown = true;
+        // Change button text to "Next Question"
+        nextButton.innerHTML = `
+            <span id="nextBtnText">Next Question</span>
+            <i class="fas fa-arrow-right ms-2"></i>
+        `;
+        return;
+    }
+    
+    // Feedback already shown, move to next question
+    if (currentQuestionIndex < quizQuestions.length - 1) {
         currentQuestionIndex++;
         renderQuestion();
         // Scroll to top
         document.querySelector('.quiz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+}
+
+function showCorrectnessFeedback() {
+    const question = quizQuestions[currentQuestionIndex];
+    const userAnswerIndex = userAnswers[currentQuestionIndex];
+    const isCorrect = userAnswerIndex === question.answer;
+    const correctAnswerIndex = question.answer;
+    const correctAnswerText = question.options[correctAnswerIndex];
+    
+    // Update all option buttons to show correctness
+    document.querySelectorAll('.option-btn').forEach((btn, idx) => {
+        if (idx === correctAnswerIndex) {
+            // Correct answer - always show in green
+            btn.classList.add('correct-answer');
+            btn.innerHTML = btn.innerHTML.replace('option-check', 'option-indicator');
+            btn.innerHTML = btn.innerHTML.replace('fas fa-check-circle', 'fas fa-check-circle correct-icon');
+        } else if (idx === userAnswerIndex && !isCorrect) {
+            // Wrong answer selected by user - show in red
+            btn.classList.add('wrong-answer');
+            btn.innerHTML = btn.innerHTML.replace('option-check', 'option-indicator');
+            btn.innerHTML = btn.innerHTML.replace('fas fa-check-circle', 'fas fa-times-circle wrong-icon');
+        }
+    });
+    
+    // Show feedback message
+    feedbackMessage.classList.remove('d-none');
+    if (isCorrect) {
+        feedbackMessage.classList.remove('feedback-wrong');
+        feedbackMessage.classList.add('feedback-correct');
+        feedbackMessage.innerHTML = `
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Correct!</strong> Great job!</span>
+        `;
+    } else {
+        feedbackMessage.classList.remove('feedback-correct');
+        feedbackMessage.classList.add('feedback-wrong');
+        feedbackMessage.innerHTML = `
+            <i class="fas fa-times-circle"></i>
+            <div class="feedback-content">
+                <div><strong>Not quite right.</strong></div>
+                <div class="feedback-correct-answer">The correct answer is <strong>${String.fromCharCode(65 + correctAnswerIndex)}</strong>: ${correctAnswerText}</div>
+            </div>
+        `;
+    }
+    
+    // Disable answer selection during feedback
+    document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.style.pointerEvents = 'none';
+        btn.style.cursor = 'default';
+    });
 }
 
 async function submitQuiz() {
