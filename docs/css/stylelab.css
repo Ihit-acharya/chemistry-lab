@@ -614,6 +614,7 @@ body.dual-windows #warningsWindow {
     background: transparent; /* remove previous background */
     border: none; /* remove original box border */
     border-radius: 0;
+    touch-action: none;
 }
 
 /* Prevent the generic equipment hover/border effects from showing on the flask container */
@@ -644,6 +645,7 @@ body.dual-windows #warningsWindow {
     cursor: grab;
     z-index: 80;
     backdrop-filter: blur(8px) saturate(140%);
+    touch-action: none;
 }
 
 .pour-handle:hover {
@@ -693,6 +695,7 @@ body.dual-windows #warningsWindow {
     justify-content: center;
     cursor: grab;
     z-index: 60;
+    touch-action: none;
 }
 
 .movable-apparatus img,

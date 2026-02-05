@@ -10915,9 +10915,19 @@
       "White precipitate forms",
       "Solution becomes cloudy"
     ],
-    "requires": [
-      "stirrer"
-    ]
+    "requires": []
+  },
+  "CU+H2SO4": {
+    "product": "CuSO4 + SO2 (g) + H2O",
+    "color": "#4da6ff",
+    "type": "gas evolution",
+    "heat": "endothermic",
+    "observations": [
+      "Blue solution forms",
+      "Pungent gas is released",
+      "Reaction requires heating"
+    ],
+    "requires": []
   },
   "BAI2+K3PO4": {
     "product": "BA3(PO4)2 (s)",
@@ -35418,6 +35428,468 @@
     "heat": "negligible",
     "observations": [
       "White precipitate forms",
+      "Solution becomes cloudy"
+    ],
+    "requires": [
+      "stirrer"
+    ]
+  },
+  "CL2+NA": {
+    "product": "NaCl (s)",
+    "color": "#ffffff",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "White solid forms",
+      "Heat is released",
+      "Chlorine color fades"
+    ],
+    "requires": []
+  },
+  "CH3COOH+NA2CO3": {
+    "product": "CH3COONa + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "CH3COOH+NAHCO3": {
+    "product": "CH3COONa + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "CACO3+HCL": {
+    "product": "CaCl2 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Bubbling as CO2 is released",
+      "Solid gradually dissolves"
+    ],
+    "requires": []
+  },
+  "CACO3+H2SO4": {
+    "product": "CaSO4 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Bubbling as CO2 is released",
+      "Solid gradually dissolves"
+    ],
+    "requires": []
+  },
+  "H2SO4+NA2CO3": {
+    "product": "Na2SO4 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "H2SO4+NAHCO3": {
+    "product": "Na2SO4 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "HCL+NA2CO3": {
+    "product": "NaCl + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "HCL+NAHCO3": {
+    "product": "NaCl + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "HNO3+NA2CO3": {
+    "product": "NaNO3 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "HNO3+NAHCO3": {
+    "product": "NaNO3 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Effervescence observed (CO2 gas)",
+      "Solution may cool slightly"
+    ],
+    "requires": []
+  },
+  "CACO3+HNO3": {
+    "product": "Ca(NO3)2 + H2O + CO2",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "negligible",
+    "observations": [
+      "Bubbling as CO2 is released",
+      "Solid gradually dissolves"
+    ],
+    "requires": []
+  },
+  "BA(OH)2+H2SO4": {
+    "product": "BaSO4 (s) + H2O",
+    "color": "#ffffff",
+    "type": "precipitation",
+    "heat": "exothermic",
+    "observations": [
+      "White precipitate forms",
+      "Heat released"
+    ],
+    "requires": [
+      "stirrer"
+    ]
+  },
+  "CA(OH)2+H2SO4": {
+    "product": "CaSO4 (s) + H2O",
+    "color": "#ffffff",
+    "type": "precipitation",
+    "heat": "exothermic",
+    "observations": [
+      "White precipitate forms",
+      "Heat released"
+    ],
+    "requires": [
+      "stirrer"
+    ]
+  },
+  "SR(OH)2+H2SO4": {
+    "product": "SrSO4 (s) + H2O",
+    "color": "#ffffff",
+    "type": "precipitation",
+    "heat": "exothermic",
+    "observations": [
+      "White precipitate forms",
+      "Heat released"
+    ],
+    "requires": [
+      "stirrer"
+    ]
+  },
+  "BA(OH)2+HNO3": {
+    "product": "Ba(NO3)2 + H2O",
+    "color": "#ffffff",
+    "type": "neutralization",
+    "heat": "exothermic",
+    "observations": [
+      "Heat released",
+      "Colorless solution"
+    ],
+    "requires": []
+  },
+  "CA(OH)2+HNO3": {
+    "product": "Ca(NO3)2 + H2O",
+    "color": "#ffffff",
+    "type": "neutralization",
+    "heat": "exothermic",
+    "observations": [
+      "Heat released",
+      "Colorless solution"
+    ],
+    "requires": []
+  },
+  "SR(OH)2+HNO3": {
+    "product": "Sr(NO3)2 + H2O",
+    "color": "#ffffff",
+    "type": "neutralization",
+    "heat": "exothermic",
+    "observations": [
+      "Heat released",
+      "Colorless solution"
+    ],
+    "requires": []
+  },
+  "C+O2": {
+    "product": "CO2 (g)",
+    "color": "#dfe6e9",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "Combustion occurs",
+      "Colorless gas is released"
+    ],
+    "requires": []
+  },
+  "S+O2": {
+    "product": "SO2 (g)",
+    "color": "#e6e6e6",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "Pungent gas is released",
+      "Combustion occurs"
+    ],
+    "requires": []
+  },
+  "H2+O2": {
+    "product": "H2O",
+    "color": "#ffffff",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "Water forms",
+      "Heat released"
+    ],
+    "requires": []
+  },
+  "H2+CL2": {
+    "product": "HCl (g)",
+    "color": "#ffffff",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "White fumes may appear",
+      "Reaction releases heat"
+    ],
+    "requires": []
+  },
+  "MG+O2": {
+    "product": "MgO (s)",
+    "color": "#ffffff",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "Bright white light observed",
+      "White solid forms"
+    ],
+    "requires": []
+  },
+  "FE+S": {
+    "product": "FeS (s)",
+    "color": "#1a1a1a",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "Black solid forms",
+      "Heat released"
+    ],
+    "requires": []
+  },
+  "MG+CL2": {
+    "product": "MgCl2 (s)",
+    "color": "#ffffff",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "White solid forms",
+      "Chlorine color fades"
+    ],
+    "requires": []
+  },
+  "CA+O2": {
+    "product": "CaO (s)",
+    "color": "#ffffff",
+    "type": "redox",
+    "heat": "exothermic",
+    "observations": [
+      "White solid forms",
+      "Heat released"
+    ],
+    "requires": []
+  },
+  "MG+HCL": {
+    "product": "MgCl2 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "ZN+HCL": {
+    "product": "ZnCl2 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "FE+HCL": {
+    "product": "FeCl2 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "AL+HCL": {
+    "product": "AlCl3 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "CA+HCL": {
+    "product": "CaCl2 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "MG+H2SO4": {
+    "product": "MgSO4 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "ZN+H2SO4": {
+    "product": "ZnSO4 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "FE+H2SO4": {
+    "product": "FeSO4 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "AL+H2SO4": {
+    "product": "Al2(SO4)3 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "CA+H2SO4": {
+    "product": "CaSO4 + H2 (g)",
+    "color": "#ffffff",
+    "type": "gas evolution",
+    "heat": "exothermic",
+    "observations": [
+      "Effervescence observed (H2 gas)",
+      "Metal dissolves"
+    ],
+    "requires": []
+  },
+  "FE+CUSO4": {
+    "product": "FeSO4 + Cu (s)",
+    "color": "#b87333",
+    "type": "redox",
+    "heat": "negligible",
+    "observations": [
+      "Reddish-brown copper deposits",
+      "Blue solution fades"
+    ],
+    "requires": []
+  },
+  "ZN+CUSO4": {
+    "product": "ZnSO4 + Cu (s)",
+    "color": "#b87333",
+    "type": "redox",
+    "heat": "negligible",
+    "observations": [
+      "Reddish-brown copper deposits",
+      "Blue solution fades"
+    ],
+    "requires": []
+  },
+  "MG+CUSO4": {
+    "product": "MgSO4 + Cu (s)",
+    "color": "#b87333",
+    "type": "redox",
+    "heat": "negligible",
+    "observations": [
+      "Reddish-brown copper deposits",
+      "Blue solution fades"
+    ],
+    "requires": []
+  },
+  "BACl2+CUSO4": {
+    "product": "BaSO4 (s) + CuCl2",
+    "color": "#ffffff",
+    "type": "precipitation",
+    "heat": "negligible",
+    "observations": [
+      "White precipitate forms",
+      "Solution becomes cloudy"
+    ],
+    "requires": [
+      "stirrer"
+    ]
+  },
+  "NAOH+CUSO4": {
+    "product": "Cu(OH)2 (s) + Na2SO4",
+    "color": "#4da6ff",
+    "type": "precipitation",
+    "heat": "negligible",
+    "observations": [
+      "Blue precipitate forms",
       "Solution becomes cloudy"
     ],
     "requires": [

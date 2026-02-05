@@ -62,6 +62,8 @@ const simSpeedInput = document.getElementById('simSpeed');
 const pauseBtn = document.getElementById('pauseSimulation');
 const resumeBtn = document.getElementById('resumeSimulation');
 
+const supportsPointerEvents = typeof window !== 'undefined' && 'PointerEvent' in window;
+
 const transferableVessels = new Set(['beaker', 'test_tube']);
 
 const historyStack = [];
@@ -409,6 +411,10 @@ function attachPourHandle(targetEl, sourceType, sourceId) {
     handle.innerHTML = '<i class="fas fa-tint"></i>';
 
     handle.addEventListener('pointerdown', e => e.stopPropagation());
+    handle.addEventListener('pointerdown', e => startTouchTransfer(e, sourceType, sourceId, handle));
+    if (!supportsPointerEvents) {
+        handle.addEventListener('touchstart', e => startLegacyTouchTransfer(e, sourceType, sourceId, handle), { passive: false });
+    }
     handle.addEventListener('dragstart', e => {
         e.dataTransfer.setData('type', 'transfer');
         e.dataTransfer.setData('sourceType', sourceType);
@@ -531,6 +537,152 @@ function setContainerState(containerId, state) {
 // ================= CHEMICAL DRAGGING =================
 let activeTouchDrag = null;
 
+function startTouchTransfer(e, sourceType, sourceId, handleEl) {
+    if (e.pointerType && e.pointerType !== 'touch' && e.pointerType !== 'pen') return;
+    e.preventDefault();
+    if (!handleEl) return;
+
+    const sourceEl = handleEl.closest('.flask, .movable-apparatus');
+    if (sourceEl) sourceEl.classList.add('pouring');
+
+    const ghost = handleEl.cloneNode(true);
+    ghost.classList.add('drag-ghost');
+    ghost.style.width = `${handleEl.offsetWidth}px`;
+    ghost.style.height = `${handleEl.offsetHeight}px`;
+    document.body.appendChild(ghost);
+
+    const offsetX = handleEl.offsetWidth / 2;
+    const offsetY = handleEl.offsetHeight / 2;
+
+    const moveGhost = (x, y) => {
+        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+    };
+
+    moveGhost(e.clientX, e.clientY);
+    document.body.classList.add('dragging');
+
+    activeTouchDrag = { type: 'transfer', sourceType, sourceId, ghost };
+
+    const onMove = (ev) => {
+        moveGhost(ev.clientX, ev.clientY);
+    };
+
+    const onUp = (ev) => {
+        try { handleEl.releasePointerCapture(ev.pointerId); } catch (_) {}
+        document.removeEventListener('pointermove', onMove);
+        document.removeEventListener('pointerup', onUp);
+        document.removeEventListener('pointercancel', onUp);
+        document.body.classList.remove('dragging');
+
+        if (sourceEl) sourceEl.classList.remove('pouring');
+
+        if (ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
+
+        const dropTarget = document.elementFromPoint(ev.clientX, ev.clientY);
+        if (!dropTarget) {
+            activeTouchDrag = null;
+            return;
+        }
+
+        const containerEl = dropTarget.closest('.movable-apparatus[data-container-id]');
+        if (containerEl && containerEl.dataset.containerId) {
+            transferContents(sourceType, sourceId, 'container', containerEl.dataset.containerId);
+            activeTouchDrag = null;
+            return;
+        }
+
+        if (dropTarget.closest('#mainFlask')) {
+            transferContents(sourceType, sourceId, 'flask', 'flask');
+            activeTouchDrag = null;
+            return;
+        }
+
+        activeTouchDrag = null;
+    };
+
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    document.addEventListener('pointercancel', onUp);
+
+    try { handleEl.setPointerCapture(e.pointerId); } catch (_) {}
+}
+
+function startLegacyTouchTransfer(e, sourceType, sourceId, handleEl) {
+    if (supportsPointerEvents) return;
+    if (!e.touches || !e.touches.length) return;
+    e.preventDefault();
+    if (!handleEl) return;
+
+    const sourceEl = handleEl.closest('.flask, .movable-apparatus');
+    if (sourceEl) sourceEl.classList.add('pouring');
+
+    const ghost = handleEl.cloneNode(true);
+    ghost.classList.add('drag-ghost');
+    ghost.style.width = `${handleEl.offsetWidth}px`;
+    ghost.style.height = `${handleEl.offsetHeight}px`;
+    document.body.appendChild(ghost);
+
+    const offsetX = handleEl.offsetWidth / 2;
+    const offsetY = handleEl.offsetHeight / 2;
+
+    const moveGhost = (x, y) => {
+        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+    };
+
+    const touch = e.touches[0];
+    moveGhost(touch.clientX, touch.clientY);
+    document.body.classList.add('dragging');
+
+    activeTouchDrag = { type: 'transfer', sourceType, sourceId, ghost };
+
+    const onMove = (ev) => {
+        if (!ev.touches || !ev.touches.length) return;
+        const t = ev.touches[0];
+        moveGhost(t.clientX, t.clientY);
+    };
+
+    const onUp = (ev) => {
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend', onUp);
+        document.removeEventListener('touchcancel', onUp);
+        document.body.classList.remove('dragging');
+
+        if (sourceEl) sourceEl.classList.remove('pouring');
+        if (ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
+
+        const changed = ev.changedTouches && ev.changedTouches[0];
+        if (!changed) {
+            activeTouchDrag = null;
+            return;
+        }
+
+        const dropTarget = document.elementFromPoint(changed.clientX, changed.clientY);
+        if (!dropTarget) {
+            activeTouchDrag = null;
+            return;
+        }
+
+        const containerEl = dropTarget.closest('.movable-apparatus[data-container-id]');
+        if (containerEl && containerEl.dataset.containerId) {
+            transferContents(sourceType, sourceId, 'container', containerEl.dataset.containerId);
+            activeTouchDrag = null;
+            return;
+        }
+
+        if (dropTarget.closest('#mainFlask')) {
+            transferContents(sourceType, sourceId, 'flask', 'flask');
+            activeTouchDrag = null;
+            return;
+        }
+
+        activeTouchDrag = null;
+    };
+
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+    document.addEventListener('touchcancel', onUp);
+}
+
 function startTouchDrag(e, item) {
     if (e.pointerType && e.pointerType !== 'touch' && e.pointerType !== 'pen') return;
     e.preventDefault();
@@ -616,6 +768,98 @@ function startTouchDrag(e, item) {
     try { item.setPointerCapture(e.pointerId); } catch (_) {}
 }
 
+function startLegacyTouchDrag(e, item) {
+    if (supportsPointerEvents) return;
+    if (!e.touches || !e.touches.length) return;
+    e.preventDefault();
+
+    const type = item.getAttribute('data-chemical') ? 'chemical' : 'equipment';
+    const name = item.getAttribute('data-chemical') || item.getAttribute('data-equipment');
+    const color = item.getAttribute('data-color') || '#8a2be2';
+    const formula = item.getAttribute('data-formula') || '';
+    const chemType = item.getAttribute('data-type') || '';
+
+    const ghost = item.cloneNode(true);
+    ghost.classList.add('drag-ghost');
+    ghost.style.width = `${item.offsetWidth}px`;
+    ghost.style.height = `${item.offsetHeight}px`;
+    document.body.appendChild(ghost);
+
+    const offsetX = item.offsetWidth / 2;
+    const offsetY = item.offsetHeight / 2;
+
+    const moveGhost = (x, y) => {
+        ghost.style.transform = `translate(${x - offsetX}px, ${y - offsetY}px)`;
+    };
+
+    const touch = e.touches[0];
+    moveGhost(touch.clientX, touch.clientY);
+    document.body.classList.add('dragging');
+
+    activeTouchDrag = { type, name, color, formula, chemType, ghost };
+
+    const onMove = (ev) => {
+        if (!ev.touches || !ev.touches.length) return;
+        const t = ev.touches[0];
+        moveGhost(t.clientX, t.clientY);
+    };
+
+    const onUp = (ev) => {
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend', onUp);
+        document.removeEventListener('touchcancel', onUp);
+        document.body.classList.remove('dragging');
+
+        if (ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
+
+        const changed = ev.changedTouches && ev.changedTouches[0];
+        if (!changed) {
+            activeTouchDrag = null;
+            return;
+        }
+
+        const dropTarget = document.elementFromPoint(changed.clientX, changed.clientY);
+        if (!dropTarget) {
+            activeTouchDrag = null;
+            return;
+        }
+
+        const containerEl = dropTarget.closest('.movable-apparatus[data-container-id]');
+        if (containerEl && containerEl.dataset.containerId) {
+            const id = containerEl.dataset.containerId;
+            if (type === 'chemical') {
+                addChemicalToContainer(id, name, color, formula, chemType);
+            } else if (type === 'equipment') {
+                useEquipment(name);
+            }
+            activeTouchDrag = null;
+            return;
+        }
+
+        if (dropTarget.closest('#mainFlask')) {
+            if (type === 'chemical') {
+                addChemicalToFlask(name, color, formula, chemType);
+            } else if (type === 'equipment') {
+                useEquipment(name);
+            }
+            activeTouchDrag = null;
+            return;
+        }
+
+        if (type === 'equipment' && labBench && labBench.contains(dropTarget)) {
+            const rect = labBench.getBoundingClientRect();
+            pushHistory();
+            placeApparatus(name, changed.clientX - rect.left, changed.clientY - rect.top);
+        }
+
+        activeTouchDrag = null;
+    };
+
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+    document.addEventListener('touchcancel', onUp);
+}
+
 function enableChemicalDragging() {
     document.querySelectorAll('.chemical-item').forEach(item => {
         item.draggable = true;
@@ -623,6 +867,9 @@ function enableChemicalDragging() {
         if (!item.dataset.touchDragBound) {
             item.dataset.touchDragBound = 'true';
             item.addEventListener('pointerdown', (e) => startTouchDrag(e, item));
+            if (!supportsPointerEvents) {
+                item.addEventListener('touchstart', (e) => startLegacyTouchDrag(e, item), { passive: false });
+            }
         }
 
         item.addEventListener('dragstart', e => {
@@ -1283,6 +1530,56 @@ function makeMovable(el) {
     }
 
     el.addEventListener('pointerdown', onPointerDown);
+
+    if (!supportsPointerEvents) {
+        el.addEventListener('touchstart', (e) => {
+            if (!e.touches || !e.touches.length) return;
+            e.preventDefault();
+            const touch = e.touches[0];
+            startX = touch.clientX; startY = touch.clientY;
+            const rect = el.getBoundingClientRect();
+            const benchRect = labBench.getBoundingClientRect();
+            origX = rect.left - benchRect.left; origY = rect.top - benchRect.top;
+            el.style.cursor = 'grabbing';
+
+            const onTouchMove = (ev) => {
+                if (!ev.touches || !ev.touches.length) return;
+                const t = ev.touches[0];
+                const dx = t.clientX - startX; const dy = t.clientY - startY;
+                const benchRectMove = labBench.getBoundingClientRect();
+                const maxW = labBench.clientWidth || benchRectMove.width;
+                const maxH = labBench.clientHeight || benchRectMove.height;
+                let nx = origX + dx; let ny = origY + dy;
+                nx = Math.max(0, Math.min(maxW - el.offsetWidth, nx));
+                ny = Math.max(0, Math.min(maxH - el.offsetHeight, ny));
+                el.style.left = nx + 'px';
+                el.style.top = ny + 'px';
+            };
+
+            const onTouchEnd = () => {
+                el.style.cursor = 'grab';
+                document.removeEventListener('touchmove', onTouchMove);
+                document.removeEventListener('touchend', onTouchEnd);
+                document.removeEventListener('touchcancel', onTouchEnd);
+                if (el.dataset.type === 'burner') {
+                    positionBurnerUnderFlask();
+                } else {
+                    const benchRectEnd = labBench.getBoundingClientRect();
+                    const rectEnd = el.getBoundingClientRect();
+                    const snappedLeft = snapToGrid(rectEnd.left - benchRectEnd.left);
+                    const snappedTop = snapToGrid(rectEnd.top - benchRectEnd.top);
+                    const maxW = labBench.clientWidth || benchRectEnd.width;
+                    const maxH = labBench.clientHeight || benchRectEnd.height;
+                    el.style.left = `${Math.max(0, Math.min(maxW - el.offsetWidth, snappedLeft))}px`;
+                    el.style.top = `${Math.max(0, Math.min(maxH - el.offsetHeight, snappedTop))}px`;
+                }
+            };
+
+            document.addEventListener('touchmove', onTouchMove, { passive: false });
+            document.addEventListener('touchend', onTouchEnd);
+            document.addEventListener('touchcancel', onTouchEnd);
+        }, { passive: false });
+    }
 }
 
 // Ensure the burner element stays centered under the flask
