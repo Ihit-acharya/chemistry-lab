@@ -110,8 +110,8 @@
     position: fixed;
     top: 60px;
     right: 24px;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 1px solid rgba(190, 180, 255, 0.5);
     background: linear-gradient(135deg, rgba(70, 76, 110, 0.6), rgba(32, 36, 60, 0.55));
@@ -135,8 +135,9 @@
 .status-left {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .status-pill {
@@ -171,8 +172,9 @@
 .status-actions {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 8px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
 }
 
 .icon-btn {
