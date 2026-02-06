@@ -341,7 +341,7 @@ body.dragging .drawer-backdrop {
 .floating-window {
     position: fixed;
     top: 160px;
-    right: auto;
+    right: -6px;
     left: 24px;
     width: 320px;
     max-width: calc(100vw - 48px);
