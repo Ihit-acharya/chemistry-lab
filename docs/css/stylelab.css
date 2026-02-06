@@ -528,6 +528,8 @@ body.dual-windows #warningsWindow {
     touch-action: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: rgba(138, 43, 226, 0.3);
+    pointer-events: auto;
+    flex-shrink: 0;
 }
 
 .fab::before {
@@ -1976,6 +1978,16 @@ input[type="range"]::-moz-range-thumb:hover {
         top: 120px;
         max-height: calc(100vh - 160px);
     }
+    .floating-actions {
+        right: 18px;
+        top: 95px;
+        gap: 11px;
+    }
+    .fab {
+        width: 52px;
+        height: 52px;
+        font-size: 1.2rem;
+    }
     .lab-bench {
         min-height: 60vh;
         border-left: none;
@@ -2030,6 +2042,12 @@ input[type="range"]::-moz-range-thumb:hover {
     .floating-actions {
         right: 16px;
         top: 90px;
+        gap: 10px;
+    }
+    .fab {
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
     }
 }
 
@@ -2077,5 +2095,16 @@ input[type="range"]::-moz-range-thumb:hover {
         left: 15px;
         transform: none;
         text-align: center;
+    }
+    .floating-actions {
+        right: 12px;
+        top: 85px;
+        gap: 8px;
+    }
+    .fab {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+        border-width: 1.25px;
     }
 }
