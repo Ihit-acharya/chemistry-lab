@@ -260,6 +260,10 @@
         inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
+.drawer.open * {
+    pointer-events: auto;
+}
+
 .drawer::before {
     content: "";
     position: absolute;
@@ -499,7 +503,7 @@ body.dual-windows #warningsWindow {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 1000;
+    z-index: 900;
     pointer-events: auto;
 }
 
@@ -1116,6 +1120,7 @@ body.dual-windows #warningsWindow {
     gap: 10px;
     touch-action: none;
     overflow: hidden;
+    pointer-events: auto;
 }
 
 .chemical-item::before {
@@ -1811,6 +1816,7 @@ input[type="range"]::-moz-range-thumb:hover {
     font-weight: 600;
     margin-bottom: 10px;
     transition: all 0.25s ease;
+    pointer-events: auto;
 }
 
 .quantity-control:hover {
@@ -1834,6 +1840,7 @@ input[type="range"]::-moz-range-thumb:hover {
     display: flex;
     gap: 8px;
     margin-bottom: 10px;
+    pointer-events: auto;
 }
 
 .chemical-search {
@@ -1846,6 +1853,7 @@ input[type="range"]::-moz-range-thumb:hover {
     outline: none;
     font-size: 0.85rem;
     transition: all 0.25s ease;
+    pointer-events: auto;
 }
 
 .chemical-search:hover {
