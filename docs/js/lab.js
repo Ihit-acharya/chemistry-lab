@@ -698,6 +698,7 @@ function startLegacyTouchTransfer(e, sourceType, sourceId, handleEl) {
 function startTouchDrag(e, item) {
     if (e.pointerType && e.pointerType !== 'touch' && e.pointerType !== 'pen') return;
     e.preventDefault();
+    e.stopPropagation();
 
     const type = item.getAttribute('data-chemical') ? 'chemical' : 'equipment';
     const name = item.getAttribute('data-chemical') || item.getAttribute('data-equipment');
@@ -709,6 +710,8 @@ function startTouchDrag(e, item) {
     ghost.classList.add('drag-ghost');
     ghost.style.width = `${item.offsetWidth}px`;
     ghost.style.height = `${item.offsetHeight}px`;
+    ghost.style.zIndex = '9999';
+    ghost.style.pointerEvents = 'none';
     document.body.appendChild(ghost);
 
     const offsetX = item.offsetWidth / 2;
@@ -724,10 +727,12 @@ function startTouchDrag(e, item) {
     activeTouchDrag = { type, name, color, formula, chemType, ghost };
 
     const onMove = (ev) => {
+        ev.preventDefault();
         moveGhost(ev.clientX, ev.clientY);
     };
 
     const onUp = (ev) => {
+        ev.preventDefault();
         try { item.releasePointerCapture(ev.pointerId); } catch (_) {}
         document.removeEventListener('pointermove', onMove);
         document.removeEventListener('pointerup', onUp);
@@ -784,6 +789,7 @@ function startLegacyTouchDrag(e, item) {
     if (supportsPointerEvents) return;
     if (!e.touches || !e.touches.length) return;
     e.preventDefault();
+    e.stopPropagation();
 
     const type = item.getAttribute('data-chemical') ? 'chemical' : 'equipment';
     const name = item.getAttribute('data-chemical') || item.getAttribute('data-equipment');
@@ -795,6 +801,8 @@ function startLegacyTouchDrag(e, item) {
     ghost.classList.add('drag-ghost');
     ghost.style.width = `${item.offsetWidth}px`;
     ghost.style.height = `${item.offsetHeight}px`;
+    ghost.style.zIndex = '9999';
+    ghost.style.pointerEvents = 'none';
     document.body.appendChild(ghost);
 
     const offsetX = item.offsetWidth / 2;
@@ -812,11 +820,13 @@ function startLegacyTouchDrag(e, item) {
 
     const onMove = (ev) => {
         if (!ev.touches || !ev.touches.length) return;
+        ev.preventDefault();
         const t = ev.touches[0];
         moveGhost(t.clientX, t.clientY);
     };
 
     const onUp = (ev) => {
+        ev.preventDefault();
         document.removeEventListener('touchmove', onMove);
         document.removeEventListener('touchend', onUp);
         document.removeEventListener('touchcancel', onUp);
@@ -874,17 +884,30 @@ function startLegacyTouchDrag(e, item) {
 
 function enableChemicalDragging() {
     document.querySelectorAll('.chemical-item').forEach(item => {
+        // Only enable HTML5 drag for mouse/desktop
         item.draggable = true;
 
         if (!item.dataset.touchDragBound) {
             item.dataset.touchDragBound = 'true';
-            item.addEventListener('pointerdown', (e) => startTouchDrag(e, item));
+            // For touch/pointer events, use custom drag
+            item.addEventListener('pointerdown', (e) => {
+                if (e.pointerType === 'touch' || e.pointerType === 'pen') {
+                    startTouchDrag(e, item);
+                }
+            });
             if (!supportsPointerEvents) {
                 item.addEventListener('touchstart', (e) => startLegacyTouchDrag(e, item), { passive: false });
             }
         }
 
+        // HTML5 drag for mouse
         item.addEventListener('dragstart', e => {
+            // Only allow drag with mouse, not touch
+            if (e.pointerType === 'touch' || e.pointerType === 'pen') {
+                e.preventDefault();
+                return;
+            }
+            
             document.body.classList.add('dragging');
             const type = item.getAttribute('data-chemical') ? 'chemical' : 'equipment';
             const name = item.getAttribute('data-chemical') || item.getAttribute('data-equipment');
@@ -2613,12 +2636,24 @@ function filterChemicals(type) {
 
 function searchChemicals(query) {
     const q = query.toLowerCase();
-    renderChemicals(
-        allChemicals.filter(c =>
-            c.name.toLowerCase().includes(q) ||
-            c.formula.toLowerCase().includes(q)
-        )
+    
+    // Search chemicals
+    const filteredChemicals = allChemicals.filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        c.formula.toLowerCase().includes(q)
     );
+    
+    // Search equipment
+    const filteredEquipment = allEquipment.filter(eq =>
+        eq.name.toLowerCase().includes(q) ||
+        (eq.info && eq.info.toLowerCase().includes(q))
+    );
+    
+    // Render chemicals
+    renderChemicals(filteredChemicals);
+    
+    // Render equipment with search results
+    renderEquipment(filteredEquipment);
 }
 
 

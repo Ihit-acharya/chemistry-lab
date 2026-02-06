@@ -220,7 +220,7 @@
     position: fixed;
     top: 140px;
     right: 20px;
-    width: 360px;
+    width: 370px;
     max-width: calc(100vw - 40px);
     max-height: calc(100vh - 180px);
     z-index: 100;
@@ -241,7 +241,8 @@
         inset 0 1px 0 rgba(255,255,255,0.25);
     backdrop-filter: blur(20px) saturate(170%);
     border-radius: 18px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     will-change: transform, opacity;
