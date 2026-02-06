@@ -2654,6 +2654,9 @@ function searchChemicals(query) {
     
     // Render equipment with search results
     renderEquipment(filteredEquipment);
+    
+    // Re-enable dragging for all items
+    enableChemicalDragging();
 }
 
 
